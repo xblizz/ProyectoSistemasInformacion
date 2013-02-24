@@ -1,0 +1,19 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<h2>CustomErrorView</h2>
+<p>
+   Controller: @Model.ControllerName
+</p>
+<p>
+  ActionName
+</p>
+<p>
+  Message: @Model.Exception.Message
+</p>
+<p>
+  Stack Trace: @Model.Exception.StackTrace
+</p>

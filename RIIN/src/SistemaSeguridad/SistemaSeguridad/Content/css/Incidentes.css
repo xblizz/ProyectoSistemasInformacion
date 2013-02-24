@@ -1,0 +1,273 @@
+﻿@import "jquery.ui.all.css";
+@import "jquery-ui-1.8.17.custom.css";
+
+
+body{
+margin:0;
+padding:0;
+line-height: 1.1em;
+}
+
+.fechaIncidente {
+    size: 20;
+}
+
+
+#topsection{
+background: #EAEAEA;
+height: 90px; /*Height of top section*/
+}
+
+#topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+
+#contentcolumn{
+margin-left: 250px; /*Set left margin to LeftColumnWidth*/
+}
+
+#leftcolumn{
+float: left;
+width: 250px; /*Width of left column*/
+margin-left: -100%;
+background: #EDEDED;
+}
+
+#footer{
+clear: left;
+width: 100%;
+background: black;
+color: #FFF;
+text-align: center;
+padding: 4px 0;
+}
+
+#footer a{
+color: #FFFF80;
+}
+
+.innertube{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 50;
+}
+
+
+.Incidente{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
+
+.divMapa
+{
+    border: black 1px solid; 
+    margin-left: 10px;  
+    }
+
+.Mapa {
+   height: 390px;
+
+}
+.MapaColapsado {
+    height: 268px;
+
+}
+.ContenedorFiltros {
+    display: block;
+    height: 120px;
+}
+
+.BotonCancelar {
+    float: right;
+    margin-top: 0px;
+}
+.BotonGuardar {
+    float: left;
+    margin-top: 0px;
+}
+.Filtros {
+   display: block;
+    float: left;
+    margin-left: 25px;
+    margin-top: 5px;
+    width: 100%;
+}
+.botonBusar {
+    display: block;
+    float: right;
+    height: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.DivMenuOpciones
+{
+    background-image: url(../themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right:10px;
+    margin-top: 0px;
+    width: 100%;
+    color: blue;
+    cursor: pointer;
+    display: block;
+    height: 40px;
+
+    
+    }
+
+    
+.DivOculto 
+{
+    background-image: url(../themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 0px;
+    width: 649px;
+    color: blue;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 34px;
+}
+
+.DivComandos
+{
+    background-image: url(../themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png);
+    background-repeat: repeat-x;
+    color: #FFFFFF;
+    padding: 5px;
+    margin-left: 0px;
+    margin-top: 8px;
+    width: 180px;
+    color: blue;
+    float: right;
+}
+.ContenedorMapa {
+    border: 1px solid;
+    float: left;
+    height: 510px;
+    margin-top: 5px;
+    width: 850px;
+    
+}
+
+.ContenedorMapaColapsado {
+    border: 1px solid;
+    float: left;
+    height: 399px;
+    margin-top: 5px;
+    width: 850px;
+    
+}
+
+.EsVisible {
+    display:none; 
+    overflow:hidden; 
+    height:130px;
+}
+.DivVisible 
+{
+    position:absolute;
+    visibility: visible
+}
+
+.TituloIncidente {
+    margin-left: 25px;
+    margin-top: 5px;
+    width: 200px;
+    font-size: 110%;
+}
+.fieldCampos {
+    margin-left: 0px;
+    margin-top: 0px;    
+
+}
+.fieldComandos {
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 120px;
+    height: 120px;
+    float: right;
+}
+.divCampos {
+    margin-left: 5px;
+    margin-top: 1px;
+    border: 1px;
+    border-style: solid;
+    border-radius: 3px;
+}
+
+.divComandos {
+    margin-left: 25px;
+    margin-top: 5px;
+    width: 150px;
+    height: 100px;
+   
+}
+
+.Row1 {
+    margin-left: 25px;
+    margin-top: 10px;
+    width: auto;
+}
+
+.Row2 {
+    margin-left: 25px;
+    margin-top: 20px;
+    width: auto;
+}
+
+.RowCenter {
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.TablaFiltros
+{
+    border:10px !important;
+    background-color:Red !important;
+    border-color:Yellow;
+    }
+ 
+ .trCenter
+ {
+     text-align:center;
+     }
+     
+
+     
+table.tablaConfirmar {
+	border-width: 1px;
+	border-spacing: 2px;
+	border-style: solid;
+	border-color: gray;
+	border-collapse: separate;
+	background-color: white;
+}
+table.tablaConfirmar th {
+	border-width: 1px;
+	padding: 1px;
+	border-style: solid;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}
+table.tablaConfirmar td {
+	border-width: 1px;
+	padding: 1px;
+	border-style: solid;
+	border-color: gray;
+	background-color: white;
+	-moz-border-radius: ;
+}     

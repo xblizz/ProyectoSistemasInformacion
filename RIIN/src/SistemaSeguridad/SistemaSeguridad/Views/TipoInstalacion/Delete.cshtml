@@ -1,0 +1,40 @@
+﻿@model SS.Core.Entities.TipoInstalacion
+
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.TipoInstalacionStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.TipoInstalacionStrings.ViewDeleteName</h2>
+
+<h3>@SistemaSeguridad.Resources.TipoInstalacionStrings.DeleteConfirm</h3>
+
+@using (Html.BeginForm()) {
+<fieldset>
+
+    <table class="style1">
+        <tr>
+            <th>
+                @SistemaSeguridad.Resources.TipoInstalacionStrings.lblName</th>
+            <th>
+               @SistemaSeguridad.Resources.TipoInstalacionStrings.lblDesc</th>
+            <th>
+               @SistemaSeguridad.Resources.TipoInstalacionStrings.lblFechaAlta</th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Nombre)</td>
+            <td>
+                @Html.DisplayFor(model => model.Descripcion)</td>
+            <td>
+                @Html.DisplayFor(model => model.FechaAlta)</td>
+        </tr>
+    </table>
+</fieldset>
+
+    <p>
+        <input type="submit" value=@SistemaSeguridad.Resources.TipoInstalacionStrings.Delete /> |
+        @Html.ActionLink(@SistemaSeguridad.Resources.TipoInstalacionStrings.BackToIndex, "Index")
+    </p>
+    
+    @Html.HiddenFor(model => model.Id)
+}

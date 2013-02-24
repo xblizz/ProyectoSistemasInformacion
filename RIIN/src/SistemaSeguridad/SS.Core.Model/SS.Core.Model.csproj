@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58C2E096-AA27-4639-89F4-FEED001ADB6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SS.Core.Model</RootNamespace>
+    <AssemblyName>SS.Core.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AfectacionesIncidente.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlertasIncidente.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CantidadDelincuentes.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ciudades.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConfiguracionesDashboard.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Estados.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FiltrosDashboard.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Incidentes.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformacionEmpresas.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformacionEstados.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformacionPerfiles.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Instalaciones.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lesionados.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MediosAmenaza.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MotivosAmenaza.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NivelesGeograficos.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ParametrosSistema.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ParametrosSistemaEmpresa.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Perfiles.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Poligonos.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PoligonosDetalle.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportesDashboard.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RiinModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RiinModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RiinModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RiinModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RiinModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposAfectacion.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposArma.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposExtorsion.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposFiltroDashboard.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposIncidente.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposInstalacion.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposIntrusion.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposUnidadTiempo.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TiposVehiculo.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Zonas.cs">
+      <DependentUpon>RiinModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="RiinModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RiinModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="RiinModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RiinModel.edmx</DependentUpon>
+      <LastGenOutput>RiinModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="RiinModel.edmx.diagram">
+      <DependentUpon>RiinModel.edmx</DependentUpon>
+    </None>
+    <None Include="RiinModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RiinModel.edmx</DependentUpon>
+      <LastGenOutput>RiinModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

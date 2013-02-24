@@ -1,0 +1,77 @@
+﻿@model SS.Core.Entities.Zona
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#EstadoId").change(function () {
+            var idModel = $(this).val();
+            $.getJSON("/Zona/CargarCiudadesPorEstado", { id: idModel },
+                    function (carData) {
+                        var select = $("#CiudadId");
+                        select.empty();
+                        select.append($('<option/>', {
+                            value: 0,
+                            text: "Selecciona una ciudad"
+                        }));
+                        $.each(carData, function (index, itemData) {
+
+                            select.append($('<option/>', {
+                                value: itemData.Value,
+                                text: itemData.Text
+                            }));
+                        });
+                    });
+        });
+
+        $("#EstadoId").change(function () {
+            var idModel = $(this).val();
+            $.getJSON("/Zona/CargarZonasPorEstado", { id: idModel },
+            function (carData) {
+                var select = $("#ZonaId");
+                select.empty();
+                select.append($('<option/>', {
+                    value: 0,
+                    text: "Selecciona una zona"
+                }));
+                $.each(carData, function (index, itemData) {
+
+                    select.append($('<option/>', {
+                        value: itemData.Value,
+                        text: itemData.Text
+                    }));
+                });
+            });
+        });
+
+    });
+</script>
+<div>
+    <div style="float: left">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EstadoId, "Estado")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EstadoId", @SistemaSeguridad.Resources.GlobalStrings.selectOne)
+            @Html.ValidationMessageFor(model => model.EstadoId)
+        </div>
+    </div>
+    <div style="float: left">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CiudadId, "Ciudad")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CiudadId", @SistemaSeguridad.Resources.GlobalStrings.selectOne)
+            @Html.ValidationMessageFor(model => model.CiudadId)
+        </div>
+    </div>
+    <div style="float: left">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ZonaId, "Zona")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ZonaId", @SistemaSeguridad.Resources.GlobalStrings.selectOne)
+            @Html.ValidationMessageFor(model => model.ZonaId)
+        </div>
+    </div>
+    <div style="float: left">
+        <input type="button" value="Buscar" />
+    </div>
+</div>

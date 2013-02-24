@@ -1,0 +1,136 @@
+﻿@model IEnumerable<SS.Core.Entities.Instalacion>
+@using SistemaSeguridad.Helpers     
+     
+@{
+    ViewBag.Title = "Instalaciones";
+}
+
+<h2>Catalogo de Instalaciones</h2>
+
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.FlexGrid,"flexigrid.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+
+@Content.Script("jquery-1.5.1.js", Url)
+@Content.Script("jquery-ui-1.8.11.js", Url)
+
+<script src="@Url.JavaScript(Plugin.FlexGrid, "flexigrid.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript(Plugin.JCombo, "jquery.Cascade.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript(Plugin.Multiselect, "jquery.multiselect.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("Common.function.js")" type="text/javascript"></script>
+
+<table id="namegrid" style="display: none"></table>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+        var myFlex = {
+            autoload: true,
+            dataType: 'json',
+            url: "@Url.Action("GetInstalacion", "Instalacion")",
+            usepager: true,
+            singleSelect: true,
+            pagestat: 'Mostrando {from} a {to} de {total} registros',
+            procmsg: 'Procesando, por favor espere ...',
+            nomsg: 'No existen registros',
+            pagetext: 'Página',
+            findtext: 'Buscar',
+            outof: 'de',
+            showToggleBtn: false,
+            rp: 3
+        };
+
+        $('#namegrid').flexigrid($.extend({ }, myFlex, {
+            colModel: [
+                { display: 'id', name: 'id', width: 40, sortable: true, align: 'left', hide: true },
+                { display: 'Empresa', name: 'empresa', width: 120, sortable: true, align: 'left' },
+                { display: 'Tipo', name: 'tipo', width: 130, sortable: true, align: 'left' },
+                { display: 'Nombre', name: 'nombre', width: 130, sortable: true, align: 'left' },
+                { display: 'Fecha Alta', name: 'fechaAlta', width: 100, sortable: true, align: 'left' }
+            ],
+            buttons: [
+                { name: 'Nuevo', bclass: 'add', onpress: doCommand },
+                { name: 'Modifiicar', bclass: 'edit', onpress: doCommand },
+                { name: 'Eliminar', bclass: 'delete', onpress: doCommand }
+            ],
+            onSuccess: gridFormat
+        }));
+
+        function doCommand(com, grid) {
+            if (com == 'Nuevo') {
+                var url = "@Url.Action("Create")";
+                $(location).attr('href', url);
+            }
+            if (com == 'Modifiicar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="id"]');
+                    var url = "@Url.Action("Edit/")" + id.text(); 
+                    $(location).attr('href', url);
+                    //alert("Edit row " + id.text()); CCRS
+                });
+            } else if (com == 'Eliminar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="id"]');
+                    var url = "@Url.Action("Delete/")" + id.text(); 
+                    $(location).attr('href', url);
+                    //alert("Delete row " + id.text());
+                });
+            }
+        }
+        
+        function gridFormat() {
+            var cell = $('td[abbr*="activo"] > div');
+            var className = "";
+            var currentElement;
+            $.each(cell, function(i, item) {
+                currentElement = $(this);
+                if (currentElement.text() == "true") {
+                    className = "status_ok";
+                } else {
+                    className = "status_bad";
+                }
+                currentElement.text("");
+                currentElement.addClass(className);
+            });
+
+            var cellDataTime = $('td[abbr*="fecha"] > div');
+
+            $.each(cellDataTime, function(i, item) {
+                currentElement = $(this);
+
+                var milli = currentElement.text().replace( /\/Date\((-?\d+)\)\// , '$1');
+                var d = new Date(parseInt(milli));
+                if (d != 'Invalid Date') {
+                    currentElement.text("");
+                    currentElement.text(formatDate(d));
+                }
+            });
+            return true;
+        }
+
+        function formato(object) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth: 150,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+
+        function multiseleccion(object) {
+            $(object).multiselect({
+                selectedList: 4,
+                header: false,
+                minWidth: 150,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+
+        function prossesForm(data) {
+            //alert(data);
+        }
+    });
+</script>

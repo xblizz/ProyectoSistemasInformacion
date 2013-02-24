@@ -1,0 +1,69 @@
+USE ALXout01DB
+GO
+IF EXISTS ( SELECT * FROM SysObjects WHERE NAME = 'MediasHoras' AND XType = 'U' )
+BEGIN
+	DROP TABLE MediasHoras
+	PRINT 'Drop Table MediasHoras'
+END
+GO
+CREATE TABLE MediasHoras (
+	Id	INT NOT NULL,
+	HoraInicial Varchar(5) NOT NULL,
+	HoraFinal	Varchar(5) NOT NULL,
+	CONSTRAINT PK_MediasHoras
+	PRIMARY KEY (Id)
+)
+GO 
+PRINT 'Create Table MediasHoras'
+GO
+-- INSERTA LA INFORMACION DE LAS HORAS--
+INSERT MediasHoras VALUES(1, '00:00','00:29')
+INSERT MediasHoras VALUES(2, '00:30','00:59')
+INSERT MediasHoras VALUES(3, '01:00','01:29')
+INSERT MediasHoras VALUES(4, '01:30','01:59')
+INSERT MediasHoras VALUES(5, '02:00','02:29')
+INSERT MediasHoras VALUES(6, '02:30','02:59')
+INSERT MediasHoras VALUES(7, '03:00','03:29')
+INSERT MediasHoras VALUES(8, '03:30','03:59')
+INSERT MediasHoras VALUES(9, '04:00','04:29')
+INSERT MediasHoras VALUES(10, '04:30','04:59')
+INSERT MediasHoras VALUES(11, '05:00','05:29')
+INSERT MediasHoras VALUES(12, '05:30','05:59')
+INSERT MediasHoras VALUES(13, '06:00','06:29')
+INSERT MediasHoras VALUES(14, '06:30','06:59')
+INSERT MediasHoras VALUES(15, '07:00','07:29')
+INSERT MediasHoras VALUES(16, '07:30','07:59')
+INSERT MediasHoras VALUES(17, '08:00','08:29')
+INSERT MediasHoras VALUES(18, '08:30','08:59')
+INSERT MediasHoras VALUES(19, '09:00','09:29')
+INSERT MediasHoras VALUES(20, '09:30','09:59')
+INSERT MediasHoras VALUES(21, '10:00','10:29')
+INSERT MediasHoras VALUES(22, '10:30','10:59')
+INSERT MediasHoras VALUES(23, '11:00','11:29')
+INSERT MediasHoras VALUES(24, '11:30','11:59')
+INSERT MediasHoras VALUES(25, '12:00','12:29')
+INSERT MediasHoras VALUES(26, '12:30','12:59')
+INSERT MediasHoras VALUES(27, '13:00','13:29')
+INSERT MediasHoras VALUES(28, '13:30','13:59')
+INSERT MediasHoras VALUES(29, '14:00','14:29')
+INSERT MediasHoras VALUES(30, '14:30','14:59')
+INSERT MediasHoras VALUES(31, '15:00','15:29')
+INSERT MediasHoras VALUES(32, '15:30','15:59')
+INSERT MediasHoras VALUES(33, '16:00','16:29')
+INSERT MediasHoras VALUES(34, '16:30','16:59')
+INSERT MediasHoras VALUES(35, '17:00','17:29')
+INSERT MediasHoras VALUES(36, '17:30','17:59')
+INSERT MediasHoras VALUES(37, '18:00','18:29')
+INSERT MediasHoras VALUES(38, '18:30','18:59')
+INSERT MediasHoras VALUES(39, '19:00','19:29')
+INSERT MediasHoras VALUES(40, '19:30','19:59')
+INSERT MediasHoras VALUES(41, '20:00','20:29')
+INSERT MediasHoras VALUES(42, '20:30','20:59')
+INSERT MediasHoras VALUES(43, '21:00','21:29')
+INSERT MediasHoras VALUES(44, '21:30','21:59')
+INSERT MediasHoras VALUES(45, '22:00','22:29')
+INSERT MediasHoras VALUES(46, '22:30','22:59')
+INSERT MediasHoras VALUES(47, '23:00','23:29')
+INSERT MediasHoras VALUES(48, '23:30','23:59')
+
+

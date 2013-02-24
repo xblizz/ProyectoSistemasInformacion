@@ -1,0 +1,124 @@
+﻿@model SS.Core.Entities.TipoIncidente
+@using SistemaSeguridad.Helpers
+@{
+    ViewBag.Title = "Create";
+}
+<h2>
+    Create</h2>
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Href("~/Scripts/jquery-1.5.1.js")" type="text/javascript"></script>
+<link type="text/css" href="@Href("~/Content/themes/ui-lightness/ui.all.css")" rel="stylesheet" />
+<script type="text/javascript" src="@Href("~/Scripts/ui.core.js")"></script>
+<script type="text/javascript" src="@Href("~/Scripts/ui.dialog.js")"></script>
+<script type="text/javascript" src="@Href("~/Scripts/ui.draggable.js")"></script>
+<script type="text/javascript" src="@Href("~/Scripts/ui.resizable.js")"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#dialog").dialog({
+            bgiframe: true,
+            height: 140,
+            modal: true,
+            autoOpen: false,
+            resizable: false
+        })
+    });
+        
+</script>
+<div id="dialog-confirm" class="Invisible" title=@SistemaSeguridad.Resources.GlobalStrings.Cancel>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.ReturnConfirm
+    </p>
+</div>
+@{
+    using (Html.BeginForm("Create", "TipoIncidente", FormMethod.Post, new { id = "form" }))
+    {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>TipoIncidente</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Imagen)
+        </div>
+        
+
+    </fieldset>
+    } 
+}
+
+        <a href="#" id="lnkSubir" onclick="$('#dialog').dialog('open'); return false">Upload  File</a>
+        <div id="dialog" title="Upload files">
+            @{ using (Html.BeginForm("Upload", "TipoIncidente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+               { 
+                <br />
+                <p>
+                    <input type="file" id="fileUpload" name="fileUpload" size="23" />
+                </p>
+                <p>
+                    <input type="submit" value="Upload file" /></p>        
+               }
+            }
+        </div>
+    
+    @*
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UsuarioAlta)
+        </div>*@ @*        <p>
+            <input type="submit" value="Create" />
+        </p>*@
+
+<p style="padding-left: 10px">
+    <a class="button" id="btnGuardar"><b>Guardar</b></a> <a class="button" id="btnCancelar">
+        <b>Cancelar</b></a>
+</p>
+
+@*
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnGuardar").click(function (e) {
+            postJson("form", function (data) {
+            });
+        });
+
+        $("#btnCancelar").bind("click", function() {
+            OpenPopUp({
+                id: "dialog-confirm",
+                buttons: 2,
+                yes: function() {
+                    var url = "@Url.Action("Index")";
+                    $(location).attr('href', url);
+                    return;
+                },
+                no: function() {
+                    return;
+                }
+            });
+        });
+
+        $("#lnkSubir").click(function (e) {
+            $('#dialog').dialog('open'); return false;
+        });
+        
+
+    });
+</script>

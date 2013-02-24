@@ -1,0 +1,2974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RIINModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="RIINModelStoreContainer">
+          <EntitySet Name="AfectacionesIncidente" EntityType="RIINModel.Store.AfectacionesIncidente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AlertasIncidente" EntityType="RIINModel.Store.AlertasIncidente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CantidadDelincuentes" EntityType="RIINModel.Store.CantidadDelincuentes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ciudades" EntityType="RIINModel.Store.Ciudades" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConfiguracionesDashboard" EntityType="RIINModel.Store.ConfiguracionesDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Empresas" EntityType="RIINModel.Store.Empresas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estados" EntityType="RIINModel.Store.Estados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FiltrosDashboard" EntityType="RIINModel.Store.FiltrosDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Incidentes" EntityType="RIINModel.Store.Incidentes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Instalaciones" EntityType="RIINModel.Store.Instalaciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lesionados" EntityType="RIINModel.Store.Lesionados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MediosAmenaza" EntityType="RIINModel.Store.MediosAmenaza" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MotivosAmenaza" EntityType="RIINModel.Store.MotivosAmenaza" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NivelesGeograficos" EntityType="RIINModel.Store.NivelesGeograficos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ParametrosSistema" EntityType="RIINModel.Store.ParametrosSistema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ParametrosSistemaEmpresa" EntityType="RIINModel.Store.ParametrosSistemaEmpresa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Perfiles" EntityType="RIINModel.Store.Perfiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Poligonos" EntityType="RIINModel.Store.Poligonos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PoligonosDetalle" EntityType="RIINModel.Store.PoligonosDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="relPerfilesUsuarios" EntityType="RIINModel.Store.relPerfilesUsuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="relUsuarioEmpresa" EntityType="RIINModel.Store.relUsuarioEmpresa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportesDashboard" EntityType="RIINModel.Store.ReportesDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="RIINModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposAfectacion" EntityType="RIINModel.Store.TiposAfectacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposArma" EntityType="RIINModel.Store.TiposArma" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposExtorsion" EntityType="RIINModel.Store.TiposExtorsion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposFiltroDashboard" EntityType="RIINModel.Store.TiposFiltroDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposIncidente" EntityType="RIINModel.Store.TiposIncidente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposInstalacion" EntityType="RIINModel.Store.TiposInstalacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposIntrusion" EntityType="RIINModel.Store.TiposIntrusion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposUnidadTiempo" EntityType="RIINModel.Store.TiposUnidadTiempo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposVehiculo" EntityType="RIINModel.Store.TiposVehiculo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="RIINModel.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zonas" EntityType="RIINModel.Store.Zonas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="InformacionEmpresas" EntityType="RIINModel.Store.InformacionEmpresas" store:Type="Views" store:Schema="dbo" store:Name="InformacionEmpresas">
+            <DefiningQuery>SELECT 
+      [InformacionEmpresas].[Id] AS [Id], 
+      [InformacionEmpresas].[UserName] AS [UserName], 
+      [InformacionEmpresas].[Password] AS [Password], 
+      [InformacionEmpresas].[Nombre] AS [Nombre], 
+      [InformacionEmpresas].[ApellidoPaterno] AS [ApellidoPaterno], 
+      [InformacionEmpresas].[ApellidoMaterno] AS [ApellidoMaterno], 
+      [InformacionEmpresas].[Email] AS [Email], 
+      [InformacionEmpresas].[Activo] AS [Activo], 
+      [InformacionEmpresas].[UsuarioAlta] AS [UsuarioAlta], 
+      [InformacionEmpresas].[FechaAlta] AS [FechaAlta], 
+      [InformacionEmpresas].[UsuarioBaja] AS [UsuarioBaja], 
+      [InformacionEmpresas].[FechaBaja] AS [FechaBaja], 
+      [InformacionEmpresas].[FechaUltimoLogin] AS [FechaUltimoLogin], 
+      [InformacionEmpresas].[Bloqueado] AS [Bloqueado], 
+      [InformacionEmpresas].[UsuarioId] AS [UsuarioId], 
+      [InformacionEmpresas].[EmpresaId] AS [EmpresaId], 
+      [InformacionEmpresas].[Expr1] AS [Expr1], 
+      [InformacionEmpresas].[Expr2] AS [Expr2], 
+      [InformacionEmpresas].[TipoEmpresa] AS [TipoEmpresa], 
+      [InformacionEmpresas].[Expr3] AS [Expr3], 
+      [InformacionEmpresas].[Expr4] AS [Expr4], 
+      [InformacionEmpresas].[GrupoId] AS [GrupoId]
+      FROM [dbo].[InformacionEmpresas] AS [InformacionEmpresas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InformacionEstados" EntityType="RIINModel.Store.InformacionEstados" store:Type="Views" store:Schema="dbo" store:Name="InformacionEstados">
+            <DefiningQuery>SELECT 
+      [InformacionEstados].[Nombre] AS [Nombre], 
+      [InformacionEstados].[Expr1] AS [Expr1], 
+      [InformacionEstados].[Id] AS [Id], 
+      [InformacionEstados].[FechaIncidente] AS [FechaIncidente], 
+      [InformacionEstados].[EmpresaId] AS [EmpresaId], 
+      [InformacionEstados].[TipoIncidenteId] AS [TipoIncidenteId], 
+      [InformacionEstados].[LesionadosId] AS [LesionadosId], 
+      [InformacionEstados].[TipoInstalacionId] AS [TipoInstalacionId], 
+      [InformacionEstados].[InstalacionId] AS [InstalacionId], 
+      [InformacionEstados].[MontoAfectacion] AS [MontoAfectacion], 
+      [InformacionEstados].[Comentarios] AS [Comentarios], 
+      [InformacionEstados].[Latitud] AS [Latitud], 
+      [InformacionEstados].[Longitud] AS [Longitud], 
+      [InformacionEstados].[EstadoId] AS [EstadoId], 
+      [InformacionEstados].[CiudadId] AS [CiudadId], 
+      [InformacionEstados].[ZonaId] AS [ZonaId], 
+      [InformacionEstados].[TipoArmaId] AS [TipoArmaId], 
+      [InformacionEstados].[Detenidos] AS [Detenidos], 
+      [InformacionEstados].[CantidadDelincuentesId] AS [CantidadDelincuentesId], 
+      [InformacionEstados].[TipoVehiculoId] AS [TipoVehiculoId], 
+      [InformacionEstados].[TipoExtorsionId] AS [TipoExtorsionId], 
+      [InformacionEstados].[UsuarioAlta] AS [UsuarioAlta], 
+      [InformacionEstados].[FechaAlta] AS [FechaAlta], 
+      [InformacionEstados].[UsuarioCancelacion] AS [UsuarioCancelacion], 
+      [InformacionEstados].[FechaCancelacion] AS [FechaCancelacion], 
+      [InformacionEstados].[UsuarioUltimaModificacion] AS [UsuarioUltimaModificacion], 
+      [InformacionEstados].[FechaUltimaMoldificacion] AS [FechaUltimaMoldificacion], 
+      [InformacionEstados].[MotivoAmenazaId] AS [MotivoAmenazaId], 
+      [InformacionEstados].[MedioAmenazaId] AS [MedioAmenazaId], 
+      [InformacionEstados].[TipoIntrusionId] AS [TipoIntrusionId], 
+      [InformacionEstados].[Calle] AS [Calle], 
+      [InformacionEstados].[Colonia] AS [Colonia], 
+      [InformacionEstados].[EntreCalles] AS [EntreCalles], 
+      [InformacionEstados].[ConVehiculo] AS [ConVehiculo]
+      FROM [dbo].[InformacionEstados] AS [InformacionEstados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InformacionPerfiles" EntityType="RIINModel.Store.InformacionPerfiles" store:Type="Views" store:Schema="dbo" store:Name="InformacionPerfiles">
+            <DefiningQuery>SELECT 
+      [InformacionPerfiles].[Id] AS [Id], 
+      [InformacionPerfiles].[UserName] AS [UserName], 
+      [InformacionPerfiles].[Password] AS [Password], 
+      [InformacionPerfiles].[Nombre] AS [Nombre], 
+      [InformacionPerfiles].[ApellidoPaterno] AS [ApellidoPaterno], 
+      [InformacionPerfiles].[ApellidoMaterno] AS [ApellidoMaterno], 
+      [InformacionPerfiles].[Email] AS [Email], 
+      [InformacionPerfiles].[Activo] AS [Activo], 
+      [InformacionPerfiles].[UsuarioAlta] AS [UsuarioAlta], 
+      [InformacionPerfiles].[FechaAlta] AS [FechaAlta], 
+      [InformacionPerfiles].[UsuarioBaja] AS [UsuarioBaja], 
+      [InformacionPerfiles].[FechaBaja] AS [FechaBaja], 
+      [InformacionPerfiles].[FechaUltimoLogin] AS [FechaUltimoLogin], 
+      [InformacionPerfiles].[Bloqueado] AS [Bloqueado], 
+      [InformacionPerfiles].[UsuarioId] AS [UsuarioId], 
+      [InformacionPerfiles].[PerfilId] AS [PerfilId], 
+      [InformacionPerfiles].[Expr1] AS [Expr1], 
+      [InformacionPerfiles].[Expr2] AS [Expr2], 
+      [InformacionPerfiles].[Expr3] AS [Expr3], 
+      [InformacionPerfiles].[Expr4] AS [Expr4]
+      FROM [dbo].[InformacionPerfiles] AS [InformacionPerfiles]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CantidadDelincuentesIncidentes" Association="RIINModel.Store.FK_CantidadDelincuentesIncidentes">
+            <End Role="CantidadDelincuentes" EntitySet="CantidadDelincuentes" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CiudadesIncidentes" Association="RIINModel.Store.FK_CiudadesIncidentes">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConfiguracionDashboardFiltrosDashboard" Association="RIINModel.Store.FK_ConfiguracionDashboardFiltrosDashboard">
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaAlertaIncidente" Association="RIINModel.Store.FK_EmpresaAlertaIncidente">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="AlertasIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaParametrosSistemaEmpresa" Association="RIINModel.Store.FK_EmpresaParametrosSistemaEmpresa">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresasIncidentes" Association="RIINModel.Store.FK_EmpresasIncidentes">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresasInstalaciones" Association="RIINModel.Store.FK_EmpresasInstalaciones">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosCiudades" Association="RIINModel.Store.FK_EstadosCiudades">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosIncidentes" Association="RIINModel.Store.FK_EstadosIncidentes">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosPoligono" Association="RIINModel.Store.FK_EstadosPoligono">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Estados" EntitySet="Estados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosZona" Association="RIINModel.Store.FK_EstadosZona">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncidenteAfectacionIncidente" Association="RIINModel.Store.FK_IncidenteAfectacionIncidente">
+            <End Role="Incidentes" EntitySet="Incidentes" />
+            <End Role="AfectacionesIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalacionesIncidentes" Association="RIINModel.Store.FK_InstalacionesIncidentes">
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LesionadosIncidentes" Association="RIINModel.Store.FK_LesionadosIncidentes">
+            <End Role="Lesionados" EntitySet="Lesionados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedioAmenazaIncidentes" Association="RIINModel.Store.FK_MedioAmenazaIncidentes">
+            <End Role="MediosAmenaza" EntitySet="MediosAmenaza" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MotivoAmenazaIncidente" Association="RIINModel.Store.FK_MotivoAmenazaIncidente">
+            <End Role="MotivosAmenaza" EntitySet="MotivosAmenaza" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NivelGeograficoPoligono" Association="RIINModel.Store.FK_NivelGeograficoPoligono">
+            <End Role="NivelesGeograficos" EntitySet="NivelesGeograficos" />
+            <End Role="Poligonos" EntitySet="Poligonos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParametrosSistemaParametrosSistemaEmpresa" Association="RIINModel.Store.FK_ParametrosSistemaParametrosSistemaEmpresa">
+            <End Role="ParametrosSistema" EntitySet="ParametrosSistema" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilrelPerfilUsuario" Association="RIINModel.Store.FK_PerfilrelPerfilUsuario">
+            <End Role="Perfiles" EntitySet="Perfiles" />
+            <End Role="relPerfilesUsuarios" EntitySet="relPerfilesUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PoligonoCiudades" Association="RIINModel.Store.FK_PoligonoCiudades">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PoligonoPoligonoDetalle" Association="RIINModel.Store.FK_PoligonoPoligonoDetalle">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="PoligonosDetalle" EntitySet="PoligonosDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportesDashboardConfiguracionDashboard" Association="RIINModel.Store.FK_ReportesDashboardConfiguracionDashboard">
+            <End Role="ReportesDashboard" EntitySet="ReportesDashboard" />
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoAfectacionAfectacionIncidente" Association="RIINModel.Store.FK_TipoAfectacionAfectacionIncidente">
+            <End Role="TiposAfectacion" EntitySet="TiposAfectacion" />
+            <End Role="AfectacionesIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoArmaIncidentes" Association="RIINModel.Store.FK_TipoArmaIncidentes">
+            <End Role="TiposArma" EntitySet="TiposArma" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoExtorcionIncidentes" Association="RIINModel.Store.FK_TipoExtorcionIncidentes">
+            <End Role="TiposExtorsion" EntitySet="TiposExtorsion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoFiltroDashboardFiltrosDashboard" Association="RIINModel.Store.FK_TipoFiltroDashboardFiltrosDashboard">
+            <End Role="TiposFiltroDashboard" EntitySet="TiposFiltroDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteAlertaIncidente" Association="RIINModel.Store.FK_TipoIncidenteAlertaIncidente">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="AlertasIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteIncidentes" Association="RIINModel.Store.FK_TipoIncidenteIncidentes">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteParametroSistemaEmpresa" Association="RIINModel.Store.FK_TipoIncidenteParametroSistemaEmpresa">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoInstalacionIncidente" Association="RIINModel.Store.FK_TipoInstalacionIncidente">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoInstalacionInstalaciones" Association="RIINModel.Store.FK_TipoInstalacionInstalaciones">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIntrusionIncidentes" Association="RIINModel.Store.FK_TipoIntrusionIncidentes">
+            <End Role="TiposIntrusion" EntitySet="TiposIntrusion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoUnidadTiempoConfiguracionDashboard" Association="RIINModel.Store.FK_TipoUnidadTiempoConfiguracionDashboard">
+            <End Role="TiposUnidadTiempo" EntitySet="TiposUnidadTiempo" />
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoVehiculoIncidentes" Association="RIINModel.Store.FK_TipoVehiculoIncidentes">
+            <End Role="TiposVehiculo" EntitySet="TiposVehiculo" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresaEmpresa" Association="RIINModel.Store.FK_UsuarioEmpresaEmpresa">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="relUsuarioEmpresa" EntitySet="relUsuarioEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresaUsuario" Association="RIINModel.Store.FK_UsuarioEmpresaUsuario">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="relUsuarioEmpresa" EntitySet="relUsuarioEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioIncidentes" Association="RIINModel.Store.FK_UsuarioIncidentes">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioUsuarioPerfil" Association="RIINModel.Store.FK_UsuarioUsuarioPerfil">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="relPerfilesUsuarios" EntitySet="relPerfilesUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZonaIncidentes" Association="RIINModel.Store.FK_ZonaIncidentes">
+            <End Role="Zonas" EntitySet="Zonas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZonaPoligono" Association="RIINModel.Store.FK_ZonaPoligono">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AfectacionesIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IncidenteId" Type="int" Nullable="false" />
+          <Property Name="TipoAfectacionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AlertasIncidente">
+          <Key>
+            <PropertyRef Name="EmpresaId" />
+            <PropertyRef Name="TipoIncidenteId" />
+          </Key>
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="int" Nullable="false" />
+          <Property Name="Emails" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RecibirOtrasEmpresas" Type="bit" Nullable="false" />
+          <Property Name="RecibirMiEmpresa" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CantidadDelincuentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NombreDeCantidad" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Orden" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ciudades">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EstadoId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PoligonoId" Type="int" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConfiguracionesDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="ReporteId" Type="int" Nullable="false" />
+          <Property Name="MontoAfectadoMinimo" Type="float" Nullable="false" />
+          <Property Name="MontoAfectadoMaximo" Type="float" Nullable="false" />
+          <Property Name="EsConsolidado" Type="bit" Nullable="false" />
+          <Property Name="SeIncluyeTabla" Type="bit" Nullable="false" />
+          <Property Name="EsReporteBase" Type="bit" Nullable="false" />
+          <Property Name="SegmentoReporteId" Type="int" Nullable="false" />
+          <Property Name="TipoUnidadTiempoId" Type="int" Nullable="false" />
+          <Property Name="ValorUnidadTiempo" Type="int" Nullable="false" />
+          <Property Name="ConfiguracionDashboardBaseId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TipoEmpresa" Type="bit" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="GrupoId" Type="int" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PoligonoId" Type="int" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FiltrosDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FiltroDashboardId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FiltroDashboardId" Type="int" Nullable="false" />
+          <Property Name="TipoFiltroId" Type="int" Nullable="false" />
+          <Property Name="ValorFiltro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Incidentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaIncidente" Type="datetime" Nullable="false" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="int" Nullable="false" />
+          <Property Name="LesionadosId" Type="int" />
+          <Property Name="TipoInstalacionId" Type="int" />
+          <Property Name="InstalacionId" Type="int" />
+          <Property Name="MontoAfectacion" Type="decimal" Scale="2" />
+          <Property Name="Comentarios" Type="nvarchar(max)" />
+          <Property Name="Latitud" Type="float" Nullable="false" />
+          <Property Name="Longitud" Type="float" Nullable="false" />
+          <Property Name="EstadoId" Type="int" Nullable="false" />
+          <Property Name="CiudadId" Type="int" Nullable="false" />
+          <Property Name="ZonaId" Type="int" />
+          <Property Name="TipoArmaId" Type="int" />
+          <Property Name="Detenidos" Type="bit" />
+          <Property Name="CantidadDelincuentesId" Type="int" />
+          <Property Name="TipoVehiculoId" Type="int" />
+          <Property Name="TipoExtorsionId" Type="int" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioCancelacion" Type="int" />
+          <Property Name="FechaCancelacion" Type="datetime" />
+          <Property Name="UsuarioUltimaModificacion" Type="int" />
+          <Property Name="FechaUltimaMoldificacion" Type="datetime" />
+          <Property Name="MotivoAmenazaId" Type="int" />
+          <Property Name="MedioAmenazaId" Type="int" />
+          <Property Name="TipoIntrusionId" Type="int" />
+          <Property Name="Calle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Colonia" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EntreCalles" Type="nvarchar" MaxLength="80" />
+          <Property Name="ConVehiculo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Instalaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoInstalacionId" Type="int" Nullable="false" />
+          <Property Name="Latitud" Type="real" />
+          <Property Name="Longitud" Type="real" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lesionados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MediosAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MotivosAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NivelesGeograficos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ParametrosSistema">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TipoDeParametro" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteEsRequerido" Type="bit" Nullable="false" />
+          <Property Name="ValorFinalEsRequerido" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ParametrosSistemaEmpresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="int" />
+          <Property Name="ValorInicial" Type="int" Nullable="false" />
+          <Property Name="Valorfinal" Type="int" />
+          <Property Name="UsuarioModificacion" Type="int" />
+          <Property Name="FechaUltimaModificacion" Type="datetime" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="ParametrosSistemaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Perfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Poligonos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NivelGeograficoId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PoligonosDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PoligonoId" Type="int" Nullable="false" />
+          <Property Name="Latitud" Type="float" Nullable="false" />
+          <Property Name="Longitud" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relPerfilesUsuarios">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PerfilId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="PerfilId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relUsuarioEmpresa">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="EmpresaId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportesDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TiposAfectacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposArma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposExtorsion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposFiltroDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TiposIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="140" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="Imagen" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposInstalacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="140" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposIntrusion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposUnidadTiempo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TiposVehiculo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoPaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoMaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioBaja" Type="int" />
+          <Property Name="FechaBaja" Type="datetime" />
+          <Property Name="FechaUltimoLogin" Type="datetime" />
+          <Property Name="Bloqueado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Zonas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EstadoId" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="140" />
+          <Property Name="PoligonoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RIIN.dbo.InformacionEmpresas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="InformacionEmpresas">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="ApellidoPaterno" />
+            <PropertyRef Name="ApellidoMaterno" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Activo" />
+            <PropertyRef Name="UsuarioAlta" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="EmpresaId" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="TipoEmpresa" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Expr4" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoPaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoMaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioBaja" Type="int" />
+          <Property Name="FechaBaja" Type="datetime" />
+          <Property Name="FechaUltimoLogin" Type="datetime" />
+          <Property Name="Bloqueado" Type="bit" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="Expr2" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TipoEmpresa" Type="bit" Nullable="false" />
+          <Property Name="Expr3" Type="int" Nullable="false" />
+          <Property Name="Expr4" Type="datetime" Nullable="false" />
+          <Property Name="GrupoId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RIIN.dbo.InformacionEstados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="InformacionEstados">
+          <Key>
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Expr1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" />
+          <Property Name="FechaIncidente" Type="datetime" />
+          <Property Name="EmpresaId" Type="int" />
+          <Property Name="TipoIncidenteId" Type="int" />
+          <Property Name="LesionadosId" Type="int" />
+          <Property Name="TipoInstalacionId" Type="int" />
+          <Property Name="InstalacionId" Type="int" />
+          <Property Name="MontoAfectacion" Type="decimal" Scale="2" />
+          <Property Name="Comentarios" Type="nvarchar(max)" />
+          <Property Name="Latitud" Type="float" />
+          <Property Name="Longitud" Type="float" />
+          <Property Name="EstadoId" Type="int" />
+          <Property Name="CiudadId" Type="int" />
+          <Property Name="ZonaId" Type="int" />
+          <Property Name="TipoArmaId" Type="int" />
+          <Property Name="Detenidos" Type="bit" />
+          <Property Name="CantidadDelincuentesId" Type="int" />
+          <Property Name="TipoVehiculoId" Type="int" />
+          <Property Name="TipoExtorsionId" Type="int" />
+          <Property Name="UsuarioAlta" Type="int" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="UsuarioCancelacion" Type="int" />
+          <Property Name="FechaCancelacion" Type="datetime" />
+          <Property Name="UsuarioUltimaModificacion" Type="int" />
+          <Property Name="FechaUltimaMoldificacion" Type="datetime" />
+          <Property Name="MotivoAmenazaId" Type="int" />
+          <Property Name="MedioAmenazaId" Type="int" />
+          <Property Name="TipoIntrusionId" Type="int" />
+          <Property Name="Calle" Type="nvarchar" MaxLength="50" />
+          <Property Name="Colonia" Type="nvarchar" MaxLength="50" />
+          <Property Name="EntreCalles" Type="nvarchar" MaxLength="80" />
+          <Property Name="ConVehiculo" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'RIIN.dbo.InformacionPerfiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="InformacionPerfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="ApellidoPaterno" />
+            <PropertyRef Name="ApellidoMaterno" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Activo" />
+            <PropertyRef Name="UsuarioAlta" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PerfilId" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Expr4" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoPaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoMaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioBaja" Type="int" />
+          <Property Name="FechaBaja" Type="datetime" />
+          <Property Name="FechaUltimoLogin" Type="datetime" />
+          <Property Name="Bloqueado" Type="bit" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="PerfilId" Type="int" Nullable="false" />
+          <Property Name="Expr1" Type="int" Nullable="false" />
+          <Property Name="Expr2" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Expr3" Type="int" Nullable="false" />
+          <Property Name="Expr4" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CantidadDelincuentesIncidentes">
+          <End Role="CantidadDelincuentes" Type="RIINModel.Store.CantidadDelincuentes" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CantidadDelincuentes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CantidadDelincuentesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CiudadesIncidentes">
+          <End Role="Ciudades" Type="RIINModel.Store.Ciudades" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+              <PropertyRef Name="EstadoId" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CiudadId" />
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConfiguracionDashboardFiltrosDashboard">
+          <End Role="ConfiguracionesDashboard" Type="RIINModel.Store.ConfiguracionesDashboard" Multiplicity="1" />
+          <End Role="FiltrosDashboard" Type="RIINModel.Store.FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfiguracionesDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaAlertaIncidente">
+          <End Role="Empresas" Type="RIINModel.Store.Empresas" Multiplicity="1" />
+          <End Role="AlertasIncidente" Type="RIINModel.Store.AlertasIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertasIncidente">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaParametrosSistemaEmpresa">
+          <End Role="Empresas" Type="RIINModel.Store.Empresas" Multiplicity="1" />
+          <End Role="ParametrosSistemaEmpresa" Type="RIINModel.Store.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresasIncidentes">
+          <End Role="Empresas" Type="RIINModel.Store.Empresas" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresasInstalaciones">
+          <End Role="Empresas" Type="RIINModel.Store.Empresas" Multiplicity="1" />
+          <End Role="Instalaciones" Type="RIINModel.Store.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosCiudades">
+          <End Role="Estados" Type="RIINModel.Store.Estados" Multiplicity="1" />
+          <End Role="Ciudades" Type="RIINModel.Store.Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosIncidentes">
+          <End Role="Estados" Type="RIINModel.Store.Estados" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosPoligono">
+          <End Role="Poligonos" Type="RIINModel.Store.Poligonos" Multiplicity="0..1" />
+          <End Role="Estados" Type="RIINModel.Store.Estados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estados">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosZona">
+          <End Role="Estados" Type="RIINModel.Store.Estados" Multiplicity="1" />
+          <End Role="Zonas" Type="RIINModel.Store.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncidenteAfectacionIncidente">
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="1" />
+          <End Role="AfectacionesIncidente" Type="RIINModel.Store.AfectacionesIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incidentes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionesIncidente">
+              <PropertyRef Name="IncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalacionesIncidentes">
+          <End Role="Instalaciones" Type="RIINModel.Store.Instalaciones" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instalaciones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="InstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LesionadosIncidentes">
+          <End Role="Lesionados" Type="RIINModel.Store.Lesionados" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesionados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="LesionadosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedioAmenazaIncidentes">
+          <End Role="MediosAmenaza" Type="RIINModel.Store.MediosAmenaza" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MediosAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="MedioAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MotivoAmenazaIncidente">
+          <End Role="MotivosAmenaza" Type="RIINModel.Store.MotivosAmenaza" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotivosAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="MotivoAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NivelGeograficoPoligono">
+          <End Role="NivelesGeograficos" Type="RIINModel.Store.NivelesGeograficos" Multiplicity="1" />
+          <End Role="Poligonos" Type="RIINModel.Store.Poligonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NivelesGeograficos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Poligonos">
+              <PropertyRef Name="NivelGeograficoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParametrosSistemaParametrosSistemaEmpresa">
+          <End Role="ParametrosSistema" Type="RIINModel.Store.ParametrosSistema" Multiplicity="1" />
+          <End Role="ParametrosSistemaEmpresa" Type="RIINModel.Store.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParametrosSistema">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="ParametrosSistemaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilrelPerfilUsuario">
+          <End Role="Perfiles" Type="RIINModel.Store.Perfiles" Multiplicity="1" />
+          <End Role="relPerfilesUsuarios" Type="RIINModel.Store.relPerfilesUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfiles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relPerfilesUsuarios">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PoligonoCiudades">
+          <End Role="Poligonos" Type="RIINModel.Store.Poligonos" Multiplicity="0..1" />
+          <End Role="Ciudades" Type="RIINModel.Store.Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PoligonoPoligonoDetalle">
+          <End Role="Poligonos" Type="RIINModel.Store.Poligonos" Multiplicity="1" />
+          <End Role="PoligonosDetalle" Type="RIINModel.Store.PoligonosDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PoligonosDetalle">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportesDashboardConfiguracionDashboard">
+          <End Role="ReportesDashboard" Type="RIINModel.Store.ReportesDashboard" Multiplicity="1" />
+          <End Role="ConfiguracionesDashboard" Type="RIINModel.Store.ConfiguracionesDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportesDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionesDashboard">
+              <PropertyRef Name="ReporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoAfectacionAfectacionIncidente">
+          <End Role="TiposAfectacion" Type="RIINModel.Store.TiposAfectacion" Multiplicity="1" />
+          <End Role="AfectacionesIncidente" Type="RIINModel.Store.AfectacionesIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposAfectacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionesIncidente">
+              <PropertyRef Name="TipoAfectacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoArmaIncidentes">
+          <End Role="TiposArma" Type="RIINModel.Store.TiposArma" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposArma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoArmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoExtorcionIncidentes">
+          <End Role="TiposExtorsion" Type="RIINModel.Store.TiposExtorsion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposExtorsion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoExtorsionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoFiltroDashboardFiltrosDashboard">
+          <End Role="TiposFiltroDashboard" Type="RIINModel.Store.TiposFiltroDashboard" Multiplicity="1" />
+          <End Role="FiltrosDashboard" Type="RIINModel.Store.FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposFiltroDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="TipoFiltroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteAlertaIncidente">
+          <End Role="TiposIncidente" Type="RIINModel.Store.TiposIncidente" Multiplicity="1" />
+          <End Role="AlertasIncidente" Type="RIINModel.Store.AlertasIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertasIncidente">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteIncidentes">
+          <End Role="TiposIncidente" Type="RIINModel.Store.TiposIncidente" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteParametroSistemaEmpresa">
+          <End Role="TiposIncidente" Type="RIINModel.Store.TiposIncidente" Multiplicity="0..1" />
+          <End Role="ParametrosSistemaEmpresa" Type="RIINModel.Store.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoInstalacionIncidente">
+          <End Role="TiposInstalacion" Type="RIINModel.Store.TiposInstalacion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoInstalacionInstalaciones">
+          <End Role="TiposInstalacion" Type="RIINModel.Store.TiposInstalacion" Multiplicity="1" />
+          <End Role="Instalaciones" Type="RIINModel.Store.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIntrusionIncidentes">
+          <End Role="TiposIntrusion" Type="RIINModel.Store.TiposIntrusion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIntrusion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIntrusionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoUnidadTiempoConfiguracionDashboard">
+          <End Role="TiposUnidadTiempo" Type="RIINModel.Store.TiposUnidadTiempo" Multiplicity="1" />
+          <End Role="ConfiguracionesDashboard" Type="RIINModel.Store.ConfiguracionesDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposUnidadTiempo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionesDashboard">
+              <PropertyRef Name="TipoUnidadTiempoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoVehiculoIncidentes">
+          <End Role="TiposVehiculo" Type="RIINModel.Store.TiposVehiculo" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposVehiculo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoVehiculoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresaEmpresa">
+          <End Role="Empresas" Type="RIINModel.Store.Empresas" Multiplicity="1" />
+          <End Role="relUsuarioEmpresa" Type="RIINModel.Store.relUsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relUsuarioEmpresa">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresaUsuario">
+          <End Role="Usuarios" Type="RIINModel.Store.Usuarios" Multiplicity="1" />
+          <End Role="relUsuarioEmpresa" Type="RIINModel.Store.relUsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relUsuarioEmpresa">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioIncidentes">
+          <End Role="Usuarios" Type="RIINModel.Store.Usuarios" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="UsuarioAlta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioUsuarioPerfil">
+          <End Role="Usuarios" Type="RIINModel.Store.Usuarios" Multiplicity="1" />
+          <End Role="relPerfilesUsuarios" Type="RIINModel.Store.relPerfilesUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relPerfilesUsuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZonaIncidentes">
+          <End Role="Zonas" Type="RIINModel.Store.Zonas" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zonas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="ZonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZonaPoligono">
+          <End Role="Poligonos" Type="RIINModel.Store.Poligonos" Multiplicity="1" />
+          <End Role="Zonas" Type="RIINModel.Store.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RIINModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RIINEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AfectacionesIncidente" EntityType="RIINModel.AfectacionesIncidente" />
+          <EntitySet Name="AlertasIncidente" EntityType="RIINModel.AlertasIncidente" />
+          <EntitySet Name="CantidadDelincuentes" EntityType="RIINModel.CantidadDelincuentes" />
+          <EntitySet Name="Ciudades" EntityType="RIINModel.Ciudades" />
+          <EntitySet Name="ConfiguracionesDashboard" EntityType="RIINModel.ConfiguracionesDashboard" />
+          <EntitySet Name="Empresas" EntityType="RIINModel.Empresas" />
+          <EntitySet Name="Estados" EntityType="RIINModel.Estados" />
+          <EntitySet Name="FiltrosDashboard" EntityType="RIINModel.FiltrosDashboard" />
+          <EntitySet Name="Incidentes" EntityType="RIINModel.Incidentes" />
+          <EntitySet Name="Instalaciones" EntityType="RIINModel.Instalaciones" />
+          <EntitySet Name="Lesionados" EntityType="RIINModel.Lesionados" />
+          <EntitySet Name="MediosAmenaza" EntityType="RIINModel.MediosAmenaza" />
+          <EntitySet Name="MotivosAmenaza" EntityType="RIINModel.MotivosAmenaza" />
+          <EntitySet Name="NivelesGeograficos" EntityType="RIINModel.NivelesGeograficos" />
+          <EntitySet Name="ParametrosSistema" EntityType="RIINModel.ParametrosSistema" />
+          <EntitySet Name="ParametrosSistemaEmpresa" EntityType="RIINModel.ParametrosSistemaEmpresa" />
+          <EntitySet Name="Perfiles" EntityType="RIINModel.Perfiles" />
+          <EntitySet Name="Poligonos" EntityType="RIINModel.Poligonos" />
+          <EntitySet Name="PoligonosDetalle" EntityType="RIINModel.PoligonosDetalle" />
+          <EntitySet Name="ReportesDashboard" EntityType="RIINModel.ReportesDashboard" />
+          <EntitySet Name="sysdiagrams" EntityType="RIINModel.sysdiagrams" />
+          <EntitySet Name="TiposAfectacion" EntityType="RIINModel.TiposAfectacion" />
+          <EntitySet Name="TiposArma" EntityType="RIINModel.TiposArma" />
+          <EntitySet Name="TiposExtorsion" EntityType="RIINModel.TiposExtorsion" />
+          <EntitySet Name="TiposFiltroDashboard" EntityType="RIINModel.TiposFiltroDashboard" />
+          <EntitySet Name="TiposIncidente" EntityType="RIINModel.TiposIncidente" />
+          <EntitySet Name="TiposInstalacion" EntityType="RIINModel.TiposInstalacion" />
+          <EntitySet Name="TiposIntrusion" EntityType="RIINModel.TiposIntrusion" />
+          <EntitySet Name="TiposUnidadTiempo" EntityType="RIINModel.TiposUnidadTiempo" />
+          <EntitySet Name="TiposVehiculo" EntityType="RIINModel.TiposVehiculo" />
+          <EntitySet Name="Usuarios" EntityType="RIINModel.Usuarios" />
+          <EntitySet Name="Zonas" EntityType="RIINModel.Zonas" />
+          <EntitySet Name="InformacionEmpresas" EntityType="RIINModel.InformacionEmpresas" />
+          <EntitySet Name="InformacionEstados" EntityType="RIINModel.InformacionEstados" />
+          <EntitySet Name="InformacionPerfiles" EntityType="RIINModel.InformacionPerfiles" />
+          <AssociationSet Name="FK_IncidenteAfectacionIncidente" Association="RIINModel.FK_IncidenteAfectacionIncidente">
+            <End Role="Incidentes" EntitySet="Incidentes" />
+            <End Role="AfectacionesIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoAfectacionAfectacionIncidente" Association="RIINModel.FK_TipoAfectacionAfectacionIncidente">
+            <End Role="TiposAfectacion" EntitySet="TiposAfectacion" />
+            <End Role="AfectacionesIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaAlertaIncidente" Association="RIINModel.FK_EmpresaAlertaIncidente">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="AlertasIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteAlertaIncidente" Association="RIINModel.FK_TipoIncidenteAlertaIncidente">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="AlertasIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CantidadDelincuentesIncidentes" Association="RIINModel.FK_CantidadDelincuentesIncidentes">
+            <End Role="CantidadDelincuentes" EntitySet="CantidadDelincuentes" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CiudadesIncidentes" Association="RIINModel.FK_CiudadesIncidentes">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosCiudades" Association="RIINModel.FK_EstadosCiudades">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PoligonoCiudades" Association="RIINModel.FK_PoligonoCiudades">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConfiguracionDashboardFiltrosDashboard" Association="RIINModel.FK_ConfiguracionDashboardFiltrosDashboard">
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportesDashboardConfiguracionDashboard" Association="RIINModel.FK_ReportesDashboardConfiguracionDashboard">
+            <End Role="ReportesDashboard" EntitySet="ReportesDashboard" />
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoUnidadTiempoConfiguracionDashboard" Association="RIINModel.FK_TipoUnidadTiempoConfiguracionDashboard">
+            <End Role="TiposUnidadTiempo" EntitySet="TiposUnidadTiempo" />
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaParametrosSistemaEmpresa" Association="RIINModel.FK_EmpresaParametrosSistemaEmpresa">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresasIncidentes" Association="RIINModel.FK_EmpresasIncidentes">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresasInstalaciones" Association="RIINModel.FK_EmpresasInstalaciones">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosIncidentes" Association="RIINModel.FK_EstadosIncidentes">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosPoligono" Association="RIINModel.FK_EstadosPoligono">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Estados" EntitySet="Estados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosZona" Association="RIINModel.FK_EstadosZona">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoFiltroDashboardFiltrosDashboard" Association="RIINModel.FK_TipoFiltroDashboardFiltrosDashboard">
+            <End Role="TiposFiltroDashboard" EntitySet="TiposFiltroDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalacionesIncidentes" Association="RIINModel.FK_InstalacionesIncidentes">
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LesionadosIncidentes" Association="RIINModel.FK_LesionadosIncidentes">
+            <End Role="Lesionados" EntitySet="Lesionados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedioAmenazaIncidentes" Association="RIINModel.FK_MedioAmenazaIncidentes">
+            <End Role="MediosAmenaza" EntitySet="MediosAmenaza" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MotivoAmenazaIncidente" Association="RIINModel.FK_MotivoAmenazaIncidente">
+            <End Role="MotivosAmenaza" EntitySet="MotivosAmenaza" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoArmaIncidentes" Association="RIINModel.FK_TipoArmaIncidentes">
+            <End Role="TiposArma" EntitySet="TiposArma" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoExtorcionIncidentes" Association="RIINModel.FK_TipoExtorcionIncidentes">
+            <End Role="TiposExtorsion" EntitySet="TiposExtorsion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteIncidentes" Association="RIINModel.FK_TipoIncidenteIncidentes">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoInstalacionIncidente" Association="RIINModel.FK_TipoInstalacionIncidente">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIntrusionIncidentes" Association="RIINModel.FK_TipoIntrusionIncidentes">
+            <End Role="TiposIntrusion" EntitySet="TiposIntrusion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoVehiculoIncidentes" Association="RIINModel.FK_TipoVehiculoIncidentes">
+            <End Role="TiposVehiculo" EntitySet="TiposVehiculo" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioIncidentes" Association="RIINModel.FK_UsuarioIncidentes">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZonaIncidentes" Association="RIINModel.FK_ZonaIncidentes">
+            <End Role="Zonas" EntitySet="Zonas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoInstalacionInstalaciones" Association="RIINModel.FK_TipoInstalacionInstalaciones">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NivelGeograficoPoligono" Association="RIINModel.FK_NivelGeograficoPoligono">
+            <End Role="NivelesGeograficos" EntitySet="NivelesGeograficos" />
+            <End Role="Poligonos" EntitySet="Poligonos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParametrosSistemaParametrosSistemaEmpresa" Association="RIINModel.FK_ParametrosSistemaParametrosSistemaEmpresa">
+            <End Role="ParametrosSistema" EntitySet="ParametrosSistema" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteParametroSistemaEmpresa" Association="RIINModel.FK_TipoIncidenteParametroSistemaEmpresa">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PoligonoPoligonoDetalle" Association="RIINModel.FK_PoligonoPoligonoDetalle">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="PoligonosDetalle" EntitySet="PoligonosDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZonaPoligono" Association="RIINModel.FK_ZonaPoligono">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+          <AssociationSet Name="relPerfilesUsuarios" Association="RIINModel.relPerfilesUsuarios">
+            <End Role="Perfiles" EntitySet="Perfiles" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="relUsuarioEmpresa" Association="RIINModel.relUsuarioEmpresa">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AfectacionesIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IncidenteId" Type="Int32" Nullable="false" />
+          <Property Name="TipoAfectacionId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_IncidenteAfectacionIncidente" FromRole="AfectacionesIncidente" ToRole="Incidentes" />
+          <NavigationProperty Name="TiposAfectacion" Relationship="RIINModel.FK_TipoAfectacionAfectacionIncidente" FromRole="AfectacionesIncidente" ToRole="TiposAfectacion" />
+        </EntityType>
+        <EntityType Name="AlertasIncidente">
+          <Key>
+            <PropertyRef Name="EmpresaId" />
+            <PropertyRef Name="TipoIncidenteId" />
+          </Key>
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="Int32" Nullable="false" />
+          <Property Name="Emails" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="RecibirOtrasEmpresas" Type="Boolean" Nullable="false" />
+          <Property Name="RecibirMiEmpresa" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Empresas" Relationship="RIINModel.FK_EmpresaAlertaIncidente" FromRole="AlertasIncidente" ToRole="Empresas" />
+          <NavigationProperty Name="TiposIncidente" Relationship="RIINModel.FK_TipoIncidenteAlertaIncidente" FromRole="AlertasIncidente" ToRole="TiposIncidente" />
+        </EntityType>
+        <EntityType Name="CantidadDelincuentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreDeCantidad" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Orden" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_CantidadDelincuentesIncidentes" FromRole="CantidadDelincuentes" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="Ciudades">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EstadoId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoId" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PoligonoId" Type="Int32" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_CiudadesIncidentes" FromRole="Ciudades" ToRole="Incidentes" />
+          <NavigationProperty Name="Estados" Relationship="RIINModel.FK_EstadosCiudades" FromRole="Ciudades" ToRole="Estados" />
+          <NavigationProperty Name="Poligonos" Relationship="RIINModel.FK_PoligonoCiudades" FromRole="Ciudades" ToRole="Poligonos" />
+        </EntityType>
+        <EntityType Name="ConfiguracionesDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="ReporteId" Type="Int32" Nullable="false" />
+          <Property Name="MontoAfectadoMinimo" Type="Double" Nullable="false" />
+          <Property Name="MontoAfectadoMaximo" Type="Double" Nullable="false" />
+          <Property Name="EsConsolidado" Type="Boolean" Nullable="false" />
+          <Property Name="SeIncluyeTabla" Type="Boolean" Nullable="false" />
+          <Property Name="EsReporteBase" Type="Boolean" Nullable="false" />
+          <Property Name="SegmentoReporteId" Type="Int32" Nullable="false" />
+          <Property Name="TipoUnidadTiempoId" Type="Int32" Nullable="false" />
+          <Property Name="ValorUnidadTiempo" Type="Int32" Nullable="false" />
+          <Property Name="ConfiguracionDashboardBaseId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FiltrosDashboard" Relationship="RIINModel.FK_ConfiguracionDashboardFiltrosDashboard" FromRole="ConfiguracionesDashboard" ToRole="FiltrosDashboard" />
+          <NavigationProperty Name="ReportesDashboard" Relationship="RIINModel.FK_ReportesDashboardConfiguracionDashboard" FromRole="ConfiguracionesDashboard" ToRole="ReportesDashboard" />
+          <NavigationProperty Name="TiposUnidadTiempo" Relationship="RIINModel.FK_TipoUnidadTiempoConfiguracionDashboard" FromRole="ConfiguracionesDashboard" ToRole="TiposUnidadTiempo" />
+        </EntityType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TipoEmpresa" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GrupoId" Type="Int32" />
+          <NavigationProperty Name="AlertasIncidente" Relationship="RIINModel.FK_EmpresaAlertaIncidente" FromRole="Empresas" ToRole="AlertasIncidente" />
+          <NavigationProperty Name="ParametrosSistemaEmpresa" Relationship="RIINModel.FK_EmpresaParametrosSistemaEmpresa" FromRole="Empresas" ToRole="ParametrosSistemaEmpresa" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_EmpresasIncidentes" FromRole="Empresas" ToRole="Incidentes" />
+          <NavigationProperty Name="Instalaciones" Relationship="RIINModel.FK_EmpresasInstalaciones" FromRole="Empresas" ToRole="Instalaciones" />
+          <NavigationProperty Name="Usuarios" Relationship="RIINModel.relUsuarioEmpresa" FromRole="Empresas" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PoligonoId" Type="Int32" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Ciudades" Relationship="RIINModel.FK_EstadosCiudades" FromRole="Estados" ToRole="Ciudades" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_EstadosIncidentes" FromRole="Estados" ToRole="Incidentes" />
+          <NavigationProperty Name="Poligonos" Relationship="RIINModel.FK_EstadosPoligono" FromRole="Estados" ToRole="Poligonos" />
+          <NavigationProperty Name="Zonas" Relationship="RIINModel.FK_EstadosZona" FromRole="Estados" ToRole="Zonas" />
+        </EntityType>
+        <EntityType Name="FiltrosDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FiltroDashboardId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FiltroDashboardId" Type="Int32" Nullable="false" />
+          <Property Name="TipoFiltroId" Type="Int32" Nullable="false" />
+          <Property Name="ValorFiltro" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ConfiguracionesDashboard" Relationship="RIINModel.FK_ConfiguracionDashboardFiltrosDashboard" FromRole="FiltrosDashboard" ToRole="ConfiguracionesDashboard" />
+          <NavigationProperty Name="TiposFiltroDashboard" Relationship="RIINModel.FK_TipoFiltroDashboardFiltrosDashboard" FromRole="FiltrosDashboard" ToRole="TiposFiltroDashboard" />
+        </EntityType>
+        <EntityType Name="Incidentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FechaIncidente" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="Int32" Nullable="false" />
+          <Property Name="LesionadosId" Type="Int32" />
+          <Property Name="TipoInstalacionId" Type="Int32" />
+          <Property Name="InstalacionId" Type="Int32" />
+          <Property Name="MontoAfectacion" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Latitud" Type="Double" Nullable="false" />
+          <Property Name="Longitud" Type="Double" Nullable="false" />
+          <Property Name="EstadoId" Type="Int32" Nullable="false" />
+          <Property Name="CiudadId" Type="Int32" Nullable="false" />
+          <Property Name="ZonaId" Type="Int32" />
+          <Property Name="TipoArmaId" Type="Int32" />
+          <Property Name="Detenidos" Type="Boolean" />
+          <Property Name="CantidadDelincuentesId" Type="Int32" />
+          <Property Name="TipoVehiculoId" Type="Int32" />
+          <Property Name="TipoExtorsionId" Type="Int32" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioCancelacion" Type="Int32" />
+          <Property Name="FechaCancelacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioUltimaModificacion" Type="Int32" />
+          <Property Name="FechaUltimaMoldificacion" Type="DateTime" Precision="3" />
+          <Property Name="MotivoAmenazaId" Type="Int32" />
+          <Property Name="MedioAmenazaId" Type="Int32" />
+          <Property Name="TipoIntrusionId" Type="Int32" />
+          <Property Name="Calle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Colonia" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EntreCalles" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="ConVehiculo" Type="Boolean" />
+          <NavigationProperty Name="AfectacionesIncidente" Relationship="RIINModel.FK_IncidenteAfectacionIncidente" FromRole="Incidentes" ToRole="AfectacionesIncidente" />
+          <NavigationProperty Name="CantidadDelincuentes" Relationship="RIINModel.FK_CantidadDelincuentesIncidentes" FromRole="Incidentes" ToRole="CantidadDelincuentes" />
+          <NavigationProperty Name="Ciudades" Relationship="RIINModel.FK_CiudadesIncidentes" FromRole="Incidentes" ToRole="Ciudades" />
+          <NavigationProperty Name="Empresas" Relationship="RIINModel.FK_EmpresasIncidentes" FromRole="Incidentes" ToRole="Empresas" />
+          <NavigationProperty Name="Estados" Relationship="RIINModel.FK_EstadosIncidentes" FromRole="Incidentes" ToRole="Estados" />
+          <NavigationProperty Name="Instalaciones" Relationship="RIINModel.FK_InstalacionesIncidentes" FromRole="Incidentes" ToRole="Instalaciones" />
+          <NavigationProperty Name="Lesionados" Relationship="RIINModel.FK_LesionadosIncidentes" FromRole="Incidentes" ToRole="Lesionados" />
+          <NavigationProperty Name="MediosAmenaza" Relationship="RIINModel.FK_MedioAmenazaIncidentes" FromRole="Incidentes" ToRole="MediosAmenaza" />
+          <NavigationProperty Name="MotivosAmenaza" Relationship="RIINModel.FK_MotivoAmenazaIncidente" FromRole="Incidentes" ToRole="MotivosAmenaza" />
+          <NavigationProperty Name="TiposArma" Relationship="RIINModel.FK_TipoArmaIncidentes" FromRole="Incidentes" ToRole="TiposArma" />
+          <NavigationProperty Name="TiposExtorsion" Relationship="RIINModel.FK_TipoExtorcionIncidentes" FromRole="Incidentes" ToRole="TiposExtorsion" />
+          <NavigationProperty Name="TiposIncidente" Relationship="RIINModel.FK_TipoIncidenteIncidentes" FromRole="Incidentes" ToRole="TiposIncidente" />
+          <NavigationProperty Name="TiposInstalacion" Relationship="RIINModel.FK_TipoInstalacionIncidente" FromRole="Incidentes" ToRole="TiposInstalacion" />
+          <NavigationProperty Name="TiposIntrusion" Relationship="RIINModel.FK_TipoIntrusionIncidentes" FromRole="Incidentes" ToRole="TiposIntrusion" />
+          <NavigationProperty Name="TiposVehiculo" Relationship="RIINModel.FK_TipoVehiculoIncidentes" FromRole="Incidentes" ToRole="TiposVehiculo" />
+          <NavigationProperty Name="Usuarios" Relationship="RIINModel.FK_UsuarioIncidentes" FromRole="Incidentes" ToRole="Usuarios" />
+          <NavigationProperty Name="Zonas" Relationship="RIINModel.FK_ZonaIncidentes" FromRole="Incidentes" ToRole="Zonas" />
+        </EntityType>
+        <EntityType Name="Instalaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="TipoInstalacionId" Type="Int32" Nullable="false" />
+          <Property Name="Latitud" Type="Single" />
+          <Property Name="Longitud" Type="Single" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Empresas" Relationship="RIINModel.FK_EmpresasInstalaciones" FromRole="Instalaciones" ToRole="Empresas" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_InstalacionesIncidentes" FromRole="Instalaciones" ToRole="Incidentes" />
+          <NavigationProperty Name="TiposInstalacion" Relationship="RIINModel.FK_TipoInstalacionInstalaciones" FromRole="Instalaciones" ToRole="TiposInstalacion" />
+        </EntityType>
+        <EntityType Name="Lesionados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_LesionadosIncidentes" FromRole="Lesionados" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="MediosAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_MedioAmenazaIncidentes" FromRole="MediosAmenaza" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="MotivosAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_MotivoAmenazaIncidente" FromRole="MotivosAmenaza" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="NivelesGeograficos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Poligonos" Relationship="RIINModel.FK_NivelGeograficoPoligono" FromRole="NivelesGeograficos" ToRole="Poligonos" />
+        </EntityType>
+        <EntityType Name="ParametrosSistema">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TipoDeParametro" Type="Int32" Nullable="false" />
+          <Property Name="TipoIncidenteEsRequerido" Type="Boolean" Nullable="false" />
+          <Property Name="ValorFinalEsRequerido" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ParametrosSistemaEmpresa" Relationship="RIINModel.FK_ParametrosSistemaParametrosSistemaEmpresa" FromRole="ParametrosSistema" ToRole="ParametrosSistemaEmpresa" />
+        </EntityType>
+        <EntityType Name="ParametrosSistemaEmpresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="Int32" />
+          <Property Name="ValorInicial" Type="Int32" Nullable="false" />
+          <Property Name="Valorfinal" Type="Int32" />
+          <Property Name="UsuarioModificacion" Type="Int32" />
+          <Property Name="FechaUltimaModificacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ParametrosSistemaId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Empresas" Relationship="RIINModel.FK_EmpresaParametrosSistemaEmpresa" FromRole="ParametrosSistemaEmpresa" ToRole="Empresas" />
+          <NavigationProperty Name="ParametrosSistema" Relationship="RIINModel.FK_ParametrosSistemaParametrosSistemaEmpresa" FromRole="ParametrosSistemaEmpresa" ToRole="ParametrosSistema" />
+          <NavigationProperty Name="TiposIncidente" Relationship="RIINModel.FK_TipoIncidenteParametroSistemaEmpresa" FromRole="ParametrosSistemaEmpresa" ToRole="TiposIncidente" />
+        </EntityType>
+        <EntityType Name="Perfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Usuarios" Relationship="RIINModel.relPerfilesUsuarios" FromRole="Perfiles" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="Poligonos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="NivelGeograficoId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ciudades" Relationship="RIINModel.FK_PoligonoCiudades" FromRole="Poligonos" ToRole="Ciudades" />
+          <NavigationProperty Name="Estados" Relationship="RIINModel.FK_EstadosPoligono" FromRole="Poligonos" ToRole="Estados" />
+          <NavigationProperty Name="NivelesGeograficos" Relationship="RIINModel.FK_NivelGeograficoPoligono" FromRole="Poligonos" ToRole="NivelesGeograficos" />
+          <NavigationProperty Name="PoligonosDetalle" Relationship="RIINModel.FK_PoligonoPoligonoDetalle" FromRole="Poligonos" ToRole="PoligonosDetalle" />
+          <NavigationProperty Name="Zonas" Relationship="RIINModel.FK_ZonaPoligono" FromRole="Poligonos" ToRole="Zonas" />
+        </EntityType>
+        <EntityType Name="PoligonosDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PoligonoId" Type="Int32" Nullable="false" />
+          <Property Name="Latitud" Type="Double" Nullable="false" />
+          <Property Name="Longitud" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Poligonos" Relationship="RIINModel.FK_PoligonoPoligonoDetalle" FromRole="PoligonosDetalle" ToRole="Poligonos" />
+        </EntityType>
+        <EntityType Name="ReportesDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="120" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ConfiguracionesDashboard" Relationship="RIINModel.FK_ReportesDashboardConfiguracionDashboard" FromRole="ReportesDashboard" ToRole="ConfiguracionesDashboard" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TiposAfectacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="AfectacionesIncidente" Relationship="RIINModel.FK_TipoAfectacionAfectacionIncidente" FromRole="TiposAfectacion" ToRole="AfectacionesIncidente" />
+        </EntityType>
+        <EntityType Name="TiposArma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_TipoArmaIncidentes" FromRole="TiposArma" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="TiposExtorsion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_TipoExtorcionIncidentes" FromRole="TiposExtorsion" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="TiposFiltroDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="FiltrosDashboard" Relationship="RIINModel.FK_TipoFiltroDashboardFiltrosDashboard" FromRole="TiposFiltroDashboard" ToRole="FiltrosDashboard" />
+        </EntityType>
+        <EntityType Name="TiposIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="140" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Imagen" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AlertasIncidente" Relationship="RIINModel.FK_TipoIncidenteAlertaIncidente" FromRole="TiposIncidente" ToRole="AlertasIncidente" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_TipoIncidenteIncidentes" FromRole="TiposIncidente" ToRole="Incidentes" />
+          <NavigationProperty Name="ParametrosSistemaEmpresa" Relationship="RIINModel.FK_TipoIncidenteParametroSistemaEmpresa" FromRole="TiposIncidente" ToRole="ParametrosSistemaEmpresa" />
+        </EntityType>
+        <EntityType Name="TiposInstalacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="140" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_TipoInstalacionIncidente" FromRole="TiposInstalacion" ToRole="Incidentes" />
+          <NavigationProperty Name="Instalaciones" Relationship="RIINModel.FK_TipoInstalacionInstalaciones" FromRole="TiposInstalacion" ToRole="Instalaciones" />
+        </EntityType>
+        <EntityType Name="TiposIntrusion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_TipoIntrusionIncidentes" FromRole="TiposIntrusion" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="TiposUnidadTiempo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ConfiguracionesDashboard" Relationship="RIINModel.FK_TipoUnidadTiempoConfiguracionDashboard" FromRole="TiposUnidadTiempo" ToRole="ConfiguracionesDashboard" />
+        </EntityType>
+        <EntityType Name="TiposVehiculo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_TipoVehiculoIncidentes" FromRole="TiposVehiculo" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApellidoPaterno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApellidoMaterno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioBaja" Type="Int32" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="3" />
+          <Property Name="FechaUltimoLogin" Type="DateTime" Precision="3" />
+          <Property Name="Bloqueado" Type="Boolean" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_UsuarioIncidentes" FromRole="Usuarios" ToRole="Incidentes" />
+          <NavigationProperty Name="Perfiles" Relationship="RIINModel.relPerfilesUsuarios" FromRole="Usuarios" ToRole="Perfiles" />
+          <NavigationProperty Name="Empresas" Relationship="RIINModel.relUsuarioEmpresa" FromRole="Usuarios" ToRole="Empresas" />
+        </EntityType>
+        <EntityType Name="Zonas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EstadoId" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="140" Unicode="true" FixedLength="false" />
+          <Property Name="PoligonoId" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Estados" Relationship="RIINModel.FK_EstadosZona" FromRole="Zonas" ToRole="Estados" />
+          <NavigationProperty Name="Incidentes" Relationship="RIINModel.FK_ZonaIncidentes" FromRole="Zonas" ToRole="Incidentes" />
+          <NavigationProperty Name="Poligonos" Relationship="RIINModel.FK_ZonaPoligono" FromRole="Zonas" ToRole="Poligonos" />
+        </EntityType>
+        <EntityType Name="InformacionEmpresas">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="ApellidoPaterno" />
+            <PropertyRef Name="ApellidoMaterno" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Activo" />
+            <PropertyRef Name="UsuarioAlta" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="EmpresaId" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="TipoEmpresa" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Expr4" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApellidoPaterno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApellidoMaterno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioBaja" Type="Int32" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="3" />
+          <Property Name="FechaUltimoLogin" Type="DateTime" Precision="3" />
+          <Property Name="Bloqueado" Type="Boolean" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="EmpresaId" Type="Int32" Nullable="false" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="Expr2" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TipoEmpresa" Type="Boolean" Nullable="false" />
+          <Property Name="Expr3" Type="Int32" Nullable="false" />
+          <Property Name="Expr4" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="GrupoId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="InformacionEstados">
+          <Key>
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Expr1" />
+          </Key>
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Expr1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Id" Type="Int32" />
+          <Property Name="FechaIncidente" Type="DateTime" Precision="3" />
+          <Property Name="EmpresaId" Type="Int32" />
+          <Property Name="TipoIncidenteId" Type="Int32" />
+          <Property Name="LesionadosId" Type="Int32" />
+          <Property Name="TipoInstalacionId" Type="Int32" />
+          <Property Name="InstalacionId" Type="Int32" />
+          <Property Name="MontoAfectacion" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Latitud" Type="Double" />
+          <Property Name="Longitud" Type="Double" />
+          <Property Name="EstadoId" Type="Int32" />
+          <Property Name="CiudadId" Type="Int32" />
+          <Property Name="ZonaId" Type="Int32" />
+          <Property Name="TipoArmaId" Type="Int32" />
+          <Property Name="Detenidos" Type="Boolean" />
+          <Property Name="CantidadDelincuentesId" Type="Int32" />
+          <Property Name="TipoVehiculoId" Type="Int32" />
+          <Property Name="TipoExtorsionId" Type="Int32" />
+          <Property Name="UsuarioAlta" Type="Int32" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioCancelacion" Type="Int32" />
+          <Property Name="FechaCancelacion" Type="DateTime" Precision="3" />
+          <Property Name="UsuarioUltimaModificacion" Type="Int32" />
+          <Property Name="FechaUltimaMoldificacion" Type="DateTime" Precision="3" />
+          <Property Name="MotivoAmenazaId" Type="Int32" />
+          <Property Name="MedioAmenazaId" Type="Int32" />
+          <Property Name="TipoIntrusionId" Type="Int32" />
+          <Property Name="Calle" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Colonia" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="EntreCalles" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="ConVehiculo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="InformacionPerfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="ApellidoPaterno" />
+            <PropertyRef Name="ApellidoMaterno" />
+            <PropertyRef Name="Email" />
+            <PropertyRef Name="Activo" />
+            <PropertyRef Name="UsuarioAlta" />
+            <PropertyRef Name="FechaAlta" />
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PerfilId" />
+            <PropertyRef Name="Expr1" />
+            <PropertyRef Name="Expr2" />
+            <PropertyRef Name="Expr3" />
+            <PropertyRef Name="Expr4" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="12" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApellidoPaterno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ApellidoMaterno" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="Int32" Nullable="false" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UsuarioBaja" Type="Int32" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="3" />
+          <Property Name="FechaUltimoLogin" Type="DateTime" Precision="3" />
+          <Property Name="Bloqueado" Type="Boolean" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" />
+          <Property Name="PerfilId" Type="Int32" Nullable="false" />
+          <Property Name="Expr1" Type="Int32" Nullable="false" />
+          <Property Name="Expr2" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Expr3" Type="Int32" Nullable="false" />
+          <Property Name="Expr4" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_IncidenteAfectacionIncidente">
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="1" />
+          <End Role="AfectacionesIncidente" Type="RIINModel.AfectacionesIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incidentes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionesIncidente">
+              <PropertyRef Name="IncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoAfectacionAfectacionIncidente">
+          <End Role="TiposAfectacion" Type="RIINModel.TiposAfectacion" Multiplicity="1" />
+          <End Role="AfectacionesIncidente" Type="RIINModel.AfectacionesIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposAfectacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionesIncidente">
+              <PropertyRef Name="TipoAfectacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaAlertaIncidente">
+          <End Role="Empresas" Type="RIINModel.Empresas" Multiplicity="1" />
+          <End Role="AlertasIncidente" Type="RIINModel.AlertasIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertasIncidente">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteAlertaIncidente">
+          <End Role="TiposIncidente" Type="RIINModel.TiposIncidente" Multiplicity="1" />
+          <End Role="AlertasIncidente" Type="RIINModel.AlertasIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertasIncidente">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CantidadDelincuentesIncidentes">
+          <End Role="CantidadDelincuentes" Type="RIINModel.CantidadDelincuentes" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CantidadDelincuentes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CantidadDelincuentesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CiudadesIncidentes">
+          <End Role="Ciudades" Type="RIINModel.Ciudades" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+              <PropertyRef Name="EstadoId" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CiudadId" />
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosCiudades">
+          <End Role="Estados" Type="RIINModel.Estados" Multiplicity="1" />
+          <End Role="Ciudades" Type="RIINModel.Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PoligonoCiudades">
+          <End Role="Poligonos" Type="RIINModel.Poligonos" Multiplicity="0..1" />
+          <End Role="Ciudades" Type="RIINModel.Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConfiguracionDashboardFiltrosDashboard">
+          <End Role="ConfiguracionesDashboard" Type="RIINModel.ConfiguracionesDashboard" Multiplicity="1" />
+          <End Role="FiltrosDashboard" Type="RIINModel.FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfiguracionesDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportesDashboardConfiguracionDashboard">
+          <End Role="ReportesDashboard" Type="RIINModel.ReportesDashboard" Multiplicity="1" />
+          <End Role="ConfiguracionesDashboard" Type="RIINModel.ConfiguracionesDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportesDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionesDashboard">
+              <PropertyRef Name="ReporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoUnidadTiempoConfiguracionDashboard">
+          <End Role="TiposUnidadTiempo" Type="RIINModel.TiposUnidadTiempo" Multiplicity="1" />
+          <End Role="ConfiguracionesDashboard" Type="RIINModel.ConfiguracionesDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposUnidadTiempo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionesDashboard">
+              <PropertyRef Name="TipoUnidadTiempoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaParametrosSistemaEmpresa">
+          <End Role="Empresas" Type="RIINModel.Empresas" Multiplicity="1" />
+          <End Role="ParametrosSistemaEmpresa" Type="RIINModel.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresasIncidentes">
+          <End Role="Empresas" Type="RIINModel.Empresas" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresasInstalaciones">
+          <End Role="Empresas" Type="RIINModel.Empresas" Multiplicity="1" />
+          <End Role="Instalaciones" Type="RIINModel.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosIncidentes">
+          <End Role="Estados" Type="RIINModel.Estados" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosPoligono">
+          <End Role="Poligonos" Type="RIINModel.Poligonos" Multiplicity="0..1" />
+          <End Role="Estados" Type="RIINModel.Estados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estados">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosZona">
+          <End Role="Estados" Type="RIINModel.Estados" Multiplicity="1" />
+          <End Role="Zonas" Type="RIINModel.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoFiltroDashboardFiltrosDashboard">
+          <End Role="TiposFiltroDashboard" Type="RIINModel.TiposFiltroDashboard" Multiplicity="1" />
+          <End Role="FiltrosDashboard" Type="RIINModel.FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposFiltroDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="TipoFiltroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalacionesIncidentes">
+          <End Role="Instalaciones" Type="RIINModel.Instalaciones" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instalaciones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="InstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LesionadosIncidentes">
+          <End Role="Lesionados" Type="RIINModel.Lesionados" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesionados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="LesionadosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedioAmenazaIncidentes">
+          <End Role="MediosAmenaza" Type="RIINModel.MediosAmenaza" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MediosAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="MedioAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MotivoAmenazaIncidente">
+          <End Role="MotivosAmenaza" Type="RIINModel.MotivosAmenaza" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotivosAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="MotivoAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoArmaIncidentes">
+          <End Role="TiposArma" Type="RIINModel.TiposArma" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposArma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoArmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoExtorcionIncidentes">
+          <End Role="TiposExtorsion" Type="RIINModel.TiposExtorsion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposExtorsion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoExtorsionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteIncidentes">
+          <End Role="TiposIncidente" Type="RIINModel.TiposIncidente" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoInstalacionIncidente">
+          <End Role="TiposInstalacion" Type="RIINModel.TiposInstalacion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIntrusionIncidentes">
+          <End Role="TiposIntrusion" Type="RIINModel.TiposIntrusion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIntrusion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIntrusionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoVehiculoIncidentes">
+          <End Role="TiposVehiculo" Type="RIINModel.TiposVehiculo" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposVehiculo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoVehiculoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioIncidentes">
+          <End Role="Usuarios" Type="RIINModel.Usuarios" Multiplicity="1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="UsuarioAlta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZonaIncidentes">
+          <End Role="Zonas" Type="RIINModel.Zonas" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="RIINModel.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zonas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="ZonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoInstalacionInstalaciones">
+          <End Role="TiposInstalacion" Type="RIINModel.TiposInstalacion" Multiplicity="1" />
+          <End Role="Instalaciones" Type="RIINModel.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NivelGeograficoPoligono">
+          <End Role="NivelesGeograficos" Type="RIINModel.NivelesGeograficos" Multiplicity="1" />
+          <End Role="Poligonos" Type="RIINModel.Poligonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NivelesGeograficos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Poligonos">
+              <PropertyRef Name="NivelGeograficoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParametrosSistemaParametrosSistemaEmpresa">
+          <End Role="ParametrosSistema" Type="RIINModel.ParametrosSistema" Multiplicity="1" />
+          <End Role="ParametrosSistemaEmpresa" Type="RIINModel.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParametrosSistema">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="ParametrosSistemaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteParametroSistemaEmpresa">
+          <End Role="TiposIncidente" Type="RIINModel.TiposIncidente" Multiplicity="0..1" />
+          <End Role="ParametrosSistemaEmpresa" Type="RIINModel.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PoligonoPoligonoDetalle">
+          <End Role="Poligonos" Type="RIINModel.Poligonos" Multiplicity="1" />
+          <End Role="PoligonosDetalle" Type="RIINModel.PoligonosDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PoligonosDetalle">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZonaPoligono">
+          <End Role="Poligonos" Type="RIINModel.Poligonos" Multiplicity="1" />
+          <End Role="Zonas" Type="RIINModel.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="relPerfilesUsuarios">
+          <End Role="Perfiles" Type="RIINModel.Perfiles" Multiplicity="*" />
+          <End Role="Usuarios" Type="RIINModel.Usuarios" Multiplicity="*" />
+        </Association>
+        <Association Name="relUsuarioEmpresa">
+          <End Role="Empresas" Type="RIINModel.Empresas" Multiplicity="*" />
+          <End Role="Usuarios" Type="RIINModel.Usuarios" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RIINModelStoreContainer" CdmEntityContainer="RIINEntities">
+          <EntitySetMapping Name="AfectacionesIncidente">
+            <EntityTypeMapping TypeName="RIINModel.AfectacionesIncidente">
+              <MappingFragment StoreEntitySet="AfectacionesIncidente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IncidenteId" ColumnName="IncidenteId" />
+                <ScalarProperty Name="TipoAfectacionId" ColumnName="TipoAfectacionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AlertasIncidente">
+            <EntityTypeMapping TypeName="RIINModel.AlertasIncidente">
+              <MappingFragment StoreEntitySet="AlertasIncidente">
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="TipoIncidenteId" ColumnName="TipoIncidenteId" />
+                <ScalarProperty Name="Emails" ColumnName="Emails" />
+                <ScalarProperty Name="RecibirOtrasEmpresas" ColumnName="RecibirOtrasEmpresas" />
+                <ScalarProperty Name="RecibirMiEmpresa" ColumnName="RecibirMiEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CantidadDelincuentes">
+            <EntityTypeMapping TypeName="RIINModel.CantidadDelincuentes">
+              <MappingFragment StoreEntitySet="CantidadDelincuentes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NombreDeCantidad" ColumnName="NombreDeCantidad" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ciudades">
+            <EntityTypeMapping TypeName="RIINModel.Ciudades">
+              <MappingFragment StoreEntitySet="Ciudades">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConfiguracionesDashboard">
+            <EntityTypeMapping TypeName="RIINModel.ConfiguracionesDashboard">
+              <MappingFragment StoreEntitySet="ConfiguracionesDashboard">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="ReporteId" ColumnName="ReporteId" />
+                <ScalarProperty Name="MontoAfectadoMinimo" ColumnName="MontoAfectadoMinimo" />
+                <ScalarProperty Name="MontoAfectadoMaximo" ColumnName="MontoAfectadoMaximo" />
+                <ScalarProperty Name="EsConsolidado" ColumnName="EsConsolidado" />
+                <ScalarProperty Name="SeIncluyeTabla" ColumnName="SeIncluyeTabla" />
+                <ScalarProperty Name="EsReporteBase" ColumnName="EsReporteBase" />
+                <ScalarProperty Name="SegmentoReporteId" ColumnName="SegmentoReporteId" />
+                <ScalarProperty Name="TipoUnidadTiempoId" ColumnName="TipoUnidadTiempoId" />
+                <ScalarProperty Name="ValorUnidadTiempo" ColumnName="ValorUnidadTiempo" />
+                <ScalarProperty Name="ConfiguracionDashboardBaseId" ColumnName="ConfiguracionDashboardBaseId" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresas">
+            <EntityTypeMapping TypeName="RIINModel.Empresas">
+              <MappingFragment StoreEntitySet="Empresas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="TipoEmpresa" ColumnName="TipoEmpresa" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estados">
+            <EntityTypeMapping TypeName="RIINModel.Estados">
+              <MappingFragment StoreEntitySet="Estados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FiltrosDashboard">
+            <EntityTypeMapping TypeName="RIINModel.FiltrosDashboard">
+              <MappingFragment StoreEntitySet="FiltrosDashboard">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FiltroDashboardId" ColumnName="FiltroDashboardId" />
+                <ScalarProperty Name="TipoFiltroId" ColumnName="TipoFiltroId" />
+                <ScalarProperty Name="ValorFiltro" ColumnName="ValorFiltro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Incidentes">
+            <EntityTypeMapping TypeName="RIINModel.Incidentes">
+              <MappingFragment StoreEntitySet="Incidentes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FechaIncidente" ColumnName="FechaIncidente" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="TipoIncidenteId" ColumnName="TipoIncidenteId" />
+                <ScalarProperty Name="LesionadosId" ColumnName="LesionadosId" />
+                <ScalarProperty Name="TipoInstalacionId" ColumnName="TipoInstalacionId" />
+                <ScalarProperty Name="InstalacionId" ColumnName="InstalacionId" />
+                <ScalarProperty Name="MontoAfectacion" ColumnName="MontoAfectacion" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+                <ScalarProperty Name="ZonaId" ColumnName="ZonaId" />
+                <ScalarProperty Name="TipoArmaId" ColumnName="TipoArmaId" />
+                <ScalarProperty Name="Detenidos" ColumnName="Detenidos" />
+                <ScalarProperty Name="CantidadDelincuentesId" ColumnName="CantidadDelincuentesId" />
+                <ScalarProperty Name="TipoVehiculoId" ColumnName="TipoVehiculoId" />
+                <ScalarProperty Name="TipoExtorsionId" ColumnName="TipoExtorsionId" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="UsuarioCancelacion" ColumnName="UsuarioCancelacion" />
+                <ScalarProperty Name="FechaCancelacion" ColumnName="FechaCancelacion" />
+                <ScalarProperty Name="UsuarioUltimaModificacion" ColumnName="UsuarioUltimaModificacion" />
+                <ScalarProperty Name="FechaUltimaMoldificacion" ColumnName="FechaUltimaMoldificacion" />
+                <ScalarProperty Name="MotivoAmenazaId" ColumnName="MotivoAmenazaId" />
+                <ScalarProperty Name="MedioAmenazaId" ColumnName="MedioAmenazaId" />
+                <ScalarProperty Name="TipoIntrusionId" ColumnName="TipoIntrusionId" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="EntreCalles" ColumnName="EntreCalles" />
+                <ScalarProperty Name="ConVehiculo" ColumnName="ConVehiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instalaciones">
+            <EntityTypeMapping TypeName="RIINModel.Instalaciones">
+              <MappingFragment StoreEntitySet="Instalaciones">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="TipoInstalacionId" ColumnName="TipoInstalacionId" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lesionados">
+            <EntityTypeMapping TypeName="RIINModel.Lesionados">
+              <MappingFragment StoreEntitySet="Lesionados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MediosAmenaza">
+            <EntityTypeMapping TypeName="RIINModel.MediosAmenaza">
+              <MappingFragment StoreEntitySet="MediosAmenaza">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MotivosAmenaza">
+            <EntityTypeMapping TypeName="RIINModel.MotivosAmenaza">
+              <MappingFragment StoreEntitySet="MotivosAmenaza">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NivelesGeograficos">
+            <EntityTypeMapping TypeName="RIINModel.NivelesGeograficos">
+              <MappingFragment StoreEntitySet="NivelesGeograficos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParametrosSistema">
+            <EntityTypeMapping TypeName="RIINModel.ParametrosSistema">
+              <MappingFragment StoreEntitySet="ParametrosSistema">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="TipoDeParametro" ColumnName="TipoDeParametro" />
+                <ScalarProperty Name="TipoIncidenteEsRequerido" ColumnName="TipoIncidenteEsRequerido" />
+                <ScalarProperty Name="ValorFinalEsRequerido" ColumnName="ValorFinalEsRequerido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParametrosSistemaEmpresa">
+            <EntityTypeMapping TypeName="RIINModel.ParametrosSistemaEmpresa">
+              <MappingFragment StoreEntitySet="ParametrosSistemaEmpresa">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="TipoIncidenteId" ColumnName="TipoIncidenteId" />
+                <ScalarProperty Name="ValorInicial" ColumnName="ValorInicial" />
+                <ScalarProperty Name="Valorfinal" ColumnName="Valorfinal" />
+                <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+                <ScalarProperty Name="FechaUltimaModificacion" ColumnName="FechaUltimaModificacion" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="ParametrosSistemaId" ColumnName="ParametrosSistemaId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfiles">
+            <EntityTypeMapping TypeName="RIINModel.Perfiles">
+              <MappingFragment StoreEntitySet="Perfiles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Poligonos">
+            <EntityTypeMapping TypeName="RIINModel.Poligonos">
+              <MappingFragment StoreEntitySet="Poligonos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NivelGeograficoId" ColumnName="NivelGeograficoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PoligonosDetalle">
+            <EntityTypeMapping TypeName="RIINModel.PoligonosDetalle">
+              <MappingFragment StoreEntitySet="PoligonosDetalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReportesDashboard">
+            <EntityTypeMapping TypeName="RIINModel.ReportesDashboard">
+              <MappingFragment StoreEntitySet="ReportesDashboard">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="RIINModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposAfectacion">
+            <EntityTypeMapping TypeName="RIINModel.TiposAfectacion">
+              <MappingFragment StoreEntitySet="TiposAfectacion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposArma">
+            <EntityTypeMapping TypeName="RIINModel.TiposArma">
+              <MappingFragment StoreEntitySet="TiposArma">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposExtorsion">
+            <EntityTypeMapping TypeName="RIINModel.TiposExtorsion">
+              <MappingFragment StoreEntitySet="TiposExtorsion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposFiltroDashboard">
+            <EntityTypeMapping TypeName="RIINModel.TiposFiltroDashboard">
+              <MappingFragment StoreEntitySet="TiposFiltroDashboard">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposIncidente">
+            <EntityTypeMapping TypeName="RIINModel.TiposIncidente">
+              <MappingFragment StoreEntitySet="TiposIncidente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposInstalacion">
+            <EntityTypeMapping TypeName="RIINModel.TiposInstalacion">
+              <MappingFragment StoreEntitySet="TiposInstalacion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposIntrusion">
+            <EntityTypeMapping TypeName="RIINModel.TiposIntrusion">
+              <MappingFragment StoreEntitySet="TiposIntrusion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposUnidadTiempo">
+            <EntityTypeMapping TypeName="RIINModel.TiposUnidadTiempo">
+              <MappingFragment StoreEntitySet="TiposUnidadTiempo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TiposVehiculo">
+            <EntityTypeMapping TypeName="RIINModel.TiposVehiculo">
+              <MappingFragment StoreEntitySet="TiposVehiculo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="RIINModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="UsuarioBaja" ColumnName="UsuarioBaja" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="FechaUltimoLogin" ColumnName="FechaUltimoLogin" />
+                <ScalarProperty Name="Bloqueado" ColumnName="Bloqueado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Zonas">
+            <EntityTypeMapping TypeName="RIINModel.Zonas">
+              <MappingFragment StoreEntitySet="Zonas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformacionEmpresas">
+            <EntityTypeMapping TypeName="RIINModel.InformacionEmpresas">
+              <MappingFragment StoreEntitySet="InformacionEmpresas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="UsuarioBaja" ColumnName="UsuarioBaja" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="FechaUltimoLogin" ColumnName="FechaUltimoLogin" />
+                <ScalarProperty Name="Bloqueado" ColumnName="Bloqueado" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="TipoEmpresa" ColumnName="TipoEmpresa" />
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+                <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformacionEstados">
+            <EntityTypeMapping TypeName="RIINModel.InformacionEstados">
+              <MappingFragment StoreEntitySet="InformacionEstados">
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FechaIncidente" ColumnName="FechaIncidente" />
+                <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+                <ScalarProperty Name="TipoIncidenteId" ColumnName="TipoIncidenteId" />
+                <ScalarProperty Name="LesionadosId" ColumnName="LesionadosId" />
+                <ScalarProperty Name="TipoInstalacionId" ColumnName="TipoInstalacionId" />
+                <ScalarProperty Name="InstalacionId" ColumnName="InstalacionId" />
+                <ScalarProperty Name="MontoAfectacion" ColumnName="MontoAfectacion" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+                <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+                <ScalarProperty Name="ZonaId" ColumnName="ZonaId" />
+                <ScalarProperty Name="TipoArmaId" ColumnName="TipoArmaId" />
+                <ScalarProperty Name="Detenidos" ColumnName="Detenidos" />
+                <ScalarProperty Name="CantidadDelincuentesId" ColumnName="CantidadDelincuentesId" />
+                <ScalarProperty Name="TipoVehiculoId" ColumnName="TipoVehiculoId" />
+                <ScalarProperty Name="TipoExtorsionId" ColumnName="TipoExtorsionId" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="UsuarioCancelacion" ColumnName="UsuarioCancelacion" />
+                <ScalarProperty Name="FechaCancelacion" ColumnName="FechaCancelacion" />
+                <ScalarProperty Name="UsuarioUltimaModificacion" ColumnName="UsuarioUltimaModificacion" />
+                <ScalarProperty Name="FechaUltimaMoldificacion" ColumnName="FechaUltimaMoldificacion" />
+                <ScalarProperty Name="MotivoAmenazaId" ColumnName="MotivoAmenazaId" />
+                <ScalarProperty Name="MedioAmenazaId" ColumnName="MedioAmenazaId" />
+                <ScalarProperty Name="TipoIntrusionId" ColumnName="TipoIntrusionId" />
+                <ScalarProperty Name="Calle" ColumnName="Calle" />
+                <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+                <ScalarProperty Name="EntreCalles" ColumnName="EntreCalles" />
+                <ScalarProperty Name="ConVehiculo" ColumnName="ConVehiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InformacionPerfiles">
+            <EntityTypeMapping TypeName="RIINModel.InformacionPerfiles">
+              <MappingFragment StoreEntitySet="InformacionPerfiles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+                <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="UsuarioBaja" ColumnName="UsuarioBaja" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="FechaUltimoLogin" ColumnName="FechaUltimoLogin" />
+                <ScalarProperty Name="Bloqueado" ColumnName="Bloqueado" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+                <ScalarProperty Name="Expr3" ColumnName="Expr3" />
+                <ScalarProperty Name="Expr4" ColumnName="Expr4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="relPerfilesUsuarios" TypeName="RIINModel.relPerfilesUsuarios" StoreEntitySet="relPerfilesUsuarios">
+            <EndProperty Name="Perfiles">
+              <ScalarProperty Name="Id" ColumnName="PerfilId" />
+            </EndProperty>
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="Id" ColumnName="UsuarioId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="relUsuarioEmpresa" TypeName="RIINModel.relUsuarioEmpresa" StoreEntitySet="relUsuarioEmpresa">
+            <EndProperty Name="Empresas">
+              <ScalarProperty Name="Id" ColumnName="EmpresaId" />
+            </EndProperty>
+            <EndProperty Name="Usuarios">
+              <ScalarProperty Name="Id" ColumnName="UsuarioId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

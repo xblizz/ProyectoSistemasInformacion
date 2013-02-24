@@ -1,0 +1,31 @@
+﻿@model SS.Core.Entities.Estado
+
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.EstadoStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.EstadoStrings.ViewDeleteName</h2>
+
+<h3>@SistemaSeguridad.Resources.EstadoStrings.DeleteConfirm</h3>
+
+@using (Html.BeginForm()) {
+<fieldset>
+
+    <div class="display-label">@SistemaSeguridad.Resources.EstadoStrings.Name:</div>
+    <div style="font-weight: bold;">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    @Html.HiddenFor(model => model.Id)
+    @Html.HiddenFor(model => model.PoligonoId)
+
+    <p></p>
+
+</fieldset>
+
+    <p>
+        <input type="submit" value=@SistemaSeguridad.Resources.EstadoStrings.Delete /> |
+        @Html.ActionLink(@SistemaSeguridad.Resources.EstadoStrings.BackToIndex, "Index")    
+    </p>
+
+}

@@ -1,0 +1,683 @@
+﻿@model SS.Core.Entities.Incidente
+@using SS.Core.Entities
+@using SistemaSeguridad.Helpers
+@{
+    ViewBag.Title = "Modificar Incidente";
+}
+
+
+<h2>Modificar Incidente</h2>
+
+
+<link href='@Url.Stylesheet("Incidentes.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.TimePicker, "timePicker.css")' rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script src="@Url.JavaScript("jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("jquery-1.5.1.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("jquery-ui-1.8.11.min.js")" type="text/javascript"></script>
+
+
+@Content.Script("Plugins/DatePicker/jquery.ui.datepicker.min.js", Url)
+@Content.Script("Plugins/DatePicker/Datepicker.es.js", Url)
+@Content.Script("Plugins/jCombo/jquery.Cascade.js", Url)
+@Content.Script("Plugins/Multiselect/jquery.multiselect.js", Url)
+@Content.Script("Plugins/TimePicker/jquery.timePicker.js", Url)
+
+<script src="@Url.JavaScript("gmaps/GoogleMaps.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("Common.function.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("Incidentes.js")" type="text/javascript"></script>
+
+<span id="errorDiv" class="message errormsg Invisible"></span>
+<br/>
+<div id="maincontainer">
+    @using (Html.BeginForm("Edit", "Incidente", FormMethod.Post, new { id = "EditIncidente" }))
+    {
+        @Html.ValidationSummary(true)
+
+         @Html.HiddenFor(model => model.Id)
+       
+        <div id="contentwrapper">
+            <div id="contentcolumn">
+                <div class="DivMenuOpciones">
+                    <div id="TituloIncidente" class="DivOculto">
+                    </div>
+                    <div  class="DivComandos">
+                        <div class="BotonGuardar"><a class="button" id="btnGuardar"><b class="o"><b class="m"><b>Guardar</b></b></b></a></div>
+                        <div class="BotonCancelar"><a class="button" id="btnCancelar" ><b class="o"><b class="m"><b>Cancelar</b></b></b></a></div>
+                    </div>
+                </div>
+                <div id="TiposIncidente" class="Incidente Invisible" >
+                    <div id="CamposEspecificos" class="divCampos">
+                         
+                    </div>                
+                </div>
+                <div id="ContenedorMapa"  class="divMapa" >
+                    <table style="width: 95%;" align="center">
+                        <tr>
+                            <td>
+                                <div id="btnToggleFiltros" class="DivButton">
+                                    <img src="../../Content/images/arrow_close.png" alt="Mostrar/Ocultar filtros" title="Mostrar/Ocultar filtros" id="btnToggleGenerales" height="10px" width="10px" />
+                                    Ver/Ocultar filtros.
+                                </div>
+                                <div id="controlesGenerales">
+                                    <table style="margin-top: 0; border: 1px solid gray; width: 100%;">
+                                        <tr>
+                                            <td>Estado:</td>
+                                            <td>
+                                                <span id="divEstado"><select id="ddEstado" name="EstadoId" title="Estado" style="margin: 10px;"></select></span> 
+                                            </td>
+                                            <td>Ciudad:</td>
+                                            <td>
+                                                <span id="divCiudad">
+                                                    <select id="ddCiudad" name="CiudadId" title="Ciudad" style="margin: 10px;"></select>
+                                                </span> 
+                                            </td>
+                                            <td>Zona:</td>
+                                            <td>
+                                                <span id="divZona">
+                                                    <select id="ddZona" name="ZonaId" title="Zona" style="margin: 10px;"></select>
+                                                </span> 
+                                            </td>
+                                            <td class="trCenter" rowspan="7"><a class="button" id="btnBuscar" ><b class="o"><b class="m"><b>Buscar</b></b></b></a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Colonia:</td>
+                                            <td><input type="text" id="Colonia" name="Colonia" size ="20"/></td>
+                                            <td>Calle:</td>
+                                            <td><input type="text" id="Calle" name = "Calle" size="20"/></td>
+                                            <td>Entre calles:</td>
+                                            <td><input type="text" id="EntreCalles" name="EntreCalles" size="20"/></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Latitud:</td>
+                                            <td>
+                                                <span id="divLatitud">
+                                                    @Html.EditorFor(model => model.Latitud)
+                                                    @Html.ValidationMessageFor(model => model.Latitud)
+                                                </span>
+                                            </td>
+
+                                            <td> Longitud:</td>
+                                            <td>
+                                                <span id="divLongitud">
+                                                    @Html.EditorFor(model => model.Longitud)
+                                                    @Html.ValidationMessageFor(model => model.Longitud)
+                                                </span>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>         
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="mapa" class="Mapa"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div id="leftcolumn">
+            <div class="innertube"> 
+                <fieldset>
+                    <legend>Informacion General</legend>
+                    <div class="editor-label fechaIncidente">
+                        Fecha y hora del Incidente:
+                    </div>
+                    <div class="editor-field">
+                        @*@Html.EditorFor(model => model.FechaIncidente)
+                         @Html.ValidationMessageFor(model => model.FechaIncidente)*@
+                        <input type="text" id="FechaIncidente" name="TmpFechaIncidente" size="12"/>
+                        <input type="text" id="HoraIncidente" name="TmpHoraIncidente" size="8" />
+                      
+                    </div>
+                    
+                    Grupo:<div id="divGrupos"><select id="ddGrupos" name="ddGrupos" title="Grupo"></select></div>
+                    Empresa:<div id="divEmpresa"><select id="ddEmpresa" name="EmpresaId" title="Empresa"></select></div>
+                    Tipo Incidente:<div id="divTipoIncidente"><select id="ddTipoIncidente" name="TipoIncidenteId" title="Tipo de Incidente"></select></div>
+                    Tipo Afectación:<div id="divTipoAfectacion"><select id="ddTipoAfectacion" name="TipoAfectacionId" title="Tipo Afectación"></select></div>
+                    Lesionados:<div id="divLesionados"><select id="ddLesionados" name="LesionadosId" title="Lesionados"></select></div>
+                    Tipo de Instalación:<div id="divTiposInstalacion"><select id="ddTiposInstalacion" name="TiposInstalacionId" title="Tipos de instalaciones"></select></div>
+                    Instalaciones:<div id="divInstalacion"><select id="ddInstalacion" name="InstalacionId" title="Zona"></select></div>
+                    Monto:<div id="divMonto" class="editor-field">
+                              @Html.EditorFor(model => model.MontoAfectacion)
+                              @Html.ValidationMessageFor(model => model.MontoAfectacion)
+                          </div>
+                    Comentarios:
+                    <textarea cols="28" rows="5" id="Comentarios" name="Comentarios"></textarea>
+                    <span class="field-validation-valid" data-valmsg-for="Comentarios" data-valmsg-replace="true"></span>
+                </fieldset>
+            </div>
+        </div>
+        <div id="divConfirmar" class="Invisible">
+            <center>
+                <table class="tablaConfirmar">
+                    <tr>
+                        <td colspan='6' align='center'>Información general del incidente.</td>
+                    </tr>
+                    <tr align="left">            
+                        <td style="background-color: #CBCBCB;">Fecha y hora:</td>
+                        <td><div id="lblFecha"></div></td>
+                        <td style="background-color: #CBCBCB;">Grupo:</td>
+                        <td><div id="lblGrupo"></div></td>
+                        <td style="background-color: #CBCBCB;">Empresa:</td>
+                        <td><div id="lblEmpresa"></div></td>
+                    </tr>
+                    <tr  align="left">
+                        <td style="background-color: #CBCBCB;">Tipo de Incidente:</td>
+                        <td><div id="lblIncidente"></div></td>
+                        <td style="background-color: #CBCBCB;">Tipo de Afectación:</td>
+                        <td><div id="lblAfectacion"></div></td>
+                        <td style="background-color: #CBCBCB;">Lesionados:</td>
+                        <td><div id="lblLesionados"></div></td>
+                    </tr>
+                    <tr  align="left">
+                        <td style="background-color: #CBCBCB;">Tipo de Instalación:</td>
+                        <td><div id="lblTipoInstalacion"></div></td>
+                        <td style="background-color: #CBCBCB;">Instalación:</td>
+                        <td><div id="lblInstalacion"></div></td>
+                        <td style="background-color:#CBCBCB;">Monto:</td>
+                        <td><div id="lblMonto"></div></td>
+                    </tr>
+                    <tr  align="left">
+                        <td  style="background-color:#CBCBCB;">Comtentarios:</td>
+                        <td><div id="lblComentarios"></div></td>
+                        <td style="background-color:#6689FF;">Estado:</td>
+                        <td><div id="lblEstado"><select id="cCmbEstado" name="cCmbEstado"></select></div></td>
+                        <td  style="background-color:#6689FF;">Ciudad:</td>
+                        <td><div id="lblCiudad"><select id="cCmbCiudad" name="cCmbCiudad"></select></div></td>
+
+                    </tr>
+
+                    <tr align="left">
+                        <td style="background-color:#CBCBCB;">Colonia:</td>
+                        <td><div id="lblColonia"></div></td>
+                        <td style="background-color:#6689FF;">Zona:</td>
+                        <td><div id="lblZona"></div></td>
+                        <td  style="background-color:#CBCBCB;">Calle:</td>
+                        <td><div id="lblCalle"></div></td>
+                    </tr>
+                    <tr align="left">
+
+                        <td style="background-color:#CBCBCB;">Entre Calles:</td>
+                        <td><div id="lblEntreCalles"></div></td>
+                        <td style="background-color:#CBCBCB;">Latitud:</td>
+                        <td><div id="lblLatitud"></div></td>
+                        <td style="background-color:#CBCBCB;">Longitud:</td>
+                        <td><div id="lblLongitud"></div></td>   
+                    </tr>   
+                </table>
+
+                <!--divs variables--->
+                <table id="Robo con violencia" class="tablaConfirmar Invisible">
+                    <tr  >
+                        <td colspan="6" >Robo con Violencia</td>
+                    </tr>
+                    <tr align='left' >
+                        <td style="background-color:#CBCBCB;">Tipo de Arma:</td>
+                        <td ><div id="lblArmaViolencia"></div></td>                
+                        <td  style="background-color:#CBCBCB;">Cantidad de delincuentes:</td>
+                        <td><div id="lblCantidadDelincuentes"></div></td>
+                        <td  style="background-color:#CBCBCB;">Tipo de vehículo:</td>
+                        <td><div id="lblTipoVehiculo"></div></td>
+                    </tr>            
+                    <tr>
+                        <td style="background-color:#CBCBCB;">Detenidos:</td>
+                        <td colspan="5"><div id="lblDetenidos"></div></td>
+                    </tr>
+                </table>
+                <table id="Robo sin violencia" class="tablaConfirmar Invisible">
+                    <tr>
+                        <td colspan="6">Robo sin Violencia</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#CBCBCB;">Detenidos:</td>
+                        <td colspan="5"><div id="lblDetenidosSinViolencia"></div></td>
+                    </tr>
+                </table>
+
+                <table id="Secuestro de empleado en ruta" class="tablaConfirmar Invisible">
+                    <tr>
+                        <td colspan="6">Secuestro de empleado en ruta</td>
+                    </tr>
+                    <tr align='left' >
+                        <td style="background-color:#CBCBCB;">Tipo de Arma:</td>
+                        <td ><div id="lblArmaSecuestro"></div></td>                
+                        <td  style="background-color:#CBCBCB;">Cantidad de delincuentes:</td>
+                        <td><div id="lblCantidadDelincuentesSecuestro"></div></td>
+                        <td  style="background-color:#CBCBCB;">Tipo de vehículo:</td>
+                        <td><div id="lblTipoVehiculoSecuestro"></div></td>
+                    </tr>
+                </table>
+                <table id="Extorsión" class="tablaConfirmar Invisible">
+                    <tr>
+                        <td colspan="6">Extorsión</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#CBCBCB;">Tipo de Extorsión:</td>
+                        <td colspan="5"><div id="lblTipoExtorsion"></div></td>
+                    </tr>
+                </table>
+                <table id="Amenaza" class="tablaConfirmar Invisible">
+                    <tr>
+                        <td colspan="6">Amenaza</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color:#CBCBCB;">Tipo de Amenaza:</td>
+                        <td ><div id="lblTipoAmenaza"></div></td>
+                        <td style="background-color:#CBCBCB;">Medio:</td>
+                        <td colspan="3"><div id="lblMedioAmenaza"></div></td>
+                    </tr>
+                </table>                  
+            </center>
+        </div>
+        <div id="CombosConfigrm" class="Invisible">
+            <span id="gEstado"></span>
+            <span id="gCiudad"></span>
+            <span id="gZona"></span>
+        </div>
+        <div class="Invisible" id="dialog-confirmaIncidente" title=@SistemaSeguridad.Resources.GlobalStrings.Informacion>
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+                @SistemaSeguridad.Resources.GlobalStrings.ConfirmarGeolocalizacionIncidente
+            </p>
+        </div>
+        
+    }
+</div>
+<div id="dialog-zona" class="Invisible" title=@SistemaSeguridad.Resources.GlobalStrings.Informacion>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.IncidenteSinZona
+    </p>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var milli = @Html.Raw(Json.Encode(Model.FechaIncidente));
+        var lat = @Html.Raw(Json.Encode(Model.Latitud));
+        var lng = @Html.Raw(Json.Encode(Model.Longitud));
+        
+        var dt = new Date(parseInt(milli.toString().replace( /\/Date\((-?\d+)\)\// , '$1')));
+        var hour = dt.getHours();
+        var min = dt.getMinutes();
+        
+        if(min.toString().length <=1)
+            min = "0" + min;
+
+        $("#HoraIncidente").timePicker({
+            show24Hours: true,
+            separator: ':',
+            step: 15
+        });
+        
+        $("#FechaIncidente").val(formatDate(dt, 1));
+        $("#FechaIncidente").datepicker({ dateFormat: 'dd/mm/yy' });
+        $("#HoraIncidente").val(hour + ":" + min);
+        
+        //Combos
+        $("#ddGrupos").Cascade('@Url.Action("GetGrupos", "Helper")', null, formato, 160);
+        $("#ddEmpresa").Cascade('@Url.Action("GetEmpresas", "Helper")', { parent: "#ddGrupos", parent_value: '0', selected_value: '0', initial_text: '' }, formato, 160);
+        $("#ddTipoIncidente").Cascade("@Url.Action("GetTiposIncidente", "Helper")", { selected_value: '@Html.Raw(Json.Encode(Model.TipoIncidenteId))' }, formato, 160);
+        $("#ddTipoAfectacion").Cascade("@Url.Action("GetTiposAfectacion", "Helper")", { initial_text: 'Seleccione...' }, multiseleccion, 160);
+        $("#ddLesionados").Cascade("@Url.Action("GetLesionados", "Helper")", {selected_value: '@Html.Raw(Json.Encode(Model.LesionadosId))'}, formato, 160);
+        $("#ddTiposInstalacion").Cascade("@Url.Action("GetTiposInstalacion", "Helper")", {selected_value: '@Html.Raw(Json.Encode(Model.TipoInstalacionId))'}, formato, 160);
+        $("#ddInstalacion").Cascade("@Url.Action("GetInstalaciones", "Helper")", { parent: "#ddTiposInstalacion", parent_value: '0', initial_text: 'Seleccione...', selected_value: '@Html.Raw(Json.Encode(Model.InstalacionId))' }, formato, 160);
+
+        $("#ddEstado, #cCmbEstado").Cascade("@Url.Action("GetEstados", "Helper")", { selected_value: '@Html.Raw(Json.Encode(Model.EstadoId))' }, formato, 160);
+        $("#ddCiudad, #cCmbCiudad").Cascade("@Url.Action("GetCiudades", "Helper")", { parent: "#ddEstado", parent_value: '0', selected_value: '@Html.Raw(Json.Encode(Model.CiudadId))' }, formato, 150);
+        $("#ddZona, #lblZona").Cascade("@Url.Action("GetZonas", "Helper")", { parent: "#ddEstado", parent_value: '0', selected_value: '@Html.Raw(Json.Encode(Model.ZonaId))' }, formato, 160);
+
+        
+@{var myArray = string.Empty;}
+@{
+    foreach (var afecta in Model.AfectacionIncidentes)
+    {
+        myArray += afecta.Id.ToString() + ',';
+    }
+}
+var miVariableJs = "@myArray";
+       
+        loadItemsInCombo('ui-multiselect-ddTipoAfectacion', miVariableJs);
+        
+        function loadItemsInCombo(selector,items) {
+            var arrItems = new Array();
+            arrItems = items.split(",");
+            var opt = $('input[id*="' + selector + '"]');
+            if (ui.checked) {
+                $.each(opt, function(i, item) {
+                    var currentElement = $(this);
+
+                    for (i = 0; i < items.length; i++) {
+                        if (currentElement.val() == 1) {
+                            currentElement.attr('checked', 'checked');
+                        }
+                    }
+                });
+            }
+        }
+
+        //Mapa
+        var map = new GoogleMaps();
+        map.singleMarkerOnMap(true);
+        map.initialize("mapa");
+        map.addListener('click', getMarkerPosition);
+        map.automaticCenterMapOnMarkerAdded(true);
+        map.addMarker(lat, lng, getMarkerPosition);
+
+        function setGoogleResult(data) {
+            for (var i = 0; i < data.length; i++) {
+                switch (data[i].types[0]) {
+                case "street_number":
+                    $("#gNumeroCalle").text(data[i].long_name);
+                    break;
+                case "route":
+                    $("#gCalle").text(data[i].long_name);
+                    $("#Calle").val(data[i].long_name);
+                    break;
+                case "neighborhood":
+                    $("#gColonia").text(data[i].long_name);
+                    $("#Colonia").val(data[i].long_name);
+                    break;
+                case "locality":
+                    $("#gCiudad").text(data[i].long_name);
+                    break;
+                case "administrative_area_level_1":
+                    $("#gEstado").text(data[i].long_name);
+                    break;
+                case "country":
+                    $("#gPais").text(data[i].long_name);
+                    break;
+                default:
+                }
+            }
+        }
+
+        $("#HoraIncidente").keypress(function(e) {
+            var invalidHour = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,./{}|\"<>¿?~"  + String.fromCharCode(10, 13, 32, 64);
+            var newVal = RemoveInvalidChars($("#HoraIncidente").val(), invalidHour);
+            $("#HoraIncidente").val('');
+            $("#HoraIncidente").val(newVal);
+        });
+
+        $("#MontoAfectacion").keypress(function(e) {
+            var invalidMount = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,:/{}|\"<>¿?~" + String.fromCharCode(10, 13, 32, 64);
+            var newVal = RemoveInvalidChars($("#MontoAfectacion").val(), invalidMount);
+            $("#MontoAfectacion").val('');
+            $("#MontoAfectacion").val(newVal);
+        });
+
+         $("#HoraIncidente").blur(function(e) {
+            var invalidHour = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,./{}|\"<>¿?~"  + String.fromCharCode(10, 13, 32, 64);
+            var newVal = RemoveInvalidChars($("#HoraIncidente").val(), invalidHour);
+            $("#HoraIncidente").val('');
+            $("#HoraIncidente").val(newVal);
+        });
+
+        $("#MontoAfectacion").blur(function(e) {
+            var invalidMount = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,:/{}|\"<>¿?~" + String.fromCharCode(10, 13, 32, 64);
+            var newVal = RemoveInvalidChars($("#MontoAfectacion").val(), invalidMount);
+            $("#MontoAfectacion").val('');
+            $("#MontoAfectacion").val(newVal);
+        });
+
+        $("#btnBuscar").click(function() {
+
+            var cmbEstado = document.getElementById("ddEstado");
+            var cmbCiudad = document.getElementById("ddCiudad");
+            var address = $("#Calle").val() + "," + $("#Colonia").val() + "," +
+                cmbCiudad.options[cmbCiudad.selectedIndex].text + "," +
+                    cmbEstado.options[cmbEstado.selectedIndex].text;
+            map.findAddress(address, setGoogleResult);
+        });
+
+        $("#Longitud").keypress(function(event) {
+            if (event.which == 13) {
+                event.preventDefault();
+                if ($("#Latitud").val() != null && $("#Longitud").val() != null) {
+                    map.addMarker($("#Latitud").val(), $("#Longitud").val(), getMarkerPosition);
+                }
+            }
+        });
+
+        function getMarkerPosition(data) {
+            $("#Latitud").attr("value", data.Pa);
+            $("#Longitud").attr("value", data.Qa);
+            var latlng = data.Pa + "," + data.Qa;
+            map.reverseGeocoder(latlng, setGoogleResult);
+
+            $.getJSON("@Url.Action("GetZoneForIncident")", { lat: data.Pa, lng: data.Qa }, function(zona) {
+                //TODO: validar si encontro la zona si no enviar mensaje al usuario.
+                if (zona != -1) {
+                    $('#ddZona option[value=' + zona + ']').attr('selected', 'selected');
+                    $('#ddZona').multiselect('refresh');
+                } else {
+                    OpenPopUp({
+                        id: "dialog-zona",
+                        buttons: 1,
+                        ok: function() {
+                            return;
+                        }
+                    });
+                }
+            });
+        }
+
+        $("#ddInstalacion").bind('change', function(e) {
+            var instalacionId = $(this).val();
+            if (instalacionId != null && instalacionId > 0) {
+                $.getJSON("@Url.Action("GetInstalacionCords")", { instalacionId: instalacionId }, function(data) {
+                    if (data != null) {
+                        map.addMarker(data[0], data[1], getMarkerPosition);
+                    }
+                });
+            } else {
+                map.clearMap();
+            }
+        });
+
+        $("#ddTipoAfectacion").multiselect({
+            click: function(event, ui) {
+                if(ui.value ==1) {
+                    var opt = $("input[id*='" + selector + "']");
+                    if(ui.checked) {
+                        $.each(opt, function(i, item) {
+                            var currentElement = $(this);
+                            if (currentElement.val() != 1) {
+                                currentElement.attr('checked','');
+                                currentElement.attr('disabled', 'disabled');
+                            }
+                        });
+                    }else {
+                        $.each(opt, function(i, item) {
+                            var currentElement = $(this);
+                            if (currentElement.val() != 1) {
+                                currentElement.removeAttr('disabled');
+                            }
+                        });
+                    }
+                }
+            }
+        });
+        
+
+
+        $("#ddTipoIncidente").bind('change', function(e) {
+            var idTipoIncidente = $(this).val();
+            var cmbTipoIncidente = document.getElementById("ddTipoIncidente");
+            var titulo = document.getElementById("TituloIncidente");
+            if (idTipoIncidente != undefined || idTipoIncidente > 0) {
+                titulo.innerHTML = "Tipo de incidente: " + cmbTipoIncidente.options[cmbTipoIncidente.selectedIndex].text;
+            }
+
+
+
+            $('#CamposEspecificos').load("@Url.Action("GetViewFromIncidente", "Incidente")", { 'tipoIncidenteId': idTipoIncidente }, function() {
+                switch (idTipoIncidente) {
+                case "1":
+                    $("#ddTipoArma").Cascade("@Url.Action("GetTiposArma", "Helper")", null, formato);
+                    $("#ddCantidadDelincuentes").Cascade("@Url.Action("GetDelincuentes", "Helper")", null, formato);
+                    $("#ddTipoVehiculo").Cascade("@Url.Action("GetTiposVehiculo", "Helper")", null, formato);
+                    break;
+                case "3":
+                    $("#ddTipoArma").Cascade("@Url.Action("GetTiposArma", "Helper")", null, formato);
+                    $("#ddCantidadDelincuentes").Cascade("@Url.Action("GetDelincuentes", "Helper")", null, formato);
+                    $("#ddTipoVehiculo").Cascade("@Url.Action("GetTiposVehiculo", "Helper")", null, formato);
+                    break;
+                case "4":
+                    $("#ddTipoExtorsion").Cascade("@Url.Action("GetTiposExtorcion", "Helper")", null, formato);
+                    break;
+                case "5":
+                    $("#ddMotivoAmenaza").Cascade("@Url.Action("GetMotivosAmenaza", "Helper")", null, formato);
+                    $("#ddMedioAmenaza").Cascade("@Url.Action("GetMediosAmenaza", "Helper")", null, formato);
+                    break;
+                case "6":
+                    $("#ddTipoIntrusion").Cascade("@Url.Action("GetTiposIntrusion", "Helper")", null, formato);
+                    break;
+                default:
+                    break;
+                }
+            });
+        });
+
+        $("#TituloIncidente").click(
+            function() {
+                $("#TiposIncidente").slideToggle('');
+                //$("#ContenedorMapa").slideToggle('slow')
+            });
+
+        $("#btnToggleFiltros").click(function() {
+            if ($("#btnToggleGenerales").attr("src") == "../../Content/images/arrow_close.png") {
+                $("#btnToggleGenerales").attr("src", "../../Content/images/arrow_open.png");
+            } else {
+                $("#btnToggleGenerales").attr("src", "../../Content/images/arrow_close.png");
+            }
+            $("#controlesGenerales").slideToggle('');
+        }
+        );
+
+        $("#CamposEspecificos").click(function() {
+            $(this).trigger('change');
+        });
+
+        function validaEstado(filter, callback) {
+            $.getJSON("@Url.Action("GetEstadoIdByDesc", "Helper")", { filter: filter }, function(data) {
+                if (data != undefined) {
+                    $("#cCmbEstado").Cascade("@Url.Action("GetEstados", "Helper")", { selected_value: data[0].Id }, formato, 160);
+                    $("#cCmbEstado").multiselect('disable');
+                }
+            });
+        }
+
+        function validaCiudad(filter) {
+            $.getJSON("@Url.Action("GetCiudadIdByDesc", "Helper")", { filter: filter }, function(data) {
+                if (data != undefined) {
+                    $("#cCmbCiudad").Cascade("@Url.Action("GetCiudades", "Helper")", { parent: "#cCmbEstado", parent_value: '0', selected_value: data[0].Id }, formato, 150);
+                }
+            });
+        }
+
+        $("#btnGuardar").click(function() {
+
+            validaEstado($("#gEstado").text(), validaCiudad($("#gCiudad").text()));
+           
+            
+
+            //OpenPopUpVariable("divConfirmar", "800", "450", "");
+            //datos generales  
+            $("div#lblFecha").text($('#txtFecha').val());
+            $("div#lblGrupo").text($('#divGrupos span').text());
+            $("div#lblEmpresa").text($('#divEmpresa span').text());
+            $("div#lblIncidente").text($('#divTipoIncidente span').text());
+//            $("div#lblAfectacion").text($('#divTipoAfectacion span').text());
+//            $("div#lblLesionados").text($('#divLesionados span').text());
+//            $("div#lblTipoInstalacion").text($('#divTiposInstalacion span').text());
+//            $("div#lblInstalacion").text($('#divInstalacion span').text());
+//            $("div#lblMonto").text($('#MontoAfectacion').val());
+//            $("div#lblComentarios").text($('#Comentarios').val());
+
+            $("div#lblColonia").text($('#Colonia').val());
+            $("div#lblZona").text($('#divZona span').text());
+            $("div#lblCalle").text($('#Calle').val());
+            $("div#lblEntreCalles").text($('#EntreCalles').val());
+//            $("div#lblLatitud").text($('#Latitud').val());
+//            $("div#lblLongitud").text($('#Longitud').val());
+
+
+//            var incidenteActivo = $('#divTipoIncidente span').text();
+//            obj = document.getElementById(incidenteActivo);
+//            obj.style.display = "block";
+
+//            //Robo con violencia
+//            $("div#lblArmaViolencia").text($('#divTipoArma span').text());
+//            $("div#lblCantidadDelincuentes").text($('#divCantidadDelincuentes span').text());
+//            $("div#lblTipoVehiculo").text($('#divTipoVehiculo span').text());
+//            $('#lblDetenidos').html('');
+//            $('#Detenidos').clone(false).appendTo('#lblDetenidos');
+
+//            //Robo sin violencia     
+//            $('#lblDetenidosSinViolencia').html('');
+//            $('#Detenidos').clone(false).appendTo('#lblDetenidosSinViolencia');
+
+//            //Secuestro
+//            $("div#lblArmaSecuestro").text($('#divTipoArma span').text());
+//            $("div#lblCantidadDelincuentesSecuestro").text($('#divCantidadDelincuentes span').text());
+//            $("div#lblTipoVehiculoSecuestro").text($('#divTipoVehiculo span').text());
+
+//            //lblTipoExtorsion
+//            $("div#lblTipoExtorsion").text($('#divTipoExtorsion span').text());
+
+//            //Amenaza
+//            $("div#lblTipoAmenaza").text($('#divTipoAmenaza span').text());
+//            $("div#lblMedioAmenaza").text($('#divMedioAmenaza span').text());
+
+            OpenPopUp({
+                id: "divConfirmar",
+                buttons: 2,
+                width:800,
+                height:450,
+                yes: function() {
+                    if($('#AltaIncidente').attr('action') =="/Incidente/Create"){
+                         $("#Id").val(0);
+                     }
+                    postJson('AltaIncidente', resultFunction);
+                },
+                no: function() {
+                    return;
+                }
+            });
+        });
+
+        $("#btnCancelar").click(function() {
+            var url = "@Url.Action("Index", "Home")";
+            $(location).attr('href', url);
+
+        });
+
+//        $('AltaIncidente').submit(function(e) {
+//            e.preventDefault();
+//            postJson('AltaIncidente', resultFunction);
+//        });
+
+        function resultFunction(data) {
+            $("#errorDiv").addClass("Invisible");
+            if (!data[0]) {
+                $("#errorDiv").text(data[1]);
+                $("#errorDiv").removeClass("Invisible");
+                return;
+            } else {
+                var url = "@Url.Action("Index", "Incidente")";
+                $(location).attr('href', url);
+            }
+        }
+    });
+</script>

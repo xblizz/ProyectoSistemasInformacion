@@ -1,0 +1,75 @@
+﻿@model SS.Core.Entities.Usuario
+
+@{
+    ViewBag.Title = "Modificar usuario";
+}
+
+<h2>Modificar usuario</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm("Edit", "Usuario", FormMethod.Post, new { id = "EditarUsuario" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Usuario</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-field">
+            Nombre:
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-field">
+            Apellido paterno:
+            @Html.EditorFor(model => model.ApellidoPaterno)
+            @Html.ValidationMessageFor(model => model.ApellidoPaterno)
+        </div>
+
+        <div class="editor-field">
+            Apellido materno:
+            @Html.EditorFor(model => model.ApellidoMaterno)
+            @Html.ValidationMessageFor(model => model.ApellidoMaterno)
+        </div>
+
+        <div class="editor-field">
+            Email:
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Activo)
+            @Html.ValidationMessageFor(model => model.Activo)
+            ¿Activo?
+        </div>
+
+        <p>
+            
+            <a class="button" id="btnGuardar" ><b class="o"><b class="m"><b>Guardar</b></b></b></a>
+            <a class="button" id="btnCancelar" ><b class="o"><b class="m"><b>Cancelar</b></b></b></a>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script type="text/javascript">
+    $("#btnGuardar").click(function() {
+        $('#EditarUsuario').submit();
+    });
+
+    $("#btnCancelar").click(function() {
+        var url = "@Url.Action("Index", "Usuario")";
+        $(location).attr('href', url);
+    });
+
+
+
+
+</script>

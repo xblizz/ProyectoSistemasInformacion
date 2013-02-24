@@ -1,0 +1,117 @@
+﻿@model SistemaSeguridad.Models.EmpresaEntity
+@using SistemaSeguridad.Helpers 
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.EmpresaStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.EmpresaStrings.ViewCreateName</h2>
+
+@*<link rel="stylesheet" href="../../Content/themes/base/jquery.ui.base.css" />
+<link rel="stylesheet" href="../../Content/themes/base/jquery.ui.all.css" />
+<link rel="stylesheet" href="../../Content/themes/base/jquery.ui.theme.css" />
+<link rel="stylesheet" href="../../Content/themes/base/jquery.ui.dialog.css" />
+<link rel="stylesheet" href="../../Content/themes/base/jquery.ui.core.css" />*@
+
+
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+
+<script src="@Url.JavaScript(Plugin.JCombo, "jquery.Cascade.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript(Plugin.Multiselect, "jquery.multiselect.js")" type="text/javascript"></script>
+@*<script src="@Url.Content("~/Scripts/jquery-1.7.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")" type="text/javascript"></script>*@
+<script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Empresa</legend>
+
+        <div class="editor-label">
+            @Html.CheckBoxFor(Model => Model.TipoEmpresa)
+           <label for="chkIsGroup">Es grupo</label>
+        </div>
+        
+        <div id="capturarNombreEmpresa">
+            <div class="editor-label">
+                Seleccione el grupo al que pertenece la empresa
+            </div>
+            <div class="editor-field">
+                Grupo:<select id="ddGrupos" name="ddGrupos" title="Grupos"></select>
+                @* @Html.DropDownList("EmpresaId", @SistemaSeguridad.Resources.GlobalStrings.selectOne)
+                 @Html.ValidationMessageFor(model => model.GrupoId)*@
+           </div>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <p>
+            <input type="submit" class="submit" value=@SistemaSeguridad.Resources.EmpresaStrings.Save />
+            <input type="button" id="btnCancelar" name="btnCancelar" class="submit" value=@SistemaSeguridad.Resources.EmpresaStrings.Cancel />
+        </p>
+    </fieldset>
+}
+
+<div id="dialog-confirm" title=@SistemaSeguridad.Resources.GlobalStrings.Cancel>
+	    <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+            @SistemaSeguridad.Resources.GlobalStrings.CancelConfirm
+        </p>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#ddGrupos").Cascade("@Url.Action("GetGrupos", "Helper")", null, formato, 160);
+
+         function formato(object) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth: 150,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+
+        $('#TipoEmpresa').click(function () {
+            $('#capturarNombreEmpresa').toggle();
+        });
+
+        $("#dialog-confirm").dialog({
+            autoOpen: false,
+            model: true,
+            resizable: false,
+            height: 180
+        });
+
+        $("#btnCancelar").click(function (e) {
+            e.preventDefault();
+            var targetUrl = "/Empresa";
+
+            $("#dialog-confirm").dialog({
+                buttons: {
+                    "Si": function () {
+                        window.location.href = targetUrl;
+                    },
+                    "No": function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+
+            $("#dialog-confirm").dialog("open");
+        });
+
+    });
+</script>

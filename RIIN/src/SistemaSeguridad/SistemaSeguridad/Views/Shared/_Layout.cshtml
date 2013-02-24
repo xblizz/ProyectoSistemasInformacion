@@ -1,0 +1,107 @@
+﻿@using SistemaSeguridad.Helpers
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <title>@ViewBag.Title</title>
+    <link href='@Url.Stylesheet("style.css")' rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.11.js")" type="text/javascript"></script>
+
+    <script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+    <script src="../../Scripts/Common.function.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="page">
+        <header>
+                <div id="title">
+                    <h1></h1>
+                </div>
+                <div id="sidebar">
+                    <div id="logo"><img src="@Url.Content("~/Content/images/logo.png")" width="200" height="64" /></div>
+                    @*<div id="navigation"></div>*@
+                    <ul id="nav">
+                        <li><a href="#"><img src="@Url.Content("~/Content/images/nav/catalogos.png")" alt="" width="26" height="24" /> Catálogo</a>
+                            <ul>
+                                <li>@Html.ActionLink("Configuración Empresa", "Index", "Empresa")</li>
+                                <li>@Html.ActionLink("Tipo instalación", "Index", "TipoInstalacion")</li>
+                                <li>@Html.ActionLink("Tipo incidente", "Index", "TipoIncidente")</li>
+                                <li>@Html.ActionLink("Tipo afectación", "Index", "TipoAfectacion")</li>
+                                <li>@Html.ActionLink("Alertas de Incidente", "Index", "AlertaIncidente")</li>
+                                <li>@Html.ActionLink("Parametros del Sistema", "Index", "Parametros")</li>
+                                @*<li>@Html.ActionLink("Usuarios", "Index", "Account")</li>*@
+                                <li>@Html.ActionLink("Instalación", "Index", "Instalacion")</li>
+                                <li>@Html.ActionLink("Estado", "Index", "Estado")</li>
+                                <li>@Html.ActionLink("Ciudad", "Index", "Ciudad")</li>
+                                <li>@Html.ActionLink("Zona", "Index", "Zona")</li>
+                                <li><a href="#">Configuración de Sistema</a></li>
+                                <li>@Html.ActionLink("Tipo de arma", "Index", "TipoArma")</li>
+                                <li>@Html.ActionLink("Tipo lesionado", "Index", "TipoLesionado")</li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><img src="@Url.Content("~/Content/images/nav/incidentes.png")" alt="" /> Incidentes</a>
+                            <ul>
+                                <li>@Html.ActionLink("Alta de incidente", "Create", "Incidente")</li>
+                                 <li>@Html.ActionLink("Consulta de Incidentes", "Index", "Incidente")</li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><img src="@Url.Content("~/Content/images/nav/reportes.png")" alt="" /> Reportes</a>
+                            <ul>
+                                <li>@Html.ActionLink("Reporte Tabular", "Tabular", "Reports")</li>
+                                <li>@Html.ActionLink("Reporte de Tendencia", "Tendencia", "Reports")</li>
+                                <li>@Html.ActionLink("Reporte General", "General", "Reports")</li>
+                                <li>@Html.ActionLink("Reporte de Incidentes", "Index", "Reports")</li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><img src="@Url.Content("~/Content/images/nav/usuarios.png")" alt="" /> Usuarios</a></li>
+                    </ul>
+                </div>
+                <div id="header">
+                    <div id="home"> <a href="#"><img style="padding-top:5px" src="@Url.Content("~/Content/images/home.png")" width="26" height="24" /></a>
+                    </div>
+                    <div class="userprofile">
+                        <ul>
+                            <li><a href="#"> Hola, @Session["fullNameUser"]</a>
+                                <ul>
+                                    <li><a href="#">@Session["fullNameUser"]</a></li>
+                                    <li>@Html.ActionLink("Cambio Contraseña...", "CambioContraseña", "Account")</li>
+                                    <li>>@Html.ActionLink("Cerrar sesión", "LogOff", "Account")</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>		
+                    <div class="userprofile">
+                        <ul>
+                            <li><a href="#"><img src="@Url.Content("~/Content/images/dashboard.png")" alt="" /> Dashboard</a>
+                                <ul>
+                                    <li><a href="#">Configuracion de Dashboard</a></li>
+                                    <li><a href="#">Reporte Dashboard</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>	
+                </div>
+            </header>
+        <section id="main">
+                <div id="content">
+                    @RenderBody()
+                </div>
+            </section>
+        <footer>
+            </footer>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            //$('#navigation').load("@Url.Action("Menu", "Home")");
+            $('#nav li a').click(function (event) {
+                var elem = $(this).next();
+                if (elem.is('ul')) {
+                    event.preventDefault();
+                    $('#nav ul:visible').not(elem).slideUp();
+                    elem.slideToggle();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+﻿@model SS.Core.Entities.AlertaIncidente
+@using SistemaSeguridad.Helpers
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.AlertasIncidenteStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.AlertasIncidenteStrings.ViewCreateName</h2>
+
+@*    @Content.Script("jquery.validate.min.js", Url)
+    @Content.Script("jquery.validate.unobtrusive.min.js", Url)
+    @Content.Script("Common.js", Url)
+    @Content.Script("Plugins/jCombo/jquery.jCombo.js", Url)*@
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+@Content.Script("jquery-ui-1.8.11.js", Url)
+<script src="@Url.JavaScript(Plugin.JCombo, "jquery.Cascade.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript(Plugin.Multiselect, "jquery.multiselect.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@SistemaSeguridad.Resources.AlertasIncidenteStrings.ModuleName</legend>
+
+            <table class="style1">
+        <tr>
+            <td>
+                @SistemaSeguridad.Resources.AlertasIncidenteStrings.Company</td>
+            <td>
+                @SistemaSeguridad.Resources.AlertasIncidenteStrings.Type</td>
+            <td>
+                @SistemaSeguridad.Resources.AlertasIncidenteStrings.GetOtherCompanies</td>
+            <td>
+                @SistemaSeguridad.Resources.AlertasIncidenteStrings.GetOwnCompany</td>
+        </tr>
+        <tr>
+            <td>
+                @*@Html.DropDownList("EmpresaId", @SistemaSeguridad.Resources.GlobalStrings.selectOne)*@
+            <select id="ddEmpresas" name="EmpresaId" title="Empresas"></select>
+            @Html.ValidationMessageFor(model => model.EmpresaId)</td>
+            <td>
+                @*@Html.DropDownList("TipoIncidenteId", @SistemaSeguridad.Resources.GlobalStrings.selectOne)*@
+            <select id="ddTipoIncidente" name="TipoIncidenteId" title="Tipo de Incidente"></select>
+            @Html.ValidationMessageFor(model => model.TipoIncidenteId)</td>
+            <td>
+                @Html.EditorFor(model => model.RecibirOtrasEmpresas)
+            @Html.ValidationMessageFor(model => model.RecibirOtrasEmpresas)</td>
+            <td>
+                @Html.EditorFor(model => model.RecibirMiEmpresa)
+            @Html.ValidationMessageFor(model => model.RecibirMiEmpresa)</td>
+        </tr>
+        <tr>
+            <td>
+                @SistemaSeguridad.Resources.AlertasIncidenteStrings.Emails</td>
+            <td>
+                 @Html.TextAreaFor(model => model.Emails)
+            @Html.ValidationMessageFor(model => model.Emails)</td>
+            <td>
+               </td>
+            <td>
+               </td>
+        </tr>
+    </table>
+
+        <p>
+            <input type="submit" value=@SistemaSeguridad.Resources.AlertasIncidenteStrings.Save />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(@SistemaSeguridad.Resources.AlertasIncidenteStrings.BackToIndex, "Index")
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+         $("#ddEmpresas").Cascade("@Url.Action("ObtenerEmpresas", "AlertaIncidente")", null, formato);
+         $("#ddTipoIncidente").Cascade("@Url.Action("GetTiposIncidente", "Helper")", null, formato, 160);
+
+         function formato(object, size) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth: size,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+    });
+
+
+</script>
+
+@*<script type="text/javascript">
+    $("#ddEmpresas").Cascade("/Usuario/GetEmpresas", { parent: "#ddGrupos", parent_value: '0', selected_value: '0' });
+
+//    var dd = document.getElementById("ddPerfiles");
+//    //    dd.options.length = 0;
+//    //    dd.options[0] = new Option("Espere...");
+//    //    dd.selectedIndex = 0;
+
+//    $(document).ready(function () {
+//        getJson("/Usuario/GetPerfiles", LlenarCombo);
+//        $("#ddPerfiles").change(function () {
+//            LlenarCombo($("#ddPerfiles").val());
+//        });
+//    });
+
+    function LlenarCombo(data) {
+        $.each(data, function (i, item) {
+            dd.options[i] = new Option(item.Descripcion, item.Id);
+        });
+    }
+    
+</script>*@

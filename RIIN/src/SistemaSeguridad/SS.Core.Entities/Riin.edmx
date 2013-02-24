@@ -1,0 +1,2795 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Conor.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ConorStoreContainer">
+          <EntitySet Name="AfectacionesIncidente" EntityType="Conor.Store.AfectacionesIncidente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AlertasIncidente" EntityType="Conor.Store.AlertasIncidente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CantidadDelincuentes" EntityType="Conor.Store.CantidadDelincuentes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ciudades" EntityType="Conor.Store.Ciudades" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ConfiguracionesDashboard" EntityType="Conor.Store.ConfiguracionesDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Empresas" EntityType="Conor.Store.Empresas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Estados" EntityType="Conor.Store.Estados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FiltrosDashboard" EntityType="Conor.Store.FiltrosDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Incidentes" EntityType="Conor.Store.Incidentes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Instalaciones" EntityType="Conor.Store.Instalaciones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Lesionados" EntityType="Conor.Store.Lesionados" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MediosAmenaza" EntityType="Conor.Store.MediosAmenaza" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MotivosAmenaza" EntityType="Conor.Store.MotivosAmenaza" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="NivelesGeograficos" EntityType="Conor.Store.NivelesGeograficos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ParametrosSistema" EntityType="Conor.Store.ParametrosSistema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ParametrosSistemaEmpresa" EntityType="Conor.Store.ParametrosSistemaEmpresa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Perfiles" EntityType="Conor.Store.Perfiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Poligonos" EntityType="Conor.Store.Poligonos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PoligonosDetalle" EntityType="Conor.Store.PoligonosDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="relPerfilesUsuarios" EntityType="Conor.Store.relPerfilesUsuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="relUsuarioEmpresa" EntityType="Conor.Store.relUsuarioEmpresa" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ReportesDashboard" EntityType="Conor.Store.ReportesDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposAfectacion" EntityType="Conor.Store.TiposAfectacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposArma" EntityType="Conor.Store.TiposArma" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposExtorsion" EntityType="Conor.Store.TiposExtorsion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposFiltroDashboard" EntityType="Conor.Store.TiposFiltroDashboard" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposIncidente" EntityType="Conor.Store.TiposIncidente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposInstalacion" EntityType="Conor.Store.TiposInstalacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposIntrusion" EntityType="Conor.Store.TiposIntrusion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposUnidadTiempo" EntityType="Conor.Store.TiposUnidadTiempo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TiposVehiculo" EntityType="Conor.Store.TiposVehiculo" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuarios" EntityType="Conor.Store.Usuarios" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Zonas" EntityType="Conor.Store.Zonas" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CantidadDelincuentesIncidentes" Association="Conor.Store.FK_CantidadDelincuentesIncidentes">
+            <End Role="CantidadDelincuentes" EntitySet="CantidadDelincuentes" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CiudadesIncidentes" Association="Conor.Store.FK_CiudadesIncidentes">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConfiguracionDashboardFiltrosDashboard" Association="Conor.Store.FK_ConfiguracionDashboardFiltrosDashboard">
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaAlertaIncidente" Association="Conor.Store.FK_EmpresaAlertaIncidente">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="AlertasIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresaParametrosSistemaEmpresa" Association="Conor.Store.FK_EmpresaParametrosSistemaEmpresa">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresasIncidentes" Association="Conor.Store.FK_EmpresasIncidentes">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmpresasInstalaciones" Association="Conor.Store.FK_EmpresasInstalaciones">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosCiudades" Association="Conor.Store.FK_EstadosCiudades">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosIncidentes" Association="Conor.Store.FK_EstadosIncidentes">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosPoligono" Association="Conor.Store.FK_EstadosPoligono">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Estados" EntitySet="Estados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstadosZona" Association="Conor.Store.FK_EstadosZona">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IncidenteAfectacionIncidente" Association="Conor.Store.FK_IncidenteAfectacionIncidente">
+            <End Role="Incidentes" EntitySet="Incidentes" />
+            <End Role="AfectacionesIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InstalacionesIncidentes" Association="Conor.Store.FK_InstalacionesIncidentes">
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LesionadosIncidentes" Association="Conor.Store.FK_LesionadosIncidentes">
+            <End Role="Lesionados" EntitySet="Lesionados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedioAmenazaIncidentes" Association="Conor.Store.FK_MedioAmenazaIncidentes">
+            <End Role="MediosAmenaza" EntitySet="MediosAmenaza" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MotivoAmenazaIncidente" Association="Conor.Store.FK_MotivoAmenazaIncidente">
+            <End Role="MotivosAmenaza" EntitySet="MotivosAmenaza" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NivelGeograficoPoligono" Association="Conor.Store.FK_NivelGeograficoPoligono">
+            <End Role="NivelesGeograficos" EntitySet="NivelesGeograficos" />
+            <End Role="Poligonos" EntitySet="Poligonos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParametrosSistemaParametrosSistemaEmpresa" Association="Conor.Store.FK_ParametrosSistemaParametrosSistemaEmpresa">
+            <End Role="ParametrosSistema" EntitySet="ParametrosSistema" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PerfilrelPerfilUsuario" Association="Conor.Store.FK_PerfilrelPerfilUsuario">
+            <End Role="Perfiles" EntitySet="Perfiles" />
+            <End Role="relPerfilesUsuarios" EntitySet="relPerfilesUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PoligonoCiudades" Association="Conor.Store.FK_PoligonoCiudades">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PoligonoPoligonoDetalle" Association="Conor.Store.FK_PoligonoPoligonoDetalle">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="PoligonosDetalle" EntitySet="PoligonosDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReportesDashboardConfiguracionDashboard" Association="Conor.Store.FK_ReportesDashboardConfiguracionDashboard">
+            <End Role="ReportesDashboard" EntitySet="ReportesDashboard" />
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoAfectacionAfectacionIncidente" Association="Conor.Store.FK_TipoAfectacionAfectacionIncidente">
+            <End Role="TiposAfectacion" EntitySet="TiposAfectacion" />
+            <End Role="AfectacionesIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoArmaIncidentes" Association="Conor.Store.FK_TipoArmaIncidentes">
+            <End Role="TiposArma" EntitySet="TiposArma" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoExtorcionIncidentes" Association="Conor.Store.FK_TipoExtorcionIncidentes">
+            <End Role="TiposExtorsion" EntitySet="TiposExtorsion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoFiltroDashboardFiltrosDashboard" Association="Conor.Store.FK_TipoFiltroDashboardFiltrosDashboard">
+            <End Role="TiposFiltroDashboard" EntitySet="TiposFiltroDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteAlertaIncidente" Association="Conor.Store.FK_TipoIncidenteAlertaIncidente">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="AlertasIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteIncidentes" Association="Conor.Store.FK_TipoIncidenteIncidentes">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIncidenteParametroSistemaEmpresa" Association="Conor.Store.FK_TipoIncidenteParametroSistemaEmpresa">
+            <End Role="TiposIncidente" EntitySet="TiposIncidente" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoInstalacionIncidente" Association="Conor.Store.FK_TipoInstalacionIncidente">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoInstalacionInstalaciones" Association="Conor.Store.FK_TipoInstalacionInstalaciones">
+            <End Role="TiposInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoIntrusionIncidentes" Association="Conor.Store.FK_TipoIntrusionIncidentes">
+            <End Role="TiposIntrusion" EntitySet="TiposIntrusion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoUnidadTiempoConfiguracionDashboard" Association="Conor.Store.FK_TipoUnidadTiempoConfiguracionDashboard">
+            <End Role="TiposUnidadTiempo" EntitySet="TiposUnidadTiempo" />
+            <End Role="ConfiguracionesDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TipoVehiculoIncidentes" Association="Conor.Store.FK_TipoVehiculoIncidentes">
+            <End Role="TiposVehiculo" EntitySet="TiposVehiculo" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresaEmpresa" Association="Conor.Store.FK_UsuarioEmpresaEmpresa">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="relUsuarioEmpresa" EntitySet="relUsuarioEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioEmpresaUsuario" Association="Conor.Store.FK_UsuarioEmpresaUsuario">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="relUsuarioEmpresa" EntitySet="relUsuarioEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioIncidentes" Association="Conor.Store.FK_UsuarioIncidentes">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsuarioUsuarioPerfil" Association="Conor.Store.FK_UsuarioUsuarioPerfil">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="relPerfilesUsuarios" EntitySet="relPerfilesUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZonaIncidentes" Association="Conor.Store.FK_ZonaIncidentes">
+            <End Role="Zonas" EntitySet="Zonas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ZonaPoligono" Association="Conor.Store.FK_ZonaPoligono">
+            <End Role="Poligonos" EntitySet="Poligonos" />
+            <End Role="Zonas" EntitySet="Zonas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AfectacionesIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IncidenteId" Type="int" Nullable="false" />
+          <Property Name="TipoAfectacionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AlertasIncidente">
+          <Key>
+            <PropertyRef Name="EmpresaId" />
+            <PropertyRef Name="TipoIncidenteId" />
+          </Key>
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="int" Nullable="false" />
+          <Property Name="Emails" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RecibirOtrasEmpresas" Type="bit" Nullable="false" />
+          <Property Name="RecibirMiEmpresa" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CantidadDelincuentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NombreDeCantidad" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Orden" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ciudades">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EstadoId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EstadoId" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PoligonoId" Type="int" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConfiguracionesDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="ReporteId" Type="int" Nullable="false" />
+          <Property Name="MontoAfectadoMinimo" Type="float" Nullable="false" />
+          <Property Name="MontoAfectadoMaximo" Type="float" Nullable="false" />
+          <Property Name="EsConsolidado" Type="bit" Nullable="false" />
+          <Property Name="SeIncluyeTabla" Type="bit" Nullable="false" />
+          <Property Name="EsReporteBase" Type="bit" Nullable="false" />
+          <Property Name="SegmentoReporteId" Type="int" Nullable="false" />
+          <Property Name="TipoUnidadTiempoId" Type="int" Nullable="false" />
+          <Property Name="ValorUnidadTiempo" Type="int" Nullable="false" />
+          <Property Name="ConfiguracionDashboardBaseId" Type="int" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empresas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TipoEmpresa" Type="bit" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="GrupoId" Type="int" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="PoligonoId" Type="int" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FiltrosDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FiltroDashboardId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FiltroDashboardId" Type="int" Nullable="false" />
+          <Property Name="TipoFiltroId" Type="int" Nullable="false" />
+          <Property Name="ValorFiltro" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Incidentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FechaIncidente" Type="datetime" Nullable="false" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="int" Nullable="false" />
+          <Property Name="LesionadosId" Type="int" />
+          <Property Name="TipoInstalacionId" Type="int" />
+          <Property Name="InstalacionId" Type="int" />
+          <Property Name="MontoAfectacion" Type="decimal" Scale="2" />
+          <Property Name="Comentarios" Type="nvarchar(max)" />
+          <Property Name="Latitud" Type="float" Nullable="false" />
+          <Property Name="Longitud" Type="float" Nullable="false" />
+          <Property Name="EstadoId" Type="int" Nullable="false" />
+          <Property Name="CiudadId" Type="int" Nullable="false" />
+          <Property Name="ZonaId" Type="int" />
+          <Property Name="TipoArmaId" Type="int" />
+          <Property Name="Detenidos" Type="bit" />
+          <Property Name="CantidadDelincuentesId" Type="int" />
+          <Property Name="TipoVehiculoId" Type="int" />
+          <Property Name="TipoExtorsionId" Type="int" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioCancelacion" Type="int" />
+          <Property Name="FechaCancelacion" Type="datetime" />
+          <Property Name="UsuarioUltimaModificacion" Type="int" />
+          <Property Name="FechaUltimaMoldificacion" Type="datetime" />
+          <Property Name="MotivoAmenazaId" Type="int" />
+          <Property Name="MedioAmenazaId" Type="int" />
+          <Property Name="TipoIntrusionId" Type="int" />
+          <Property Name="Calle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Colonia" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EntreCalles" Type="nvarchar" MaxLength="80" />
+          <Property Name="ConVehiculo" Type="bit" />
+        </EntityType>
+        <EntityType Name="Instalaciones">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoInstalacionId" Type="int" Nullable="false" />
+          <Property Name="Latitud" Type="real" />
+          <Property Name="Longitud" Type="real" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Lesionados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MediosAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MotivosAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NivelesGeograficos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ParametrosSistema">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="TipoDeParametro" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteEsRequerido" Type="bit" Nullable="false" />
+          <Property Name="ValorFinalEsRequerido" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ParametrosSistemaEmpresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+          <Property Name="TipoIncidenteId" Type="int" />
+          <Property Name="ValorInicial" Type="int" Nullable="false" />
+          <Property Name="Valorfinal" Type="int" />
+          <Property Name="UsuarioModificacion" Type="int" />
+          <Property Name="FechaUltimaModificacion" Type="datetime" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="ParametrosSistemaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Perfiles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Poligonos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NivelGeograficoId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PoligonosDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PoligonoId" Type="int" Nullable="false" />
+          <Property Name="Latitud" Type="float" Nullable="false" />
+          <Property Name="Longitud" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relPerfilesUsuarios">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PerfilId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="PerfilId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="relUsuarioEmpresa">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="EmpresaId" />
+          </Key>
+          <Property Name="UsuarioId" Type="int" Nullable="false" />
+          <Property Name="EmpresaId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ReportesDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="120" />
+        </EntityType>
+        <EntityType Name="TiposAfectacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposArma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposExtorsion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposFiltroDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TiposIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="140" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="Imagen" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposInstalacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="140" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposIntrusion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TiposUnidadTiempo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TiposVehiculo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="12" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoPaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ApellidoMaterno" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="UsuarioBaja" Type="int" />
+          <Property Name="FechaBaja" Type="datetime" />
+          <Property Name="FechaUltimoLogin" Type="datetime" />
+          <Property Name="Bloqueado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Zonas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EstadoId" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" Nullable="false" MaxLength="140" />
+          <Property Name="PoligonoId" Type="int" Nullable="false" />
+          <Property Name="UsuarioAlta" Type="int" Nullable="false" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CantidadDelincuentesIncidentes">
+          <End Role="CantidadDelincuentes" Type="Conor.Store.CantidadDelincuentes" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CantidadDelincuentes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CantidadDelincuentesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CiudadesIncidentes">
+          <End Role="Ciudades" Type="Conor.Store.Ciudades" Multiplicity="1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+              <PropertyRef Name="EstadoId" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CiudadId" />
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConfiguracionDashboardFiltrosDashboard">
+          <End Role="ConfiguracionesDashboard" Type="Conor.Store.ConfiguracionesDashboard" Multiplicity="1" />
+          <End Role="FiltrosDashboard" Type="Conor.Store.FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfiguracionesDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaAlertaIncidente">
+          <End Role="Empresas" Type="Conor.Store.Empresas" Multiplicity="1" />
+          <End Role="AlertasIncidente" Type="Conor.Store.AlertasIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertasIncidente">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresaParametrosSistemaEmpresa">
+          <End Role="Empresas" Type="Conor.Store.Empresas" Multiplicity="1" />
+          <End Role="ParametrosSistemaEmpresa" Type="Conor.Store.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresasIncidentes">
+          <End Role="Empresas" Type="Conor.Store.Empresas" Multiplicity="1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmpresasInstalaciones">
+          <End Role="Empresas" Type="Conor.Store.Empresas" Multiplicity="1" />
+          <End Role="Instalaciones" Type="Conor.Store.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosCiudades">
+          <End Role="Estados" Type="Conor.Store.Estados" Multiplicity="1" />
+          <End Role="Ciudades" Type="Conor.Store.Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosIncidentes">
+          <End Role="Estados" Type="Conor.Store.Estados" Multiplicity="1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosPoligono">
+          <End Role="Poligonos" Type="Conor.Store.Poligonos" Multiplicity="0..1" />
+          <End Role="Estados" Type="Conor.Store.Estados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estados">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstadosZona">
+          <End Role="Estados" Type="Conor.Store.Estados" Multiplicity="1" />
+          <End Role="Zonas" Type="Conor.Store.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IncidenteAfectacionIncidente">
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="1" />
+          <End Role="AfectacionesIncidente" Type="Conor.Store.AfectacionesIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incidentes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionesIncidente">
+              <PropertyRef Name="IncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_InstalacionesIncidentes">
+          <End Role="Instalaciones" Type="Conor.Store.Instalaciones" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instalaciones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="InstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LesionadosIncidentes">
+          <End Role="Lesionados" Type="Conor.Store.Lesionados" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesionados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="LesionadosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedioAmenazaIncidentes">
+          <End Role="MediosAmenaza" Type="Conor.Store.MediosAmenaza" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MediosAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="MedioAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MotivoAmenazaIncidente">
+          <End Role="MotivosAmenaza" Type="Conor.Store.MotivosAmenaza" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotivosAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="MotivoAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NivelGeograficoPoligono">
+          <End Role="NivelesGeograficos" Type="Conor.Store.NivelesGeograficos" Multiplicity="1" />
+          <End Role="Poligonos" Type="Conor.Store.Poligonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NivelesGeograficos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Poligonos">
+              <PropertyRef Name="NivelGeograficoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParametrosSistemaParametrosSistemaEmpresa">
+          <End Role="ParametrosSistema" Type="Conor.Store.ParametrosSistema" Multiplicity="1" />
+          <End Role="ParametrosSistemaEmpresa" Type="Conor.Store.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParametrosSistema">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="ParametrosSistemaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PerfilrelPerfilUsuario">
+          <End Role="Perfiles" Type="Conor.Store.Perfiles" Multiplicity="1" />
+          <End Role="relPerfilesUsuarios" Type="Conor.Store.relPerfilesUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfiles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relPerfilesUsuarios">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PoligonoCiudades">
+          <End Role="Poligonos" Type="Conor.Store.Poligonos" Multiplicity="0..1" />
+          <End Role="Ciudades" Type="Conor.Store.Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PoligonoPoligonoDetalle">
+          <End Role="Poligonos" Type="Conor.Store.Poligonos" Multiplicity="1" />
+          <End Role="PoligonosDetalle" Type="Conor.Store.PoligonosDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PoligonosDetalle">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReportesDashboardConfiguracionDashboard">
+          <End Role="ReportesDashboard" Type="Conor.Store.ReportesDashboard" Multiplicity="1" />
+          <End Role="ConfiguracionesDashboard" Type="Conor.Store.ConfiguracionesDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportesDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionesDashboard">
+              <PropertyRef Name="ReporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoAfectacionAfectacionIncidente">
+          <End Role="TiposAfectacion" Type="Conor.Store.TiposAfectacion" Multiplicity="1" />
+          <End Role="AfectacionesIncidente" Type="Conor.Store.AfectacionesIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposAfectacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionesIncidente">
+              <PropertyRef Name="TipoAfectacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoArmaIncidentes">
+          <End Role="TiposArma" Type="Conor.Store.TiposArma" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposArma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoArmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoExtorcionIncidentes">
+          <End Role="TiposExtorsion" Type="Conor.Store.TiposExtorsion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposExtorsion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoExtorsionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoFiltroDashboardFiltrosDashboard">
+          <End Role="TiposFiltroDashboard" Type="Conor.Store.TiposFiltroDashboard" Multiplicity="1" />
+          <End Role="FiltrosDashboard" Type="Conor.Store.FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposFiltroDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="TipoFiltroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteAlertaIncidente">
+          <End Role="TiposIncidente" Type="Conor.Store.TiposIncidente" Multiplicity="1" />
+          <End Role="AlertasIncidente" Type="Conor.Store.AlertasIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertasIncidente">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteIncidentes">
+          <End Role="TiposIncidente" Type="Conor.Store.TiposIncidente" Multiplicity="1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIncidenteParametroSistemaEmpresa">
+          <End Role="TiposIncidente" Type="Conor.Store.TiposIncidente" Multiplicity="0..1" />
+          <End Role="ParametrosSistemaEmpresa" Type="Conor.Store.ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoInstalacionIncidente">
+          <End Role="TiposInstalacion" Type="Conor.Store.TiposInstalacion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoInstalacionInstalaciones">
+          <End Role="TiposInstalacion" Type="Conor.Store.TiposInstalacion" Multiplicity="1" />
+          <End Role="Instalaciones" Type="Conor.Store.Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoIntrusionIncidentes">
+          <End Role="TiposIntrusion" Type="Conor.Store.TiposIntrusion" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposIntrusion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIntrusionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoUnidadTiempoConfiguracionDashboard">
+          <End Role="TiposUnidadTiempo" Type="Conor.Store.TiposUnidadTiempo" Multiplicity="1" />
+          <End Role="ConfiguracionesDashboard" Type="Conor.Store.ConfiguracionesDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposUnidadTiempo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionesDashboard">
+              <PropertyRef Name="TipoUnidadTiempoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TipoVehiculoIncidentes">
+          <End Role="TiposVehiculo" Type="Conor.Store.TiposVehiculo" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TiposVehiculo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoVehiculoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresaEmpresa">
+          <End Role="Empresas" Type="Conor.Store.Empresas" Multiplicity="1" />
+          <End Role="relUsuarioEmpresa" Type="Conor.Store.relUsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relUsuarioEmpresa">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioEmpresaUsuario">
+          <End Role="Usuarios" Type="Conor.Store.Usuarios" Multiplicity="1" />
+          <End Role="relUsuarioEmpresa" Type="Conor.Store.relUsuarioEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relUsuarioEmpresa">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioIncidentes">
+          <End Role="Usuarios" Type="Conor.Store.Usuarios" Multiplicity="1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="UsuarioAlta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsuarioUsuarioPerfil">
+          <End Role="Usuarios" Type="Conor.Store.Usuarios" Multiplicity="1" />
+          <End Role="relPerfilesUsuarios" Type="Conor.Store.relPerfilesUsuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relPerfilesUsuarios">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZonaIncidentes">
+          <End Role="Zonas" Type="Conor.Store.Zonas" Multiplicity="0..1" />
+          <End Role="Incidentes" Type="Conor.Store.Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zonas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="ZonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ZonaPoligono">
+          <End Role="Poligonos" Type="Conor.Store.Poligonos" Multiplicity="1" />
+          <End Role="Zonas" Type="Conor.Store.Zonas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligonos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zonas">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Conor" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ConorContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CantidadDelincuentes" EntityType="Conor.CantidadDelincuentes" />
+          <EntitySet Name="Estados" EntityType="Conor.Estado" />
+          <EntitySet Name="Ciudades" EntityType="Conor.Ciudad" />
+          <EntitySet Name="Empresas" EntityType="Conor.Empresa" />
+          <EntitySet Name="Incidentes" EntityType="Conor.Incidente" />
+          <EntitySet Name="Instalaciones" EntityType="Conor.Instalacion" />
+          <EntitySet Name="Lesionados" EntityType="Conor.Lesionado" />
+          <EntitySet Name="MediosAmenaza" EntityType="Conor.MedioAmenaza" />
+          <EntitySet Name="Perfiles" EntityType="Conor.Perfil" />
+          <EntitySet Name="Poligonos" EntityType="Conor.Poligono" />
+          <EntitySet Name="relPerfilesUsuarios" EntityType="Conor.UsuarioPerfil" />
+          <EntitySet Name="MotivosAmenaza" EntityType="Conor.MotivoAmenaza" />
+          <EntitySet Name="TiposArma" EntityType="Conor.TipoArma" />
+          <EntitySet Name="TiposExtorsion" EntityType="Conor.TipoExtorsion" />
+          <EntitySet Name="TiposIncidente" EntityType="Conor.TipoIncidente" />
+          <EntitySet Name="TiposInstalacion" EntityType="Conor.TipoInstalacion" />
+          <EntitySet Name="TiposIntrusion" EntityType="Conor.TipoIntrusion" />
+          <EntitySet Name="TiposVehiculo" EntityType="Conor.TipoVehiculo" />
+          <EntitySet Name="Usuarios" EntityType="Conor.Usuario" />
+          <EntitySet Name="Zonas" EntityType="Conor.Zona" />
+          <AssociationSet Name="PerfilrelPerfilUsuario" Association="Conor.PerfilrelPerfilUsuario">
+            <End Role="Perfil" EntitySet="Perfiles" />
+            <End Role="relPerfilUsuario" EntitySet="relPerfilesUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="EmpresasInstalaciones" Association="Conor.EmpresasInstalaciones">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="TipoInstalacionInstalaciones" Association="Conor.TipoInstalacionInstalaciones">
+            <End Role="TipoInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Instalaciones" EntitySet="Instalaciones" />
+          </AssociationSet>
+          <AssociationSet Name="EstadosCiudades" Association="Conor.EstadosCiudades">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="EstadosZona" Association="Conor.EstadosZona">
+            <End EntitySet="Estados" Role="Estados" />
+            <End EntitySet="Zonas" Role="Zona" />
+          </AssociationSet>
+          <AssociationSet Name="TipoArmaIncidentes" Association="Conor.TipoArmaIncidentes">
+            <End Role="TipoArma" EntitySet="TiposArma" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="TipoExtorcionIncidentes" Association="Conor.TipoExtorcionIncidentes">
+            <End Role="TipoExtorsion" EntitySet="TiposExtorsion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="CantidadDelincuentesIncidentes" Association="Conor.CantidadDelincuentesIncidentes">
+            <End EntitySet="CantidadDelincuentes" Role="CantidadDelincuentes" />
+            <End EntitySet="Incidentes" Role="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="LesionadosIncidentes" Association="Conor.LesionadosIncidentes">
+            <End Role="Lesionados" EntitySet="Lesionados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="MedioAmenazaIncidentes" Association="Conor.MedioAmenazaIncidentes">
+            <End Role="MedioAmenaza" EntitySet="MediosAmenaza" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="TipoIntrusionIncidentes" Association="Conor.TipoIntrusionIncidentes">
+            <End Role="TipoIntrusion" EntitySet="TiposIntrusion" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="TipoVehiculoIncidentes" Association="Conor.TipoVehiculoIncidentes">
+            <End Role="TipoVehiculo" EntitySet="TiposVehiculo" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="TipoIncidenteIncidentes" Association="Conor.TipoIncidenteIncidentes">
+            <End Role="TipoIncidente" EntitySet="TiposIncidente" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioIncidentes" Association="Conor.UsuarioIncidentes">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="EmpresasIncidentes" Association="Conor.EmpresasIncidentes">
+            <End Role="Empresas" EntitySet="Empresas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="EstadosIncidentes" Association="Conor.EstadosIncidentes">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="CiudadesIncidentes" Association="Conor.CiudadesIncidentes">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="ZonaIncidentes" Association="Conor.ZonaIncidentes">
+            <End Role="Zona" EntitySet="Zonas" />
+            <End Role="Incidentes" EntitySet="Incidentes" />
+          </AssociationSet>
+          <EntitySet Name="AlertasIncidente" EntityType="Conor.AlertaIncidente" />
+          <EntitySet Name="ParametrosSistemaEmpresa" EntityType="Conor.ParametroSistemaEmpresa" />
+          <EntitySet Name="ConfiguracionesDashboard" EntityType="Conor.ConfiguracionDashboard" />
+          <EntitySet Name="NivelesGeograficos" EntityType="Conor.NivelGeografico" />
+          <EntitySet Name="TiposUnidadTiempo" EntityType="Conor.TipoUnidadTiempo" />
+          <EntitySet Name="ParametrosSistema" EntityType="Conor.ParametrosSistema" />
+          <EntitySet Name="FiltrosDashboard" EntityType="Conor.FiltroDashboard" />
+          <AssociationSet Name="ConfiguracionDashboardFiltrosDashboard" Association="Conor.ConfiguracionDashboardFiltrosDashboard">
+            <End Role="ConfiguracionDashboard" EntitySet="ConfiguracionesDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <EntitySet Name="TiposFiltroDashboard" EntityType="Conor.TipoFiltroDashboard" />
+          <AssociationSet Name="UsuarioUsuarioPerfil" Association="Conor.UsuarioUsuarioPerfil">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="UsuarioPerfil" EntitySet="relPerfilesUsuarios" />
+          </AssociationSet>
+          <EntitySet Name="PoligonosDetalle" EntityType="Conor.PoligonoDetalle" />
+          <AssociationSet Name="PoligonoPoligonoDetalle" Association="Conor.PoligonoPoligonoDetalle">
+            <End Role="Poligono" EntitySet="Poligonos" />
+            <End Role="PoligonoDetalle" EntitySet="PoligonosDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="NivelGeograficoPoligono" Association="Conor.NivelGeograficoPoligono">
+            <End Role="NivelGeografico" EntitySet="NivelesGeograficos" />
+            <End Role="Poligono" EntitySet="Poligonos" />
+          </AssociationSet>
+          <AssociationSet Name="InstalacionesIncidentes" Association="Conor.InstalacionesIncidentes">
+            <End EntitySet="Instalaciones" Role="Instalaciones" />
+            <End EntitySet="Incidentes" Role="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="ZonaPoligono" Association="Conor.ZonaPoligono">
+            <End Role="Zona" EntitySet="Zonas" />
+            <End Role="Poligono" EntitySet="Poligonos" />
+          </AssociationSet>
+          <AssociationSet Name="EstadosPoligono" Association="Conor.EstadosPoligono">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Poligono" EntitySet="Poligonos" />
+          </AssociationSet>
+          <AssociationSet Name="PoligonoCiudades" Association="Conor.PoligonoCiudades">
+            <End Role="Poligono" EntitySet="Poligonos" />
+            <End Role="Ciudades" EntitySet="Ciudades" />
+          </AssociationSet>
+          <AssociationSet Name="TipoUnidadTiempoConfiguracionDashboard" Association="Conor.TipoUnidadTiempoConfiguracionDashboard">
+            <End Role="TipoUnidadTiempo" EntitySet="TiposUnidadTiempo" />
+            <End Role="ConfiguracionDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="TipoFiltroDashboardFiltrosDashboard" Association="Conor.TipoFiltroDashboardFiltrosDashboard">
+            <End Role="TipoFiltroDashboard" EntitySet="TiposFiltroDashboard" />
+            <End Role="FiltrosDashboard" EntitySet="FiltrosDashboard" />
+          </AssociationSet>
+          <EntitySet Name="ReportesDashboard" EntityType="Conor.ReporteDashboard" />
+          <AssociationSet Name="ReportesDashboardConfiguracionDashboard" Association="Conor.ReportesDashboardConfiguracionDashboard">
+            <End Role="ReportesDashboard" EntitySet="ReportesDashboard" />
+            <End Role="ConfiguracionDashboard" EntitySet="ConfiguracionesDashboard" />
+          </AssociationSet>
+          <AssociationSet Name="TipoIncidenteAlertaIncidente" Association="Conor.TipoIncidenteAlertaIncidente">
+            <End Role="TipoIncidente" EntitySet="TiposIncidente" />
+            <End Role="AlertaIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="EmpresaAlertaIncidente" Association="Conor.EmpresaAlertaIncidente">
+            <End Role="Empresa" EntitySet="Empresas" />
+            <End Role="AlertaIncidente" EntitySet="AlertasIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="ParametrosSistemaParametrosSistemaEmpresa" Association="Conor.ParametrosSistemaParametrosSistemaEmpresa">
+            <End Role="ParametrosSistema" EntitySet="ParametrosSistema" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <AssociationSet Name="EmpresaParametrosSistemaEmpresa" Association="Conor.EmpresaParametrosSistemaEmpresa">
+            <End Role="Empresa" EntitySet="Empresas" />
+            <End Role="ParametrosSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <EntitySet Name="TiposAfectacion" EntityType="Conor.TipoAfectacion" />
+          <EntitySet Name="AfectacionesIncidente" EntityType="Conor.AfectacionIncidente" />
+          <AssociationSet Name="TipoAfectacionAfectacionIncidente" Association="Conor.TipoAfectacionAfectacionIncidente">
+            <End Role="TipoAfectacion" EntitySet="TiposAfectacion" />
+            <End Role="AfectacionIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="IncidenteAfectacionIncidente" Association="Conor.IncidenteAfectacionIncidente">
+            <End Role="Incidente" EntitySet="Incidentes" />
+            <End Role="AfectacionIncidente" EntitySet="AfectacionesIncidente" />
+          </AssociationSet>
+          <AssociationSet Name="TipoIncidenteParametroSistemaEmpresa" Association="Conor.TipoIncidenteParametroSistemaEmpresa">
+            <End Role="TipoIncidente" EntitySet="TiposIncidente" />
+            <End Role="ParametroSistemaEmpresa" EntitySet="ParametrosSistemaEmpresa" />
+          </AssociationSet>
+          <EntitySet Name="relUsuarioEmpresa" EntityType="Conor.UsuarioEmpresa" />
+          <AssociationSet Name="UsuarioEmpresaUsuario" Association="Conor.UsuarioEmpresaUsuario">
+            <End Role="UsuarioEmpresa" EntitySet="relUsuarioEmpresa" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="UsuarioEmpresaEmpresa" Association="Conor.UsuarioEmpresaEmpresa">
+            <End Role="UsuarioEmpresa" EntitySet="relUsuarioEmpresa" />
+            <End Role="Empresa" EntitySet="Empresas" />
+          </AssociationSet>
+          <AssociationSet Name="MotivoAmenazaIncidente" Association="Conor.MotivoAmenazaIncidente">
+            <End Role="MotivoAmenaza" EntitySet="MotivosAmenaza" />
+            <End Role="Incidente" EntitySet="Incidentes" />
+          </AssociationSet>
+          <AssociationSet Name="TipoInstalacionIncidente" Association="Conor.TipoInstalacionIncidente">
+            <End Role="TipoInstalacion" EntitySet="TiposInstalacion" />
+            <End Role="Incidente" EntitySet="Incidentes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CantidadDelincuentes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="NombreDeCantidad" Nullable="false" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.CantidadDelincuentesIncidentes" FromRole="CantidadDelincuentes" ToRole="Incidentes" />
+          <Property Type="Int32" Name="Orden" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PoligonoId" Nullable="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Ciudades" Relationship="Conor.EstadosCiudades" FromRole="Estados" ToRole="Ciudades" />
+          <NavigationProperty Name="Zonas" Relationship="Conor.EstadosZona" FromRole="Estados" ToRole="Zona" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.EstadosIncidentes" FromRole="Estados" ToRole="Incidentes" />
+          <NavigationProperty Name="Poligonos" Relationship="Conor.EstadosPoligono" FromRole="Estados" ToRole="Poligono" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EstadoId" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="EstadoId" Nullable="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PoligonoId" Nullable="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Estado" Relationship="Conor.EstadosCiudades" FromRole="Ciudades" ToRole="Estados" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.CiudadesIncidentes" FromRole="Ciudades" ToRole="Incidentes" />
+          <NavigationProperty Name="Poligono" Relationship="Conor.PoligonoCiudades" FromRole="Ciudades" ToRole="Poligono" />
+        </EntityType>
+        <EntityType Name="Empresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TipoEmpresa" Nullable="false" Type="Boolean" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Instalaciones" Relationship="Conor.EmpresasInstalaciones" FromRole="Empresas" ToRole="Instalaciones" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.EmpresasIncidentes" FromRole="Empresas" ToRole="Incidentes" />
+          <NavigationProperty Name="AlertaIncidentes" Relationship="Conor.EmpresaAlertaIncidente" FromRole="Empresa" ToRole="AlertaIncidente" />
+          <NavigationProperty Name="ParametrosSistemaEmpresas" Relationship="Conor.EmpresaParametrosSistemaEmpresa" FromRole="Empresa" ToRole="ParametrosSistemaEmpresa" />
+          <Property Type="Int32" Name="GrupoId" />
+          <NavigationProperty Name="UsuarioEmpresa" Relationship="Conor.UsuarioEmpresaEmpresa" FromRole="Empresa" ToRole="UsuarioEmpresa" />
+        </EntityType>
+        <EntityType Name="Incidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="FechaIncidente" Nullable="false" />
+          <Property Type="Int32" Name="EmpresaId" Nullable="false" />
+          <Property Type="Int32" Name="TipoIncidenteId" Nullable="false" />
+          <Property Type="Int32" Name="LesionadosId" Nullable="true" />
+          <Property Type="Int32" Name="TipoInstalacionId" Nullable="true" />
+          <Property Type="Int32" Name="InstalacionId" Nullable="true" />
+          <Property Type="Decimal" Name="MontoAfectacion" DefaultValue="0" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Comentarios" Nullable="true" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Latitud" Nullable="false" />
+		  <Property Type="Double" Name="Longitud" Nullable="false" />
+          <Property Type="Int32" Name="EstadoId" Nullable="false" />
+          <Property Type="Int32" Name="CiudadId" Nullable="false" />
+          <Property Type="Int32" Name="ZonaId" Nullable="true" />
+          <Property Type="Int32" Name="TipoArmaId" Nullable="true" />
+          <Property Type="Boolean" Name="Detenidos" Nullable="true" DefaultValue="false" />
+          <Property Type="Int32" Name="CantidadDelincuentesId" Nullable="true" />
+          <Property Type="Int32" Name="TipoVehiculoId" Nullable="true" />
+          <Property Type="Int32" Name="TipoExtorsionId" Nullable="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioCancelacion" Nullable="true" />
+          <Property Type="DateTime" Name="FechaCancelacion" Nullable="true" />
+          <Property Type="Int32" Name="UsuarioUltimaModificacion" Nullable="true" />
+          <Property Type="DateTime" Name="FechaUltimaMoldificacion" Nullable="true" />
+          <NavigationProperty Name="TipoArma" Relationship="Conor.TipoArmaIncidentes" FromRole="Incidentes" ToRole="TipoArma" />
+          <NavigationProperty Name="TipoExtorsion" Relationship="Conor.TipoExtorcionIncidentes" FromRole="Incidentes" ToRole="TipoExtorsion" />
+          <NavigationProperty Name="CantidadDelincuente" Relationship="Conor.CantidadDelincuentesIncidentes" FromRole="Incidentes" ToRole="CantidadDelincuentes" />
+          <NavigationProperty Name="Lesionado" Relationship="Conor.LesionadosIncidentes" FromRole="Incidentes" ToRole="Lesionados" />
+          <Property Type="Int32" Name="MotivoAmenazaId" Nullable="true" />
+          <NavigationProperty Name="MedioAmenaza" Relationship="Conor.MedioAmenazaIncidentes" FromRole="Incidentes" ToRole="MedioAmenaza" />
+          <Property Type="Int32" Name="MedioAmenazaId" Nullable="true" />
+          <NavigationProperty Name="TipoIntrusion" Relationship="Conor.TipoIntrusionIncidentes" FromRole="Incidentes" ToRole="TipoIntrusion" />
+          <Property Type="Int32" Name="TipoIntrusionId" Nullable="true" />
+          <NavigationProperty Name="TipoVehiculo" Relationship="Conor.TipoVehiculoIncidentes" FromRole="Incidentes" ToRole="TipoVehiculo" />
+          <NavigationProperty Name="TipoIncidente" Relationship="Conor.TipoIncidenteIncidentes" FromRole="Incidentes" ToRole="TipoIncidente" />
+          <NavigationProperty Name="Usuario" Relationship="Conor.UsuarioIncidentes" FromRole="Incidentes" ToRole="Usuario" />
+          <NavigationProperty Name="Empresa" Relationship="Conor.EmpresasIncidentes" FromRole="Incidentes" ToRole="Empresas" />
+          <NavigationProperty Name="Estado" Relationship="Conor.EstadosIncidentes" FromRole="Incidentes" ToRole="Estados" />
+          <NavigationProperty Name="Ciudad" Relationship="Conor.CiudadesIncidentes" FromRole="Incidentes" ToRole="Ciudades" />
+          <NavigationProperty Name="Zona" Relationship="Conor.ZonaIncidentes" FromRole="Incidentes" ToRole="Zona" />
+          <NavigationProperty Name="Instalaciones" Relationship="Conor.InstalacionesIncidentes" FromRole="Incidentes" ToRole="Instalaciones" />
+          <NavigationProperty Name="AfectacionIncidentes" Relationship="Conor.IncidenteAfectacionIncidente" FromRole="Incidente" ToRole="AfectacionIncidente" />
+          <Property Type="String" Name="Calle" Unicode="true" MaxLength="50" Nullable="false" FixedLength="false" />
+          <Property Type="String" Name="Colonia" Unicode="true" MaxLength="50" Nullable="false" FixedLength="false" />
+          <Property Type="String" Name="EntreCalles" Unicode="true" MaxLength="80" Nullable="true" FixedLength="false" />
+          <Property Type="Boolean" Name="ConVehiculo" Nullable="true" />
+          <NavigationProperty Name="MotivoAmenaza" Relationship="Conor.MotivoAmenazaIncidente" FromRole="Incidente" ToRole="MotivoAmenaza" />
+          <NavigationProperty Name="TipoInstalacion" Relationship="Conor.TipoInstalacionIncidente" FromRole="Incidente" ToRole="TipoInstalacion" />
+        </EntityType>
+        <EntityType Name="Instalacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EmpresaId" Nullable="false" />
+          <Property Type="Int32" Name="TipoInstalacionId" Nullable="false" />
+          <Property Name="Latitud" Type="Single" Nullable="true" />
+          <Property Type="Single" Name="Longitud" Nullable="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Empresa" Relationship="Conor.EmpresasInstalaciones" FromRole="Instalaciones" ToRole="Empresas" />
+          <NavigationProperty Name="TipoInstalacion" Relationship="Conor.TipoInstalacionInstalaciones" FromRole="Instalaciones" ToRole="TipoInstalacion" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.InstalacionesIncidentes" FromRole="Instalaciones" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="Lesionado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.LesionadosIncidentes" FromRole="Lesionados" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="MedioAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.MedioAmenazaIncidentes" FromRole="MedioAmenaza" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="relPerfilUsuarios" Relationship="Conor.PerfilrelPerfilUsuario" FromRole="Perfil" ToRole="relPerfilUsuario" />
+        </EntityType>
+        <EntityType Name="Poligono">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="NivelGeograficoId" Nullable="false" />
+          <NavigationProperty Name="PoligonoDetalles" Relationship="Conor.PoligonoPoligonoDetalle" FromRole="Poligono" ToRole="PoligonoDetalle" />
+          <NavigationProperty Name="NivelGeografico" Relationship="Conor.NivelGeograficoPoligono" FromRole="Poligono" ToRole="NivelGeografico" />
+          <NavigationProperty Name="Zona" Relationship="Conor.ZonaPoligono" FromRole="Poligono" ToRole="Zona" />
+          <NavigationProperty Name="Estado" Relationship="Conor.EstadosPoligono" FromRole="Poligono" ToRole="Estados" />
+          <NavigationProperty Name="Ciudades" Relationship="Conor.PoligonoCiudades" FromRole="Poligono" ToRole="Ciudades" />
+        </EntityType>
+        <EntityType Name="UsuarioPerfil">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="PerfilId" />
+          </Key>
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+          <NavigationProperty Name="Perfil" Relationship="Conor.PerfilrelPerfilUsuario" FromRole="relPerfilUsuario" ToRole="Perfil" />
+          <Property Type="Int32" Name="PerfilId" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Conor.UsuarioUsuarioPerfil" FromRole="UsuarioPerfil" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="MotivoAmenaza">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.MotivoAmenazaIncidente" FromRole="MotivoAmenaza" ToRole="Incidente" />
+        </EntityType>
+        <EntityType Name="TipoArma">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.TipoArmaIncidentes" FromRole="TipoArma" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="TipoExtorsion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.TipoExtorcionIncidentes" FromRole="TipoExtorsion" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="TipoIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="140" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.TipoIncidenteIncidentes" FromRole="TipoIncidente" ToRole="Incidentes" />
+          <Property Type="String" Name="Imagen" Nullable="false" Unicode="true" />
+          <NavigationProperty Name="AlertaIncidentes" Relationship="Conor.TipoIncidenteAlertaIncidente" FromRole="TipoIncidente" ToRole="AlertaIncidente" />
+          <NavigationProperty Name="ParametroSistemaEmpresa" Relationship="Conor.TipoIncidenteParametroSistemaEmpresa" FromRole="TipoIncidente" ToRole="ParametroSistemaEmpresa" />
+        </EntityType>
+        <EntityType Name="TipoInstalacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="140" FixedLength="false" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Instalaciones" Relationship="Conor.TipoInstalacionInstalaciones" FromRole="TipoInstalacion" ToRole="Instalaciones" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.TipoInstalacionIncidente" FromRole="TipoInstalacion" ToRole="Incidente" />
+        </EntityType>
+        <EntityType Name="TipoIntrusion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.TipoIntrusionIncidentes" FromRole="TipoIntrusion" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="TipoVehiculo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.TipoVehiculoIncidentes" FromRole="TipoVehiculo" ToRole="Incidentes" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" />
+          <Property Type="String" Name="ApellidoPaterno" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ApellidoMaterno" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Activo" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioBaja" Nullable="true" />
+          <Property Type="DateTime" Name="FechaBaja" Nullable="true" />
+          <Property Type="DateTime" Name="FechaUltimoLogin" Nullable="true" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.UsuarioIncidentes" FromRole="Usuario" ToRole="Incidentes" />
+          <NavigationProperty Name="UsuarioPerfiles" Relationship="Conor.UsuarioUsuarioPerfil" FromRole="Usuario" ToRole="UsuarioPerfil" />
+          <Property Type="Boolean" Name="Bloqueado" Nullable="true" />
+          <NavigationProperty Name="UsuarioEmpresa" Relationship="Conor.UsuarioEmpresaUsuario" FromRole="Usuario" ToRole="UsuarioEmpresa" />
+        </EntityType>
+        <EntityType Name="Zona">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="EstadoId" Nullable="false" />
+          <Property Type="String" Name="Descripcion" Nullable="false" MaxLength="140" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PoligonoId" Nullable="false" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="Estado" Relationship="Conor.EstadosZona" FromRole="Zona" ToRole="Estados" />
+          <NavigationProperty Name="Incidentes" Relationship="Conor.ZonaIncidentes" FromRole="Zona" ToRole="Incidentes" />
+          <NavigationProperty Name="Poligonos" Relationship="Conor.ZonaPoligono" FromRole="Zona" ToRole="Poligono" />
+          </EntityType>
+        <Association Name="PerfilrelPerfilUsuario">
+          <End Type="Conor.Perfil" Role="Perfil" Multiplicity="1" />
+          <End Type="Conor.UsuarioPerfil" Role="relPerfilUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="relPerfilUsuario">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpresasInstalaciones">
+          <End Type="Conor.Empresa" Role="Empresas" Multiplicity="1" />
+          <End Type="Conor.Instalacion" Role="Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoInstalacionInstalaciones">
+          <End Type="Conor.TipoInstalacion" Role="TipoInstalacion" Multiplicity="1" />
+          <End Type="Conor.Instalacion" Role="Instalaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Instalaciones">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EstadosCiudades">
+          <End Type="Conor.Estado" Role="Estados" Multiplicity="1" />
+          <End Type="Conor.Ciudad" Role="Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EstadosZona">
+          <End Type="Conor.Estado" Multiplicity="1" Role="Estados" />
+          <End Type="Conor.Zona" Multiplicity="*" Role="Zona" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zona">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoArmaIncidentes">
+          <End Type="Conor.TipoArma" Role="TipoArma" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoArma">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoArmaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoExtorcionIncidentes">
+          <End Type="Conor.TipoExtorsion" Role="TipoExtorsion" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoExtorsion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoExtorsionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CantidadDelincuentesIncidentes">
+          <End Type="Conor.CantidadDelincuentes" Multiplicity="0..1" Role="CantidadDelincuentes" />
+          <End Type="Conor.Incidente" Multiplicity="*" Role="Incidentes" />
+          <ReferentialConstraint>
+            <Principal Role="CantidadDelincuentes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CantidadDelincuentesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="LesionadosIncidentes">
+          <End Type="Conor.Lesionado" Role="Lesionados" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Lesionados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="LesionadosId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MedioAmenazaIncidentes">
+          <End Type="Conor.MedioAmenaza" Role="MedioAmenaza" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MedioAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="MedioAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoIntrusionIncidentes">
+          <End Type="Conor.TipoIntrusion" Role="TipoIntrusion" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoIntrusion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIntrusionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoVehiculoIncidentes">
+          <End Type="Conor.TipoVehiculo" Role="TipoVehiculo" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoVehiculo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoVehiculoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoIncidenteIncidentes">
+          <End Type="Conor.TipoIncidente" Role="TipoIncidente" Multiplicity="1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsuarioIncidentes">
+          <End Type="Conor.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="UsuarioAlta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpresasIncidentes">
+          <End Type="Conor.Empresa" Role="Empresas" Multiplicity="1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EstadosIncidentes">
+          <End Type="Conor.Estado" Role="Estados" Multiplicity="1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CiudadesIncidentes">
+          <End Type="Conor.Ciudad" Role="Ciudades" Multiplicity="1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+              <PropertyRef Name="EstadoId" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="CiudadId" />
+              <PropertyRef Name="EstadoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZonaIncidentes">
+          <End Type="Conor.Zona" Role="Zona" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidentes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Zona">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="ZonaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="AlertaIncidente">
+          <Key>
+            <PropertyRef Name="EmpresaId" />
+            <PropertyRef Name="TipoIncidenteId" />
+          </Key>
+          <Property Type="Int32" Name="EmpresaId" Nullable="false" />
+          <Property Type="Int32" Name="TipoIncidenteId" Nullable="false" />
+          <Property Type="String" Name="Emails" Nullable="false" Unicode="true" MaxLength="Max" />
+          <Property Type="Boolean" Name="RecibirOtrasEmpresas" Nullable="false" />
+          <Property Type="Boolean" Name="RecibirMiEmpresa" Nullable="false" />
+          <NavigationProperty Name="TipoIncidente" Relationship="Conor.TipoIncidenteAlertaIncidente" FromRole="AlertaIncidente" ToRole="TipoIncidente" />
+          <NavigationProperty Name="Empresa" Relationship="Conor.EmpresaAlertaIncidente" FromRole="AlertaIncidente" ToRole="Empresa" />
+        </EntityType>
+        <EntityType Name="ParametroSistemaEmpresa">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+		  <Property Type="Int32" Name="EmpresaId" Nullable="false" />
+          <Property Type="Int32" Name="TipoIncidenteId" Nullable="true" />
+          <Property Type="Int32" Name="ValorInicial" Nullable="false" />
+          <Property Type="Int32" Name="Valorfinal" Nullable="true" />
+          <Property Type="Int32" Name="UsuarioModificacion" Nullable="true" />
+          <Property Type="DateTime" Name="FechaUltimaModificacion" Nullable="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="ParametrosSistema" Relationship="Conor.ParametrosSistemaParametrosSistemaEmpresa" FromRole="ParametrosSistemaEmpresa" ToRole="ParametrosSistema" />
+          <NavigationProperty Name="Empresa" Relationship="Conor.EmpresaParametrosSistemaEmpresa" FromRole="ParametrosSistemaEmpresa" ToRole="Empresa" />
+          <Property Type="Int32" Name="ParametrosSistemaId" Nullable="false" />
+          <NavigationProperty Name="TipoIncidente" Relationship="Conor.TipoIncidenteParametroSistemaEmpresa" FromRole="ParametroSistemaEmpresa" ToRole="TipoIncidente" />
+        </EntityType>
+        <EntityType Name="ConfiguracionDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="EmpresaId" Nullable="false" />
+          <Property Type="Int32" Name="ReporteId" Nullable="false" />
+          <Property Type="Double" Name="MontoAfectadoMinimo" Nullable="false" />
+          <Property Type="Double" Name="MontoAfectadoMaximo" Nullable="false" />
+          <Property Type="Boolean" Name="EsConsolidado" Nullable="false" />
+          <Property Type="Boolean" Name="SeIncluyeTabla" Nullable="false" />
+          <Property Type="Boolean" Name="EsReporteBase" Nullable="false" />
+          <Property Type="Int32" Name="SegmentoReporteId" Nullable="false" />
+          <Property Type="Int32" Name="TipoUnidadTiempoId" Nullable="false" />
+          <Property Type="Int32" Name="ValorUnidadTiempo" Nullable="false" />
+          <Property Type="Int32" Name="ConfiguracionDashboardBaseId" Nullable="false" />
+          <NavigationProperty Name="FiltrosDashboard" Relationship="Conor.ConfiguracionDashboardFiltrosDashboard" FromRole="ConfiguracionDashboard" ToRole="FiltrosDashboard" />
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+          <NavigationProperty Name="TipoUnidadTiempo" Relationship="Conor.TipoUnidadTiempoConfiguracionDashboard" FromRole="ConfiguracionDashboard" ToRole="TipoUnidadTiempo" />
+          <NavigationProperty Name="ReportesDashboard" Relationship="Conor.ReportesDashboardConfiguracionDashboard" FromRole="ConfiguracionDashboard" ToRole="ReportesDashboard" />
+        </EntityType>
+        <EntityType Name="NivelGeografico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="Nombre" Nullable="false" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Poligonos" Relationship="Conor.NivelGeograficoPoligono" FromRole="NivelGeografico" ToRole="Poligono" />
+        </EntityType>
+        <EntityType Name="TipoUnidadTiempo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ConfiguracionesDashboard" Relationship="Conor.TipoUnidadTiempoConfiguracionDashboard" FromRole="TipoUnidadTiempo" ToRole="ConfiguracionDashboard" />
+        </EntityType>
+        <EntityType Name="ParametrosSistema">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TipoDeParametro" Nullable="false" >
+            <Documentation>
+              <LongDescription>Empresa o global</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="ParametrosSistemaEmpresas" Relationship="Conor.ParametrosSistemaParametrosSistemaEmpresa" FromRole="ParametrosSistema" ToRole="ParametrosSistemaEmpresa" />
+          <Property Type="Boolean" Name="TipoIncidenteEsRequerido" Nullable="false" />
+          <Property Type="Boolean" Name="ValorFinalEsRequerido" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FiltroDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="FiltroDashboardId" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="FiltroDashboardId" Nullable="false" />
+          <Property Type="Int32" Name="TipoFiltroId" Nullable="false" />
+          <Property Type="Int32" Name="ValorFiltro" Nullable="false" />
+          <NavigationProperty Name="ConfiguracionDashboard" Relationship="Conor.ConfiguracionDashboardFiltrosDashboard" FromRole="FiltrosDashboard" ToRole="ConfiguracionDashboard" />
+          <NavigationProperty Name="TipoFiltroDashboard" Relationship="Conor.TipoFiltroDashboardFiltrosDashboard" FromRole="FiltrosDashboard" ToRole="TipoFiltroDashboard" />
+        </EntityType>
+        <Association Name="ConfiguracionDashboardFiltrosDashboard">
+          <End Type="Conor.ConfiguracionDashboard" Role="ConfiguracionDashboard" Multiplicity="1" />
+          <End Type="Conor.FiltroDashboard" Role="FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConfiguracionDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TipoFiltroDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="FiltrosDashboard" Relationship="Conor.TipoFiltroDashboardFiltrosDashboard" FromRole="TipoFiltroDashboard" ToRole="FiltrosDashboard" />
+        </EntityType>
+        <Association Name="UsuarioUsuarioPerfil">
+          <End Type="Conor.Usuario" Role="Usuario" Multiplicity="1" >
+          </End>
+          <End Type="Conor.UsuarioPerfil" Role="UsuarioPerfil" Multiplicity="*" >
+          </End>
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioPerfil">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PoligonoDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PoligonoId" Nullable="false" />
+          <Property Type="Double" Name="Latitud" Nullable="false" />
+          <Property Type="Double" Name="Longitud" Nullable="false" />
+          <NavigationProperty Name="Poligono" Relationship="Conor.PoligonoPoligonoDetalle" FromRole="PoligonoDetalle" ToRole="Poligono" />
+        </EntityType>
+        <Association Name="PoligonoPoligonoDetalle">
+          <End Type="Conor.Poligono" Role="Poligono" Multiplicity="1" />
+          <End Type="Conor.PoligonoDetalle" Role="PoligonoDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligono">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PoligonoDetalle">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="NivelGeograficoPoligono">
+          <End Type="Conor.NivelGeografico" Role="NivelGeografico" Multiplicity="1" />
+          <End Type="Conor.Poligono" Role="Poligono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NivelGeografico">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Poligono">
+              <PropertyRef Name="NivelGeograficoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="InstalacionesIncidentes">
+          <End Type="Conor.Instalacion" Multiplicity="0..1" Role="Instalaciones" />
+          <End Type="Conor.Incidente" Multiplicity="*" Role="Incidentes" />
+          <ReferentialConstraint>
+            <Principal Role="Instalaciones">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidentes">
+              <PropertyRef Name="InstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ZonaPoligono">
+          <End Type="Conor.Zona" Role="Zona" Multiplicity="*" />
+          <End Type="Conor.Poligono" Role="Poligono" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Poligono">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Zona">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EstadosPoligono">
+          <End Type="Conor.Estado" Role="Estados" Multiplicity="*" />
+          <End Type="Conor.Poligono" Role="Poligono" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Poligono">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estados">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PoligonoCiudades">
+          <End Type="Conor.Poligono" Role="Poligono" Multiplicity="0..1" />
+          <End Type="Conor.Ciudad" Role="Ciudades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Poligono">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Ciudades">
+              <PropertyRef Name="PoligonoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoUnidadTiempoConfiguracionDashboard">
+          <End Type="Conor.TipoUnidadTiempo" Role="TipoUnidadTiempo" Multiplicity="1" />
+          <End Type="Conor.ConfiguracionDashboard" Role="ConfiguracionDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoUnidadTiempo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionDashboard">
+              <PropertyRef Name="TipoUnidadTiempoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoFiltroDashboardFiltrosDashboard">
+          <End Type="Conor.TipoFiltroDashboard" Role="TipoFiltroDashboard" Multiplicity="1" />
+          <End Type="Conor.FiltroDashboard" Role="FiltrosDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoFiltroDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FiltrosDashboard">
+              <PropertyRef Name="TipoFiltroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReporteDashboard">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="120" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ConfiguracionesDashboard" Relationship="Conor.ReportesDashboardConfiguracionDashboard" FromRole="ReportesDashboard" ToRole="ConfiguracionDashboard" />
+        </EntityType>
+        <Association Name="ReportesDashboardConfiguracionDashboard">
+          <End Type="Conor.ReporteDashboard" Role="ReportesDashboard" Multiplicity="1" />
+          <End Type="Conor.ConfiguracionDashboard" Role="ConfiguracionDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportesDashboard">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ConfiguracionDashboard">
+              <PropertyRef Name="ReporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoIncidenteAlertaIncidente">
+          <End Type="Conor.TipoIncidente" Role="TipoIncidente" Multiplicity="1" />
+          <End Type="Conor.AlertaIncidente" Role="AlertaIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertaIncidente">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpresaAlertaIncidente">
+          <End Type="Conor.Empresa" Role="Empresa" Multiplicity="1" />
+          <End Type="Conor.AlertaIncidente" Role="AlertaIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AlertaIncidente">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ParametrosSistemaParametrosSistemaEmpresa">
+          <End Type="Conor.ParametrosSistema" Role="ParametrosSistema" Multiplicity="1" />
+          <End Type="Conor.ParametroSistemaEmpresa" Role="ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParametrosSistema">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="ParametrosSistemaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmpresaParametrosSistemaEmpresa">
+          <End Type="Conor.Empresa" Role="Empresa" Multiplicity="1" />
+          <End Type="Conor.ParametroSistemaEmpresa" Role="ParametrosSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametrosSistemaEmpresa">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TipoAfectacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nombre" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="UsuarioAlta" Nullable="false" />
+          <Property Type="DateTime" Name="FechaAlta" Nullable="false" />
+          <NavigationProperty Name="AfectacionIncidentes" Relationship="Conor.TipoAfectacionAfectacionIncidente" FromRole="TipoAfectacion" ToRole="AfectacionIncidente" />
+        </EntityType>
+        <EntityType Name="AfectacionIncidente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IncidenteId" Nullable="false" />
+          <Property Type="Int32" Name="TipoAfectacionId" Nullable="false" />
+          <NavigationProperty Name="TipoAfectacion" Relationship="Conor.TipoAfectacionAfectacionIncidente" FromRole="AfectacionIncidente" ToRole="TipoAfectacion" />
+          <NavigationProperty Name="Incidente" Relationship="Conor.IncidenteAfectacionIncidente" FromRole="AfectacionIncidente" ToRole="Incidente" />
+        </EntityType>
+        <Association Name="TipoAfectacionAfectacionIncidente">
+          <End Type="Conor.TipoAfectacion" Role="TipoAfectacion" Multiplicity="1" />
+          <End Type="Conor.AfectacionIncidente" Role="AfectacionIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoAfectacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionIncidente">
+              <PropertyRef Name="TipoAfectacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="IncidenteAfectacionIncidente">
+          <End Type="Conor.Incidente" Role="Incidente" Multiplicity="1" />
+          <End Type="Conor.AfectacionIncidente" Role="AfectacionIncidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Incidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AfectacionIncidente">
+              <PropertyRef Name="IncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoIncidenteParametroSistemaEmpresa">
+          <End Type="Conor.TipoIncidente" Role="TipoIncidente" Multiplicity="0..1" />
+          <End Type="Conor.ParametroSistemaEmpresa" Role="ParametroSistemaEmpresa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoIncidente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ParametroSistemaEmpresa">
+              <PropertyRef Name="TipoIncidenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="UsuarioEmpresa">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+            <PropertyRef Name="EmpresaId" />
+          </Key>
+          <Property Type="Int32" Name="UsuarioId" Nullable="false" />
+          <Property Type="Int32" Name="EmpresaId" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Conor.UsuarioEmpresaUsuario" FromRole="UsuarioEmpresa" ToRole="Usuario" />
+          <NavigationProperty Name="Empresa" Relationship="Conor.UsuarioEmpresaEmpresa" FromRole="UsuarioEmpresa" ToRole="Empresa" />
+        </EntityType>
+        <Association Name="UsuarioEmpresaUsuario">
+          <End Type="Conor.UsuarioEmpresa" Role="UsuarioEmpresa" Multiplicity="*" />
+          <End Type="Conor.Usuario" Role="Usuario" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioEmpresa">
+              <PropertyRef Name="UsuarioId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsuarioEmpresaEmpresa">
+          <End Type="Conor.UsuarioEmpresa" Role="UsuarioEmpresa" Multiplicity="*" />
+          <End Type="Conor.Empresa" Role="Empresa" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Empresa">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsuarioEmpresa">
+              <PropertyRef Name="EmpresaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MotivoAmenazaIncidente">
+          <End Type="Conor.MotivoAmenaza" Role="MotivoAmenaza" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MotivoAmenaza">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidente">
+              <PropertyRef Name="MotivoAmenazaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TipoInstalacionIncidente">
+          <End Type="Conor.TipoInstalacion" Role="TipoInstalacion" Multiplicity="0..1" />
+          <End Type="Conor.Incidente" Role="Incidente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoInstalacion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Incidente">
+              <PropertyRef Name="TipoInstalacionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConorStoreContainer" CdmEntityContainer="ConorContainer">
+    <EntitySetMapping Name="CantidadDelincuentes">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.CantidadDelincuentes)">
+        <MappingFragment StoreEntitySet="CantidadDelincuentes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NombreDeCantidad" ColumnName="NombreDeCantidad" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Estado)">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ciudades">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Ciudad)">
+        <MappingFragment StoreEntitySet="Ciudades">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Empresa)">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TipoEmpresa" ColumnName="TipoEmpresa" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="GrupoId" ColumnName="GrupoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incidentes">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Incidente)">
+        <MappingFragment StoreEntitySet="Incidentes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FechaIncidente" ColumnName="FechaIncidente" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="TipoIncidenteId" ColumnName="TipoIncidenteId" />
+          <ScalarProperty Name="LesionadosId" ColumnName="LesionadosId" />
+          <ScalarProperty Name="TipoInstalacionId" ColumnName="TipoInstalacionId" />
+          <ScalarProperty Name="InstalacionId" ColumnName="InstalacionId" />
+          <ScalarProperty Name="MontoAfectacion" ColumnName="MontoAfectacion" />
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="CiudadId" ColumnName="CiudadId" />
+          <ScalarProperty Name="ZonaId" ColumnName="ZonaId" />
+          <ScalarProperty Name="TipoArmaId" ColumnName="TipoArmaId" />
+          <ScalarProperty Name="Detenidos" ColumnName="Detenidos" />
+          <ScalarProperty Name="CantidadDelincuentesId" ColumnName="CantidadDelincuentesId" />
+          <ScalarProperty Name="TipoVehiculoId" ColumnName="TipoVehiculoId" />
+          <ScalarProperty Name="TipoExtorsionId" ColumnName="TipoExtorsionId" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="UsuarioCancelacion" ColumnName="UsuarioCancelacion" />
+          <ScalarProperty Name="FechaCancelacion" ColumnName="FechaCancelacion" />
+          <ScalarProperty Name="UsuarioUltimaModificacion" ColumnName="UsuarioUltimaModificacion" />
+          <ScalarProperty Name="FechaUltimaMoldificacion" ColumnName="FechaUltimaMoldificacion" />
+          <ScalarProperty Name="MotivoAmenazaId" ColumnName="MotivoAmenazaId" />
+          <ScalarProperty Name="MedioAmenazaId" ColumnName="MedioAmenazaId" />
+          <ScalarProperty Name="TipoIntrusionId" ColumnName="TipoIntrusionId" />
+          <ScalarProperty Name="Calle" ColumnName="Calle" />
+          <ScalarProperty Name="Colonia" ColumnName="Colonia" />
+          <ScalarProperty Name="EntreCalles" ColumnName="EntreCalles" />
+          <ScalarProperty Name="ConVehiculo" ColumnName="ConVehiculo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instalaciones">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Instalacion)">
+        <MappingFragment StoreEntitySet="Instalaciones">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="TipoInstalacionId" ColumnName="TipoInstalacionId" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lesionados">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Lesionado)">
+        <MappingFragment StoreEntitySet="Lesionados">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediosAmenaza">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.MedioAmenaza)">
+        <MappingFragment StoreEntitySet="MediosAmenaza">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Perfiles">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Perfil)">
+        <MappingFragment StoreEntitySet="Perfiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Poligonos">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Poligono)">
+        <MappingFragment StoreEntitySet="Poligonos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NivelGeograficoId" ColumnName="NivelGeograficoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relPerfilesUsuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.UsuarioPerfil)">
+        <MappingFragment StoreEntitySet="relPerfilesUsuarios">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MotivosAmenaza">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.MotivoAmenaza)">
+        <MappingFragment StoreEntitySet="MotivosAmenaza">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposArma">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoArma)">
+        <MappingFragment StoreEntitySet="TiposArma">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposExtorsion">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoExtorsion)">
+        <MappingFragment StoreEntitySet="TiposExtorsion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposIncidente">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoIncidente)">
+        <MappingFragment StoreEntitySet="TiposIncidente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposInstalacion">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoInstalacion)">
+        <MappingFragment StoreEntitySet="TiposInstalacion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposIntrusion">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoIntrusion)">
+        <MappingFragment StoreEntitySet="TiposIntrusion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposVehiculo">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoVehiculo)">
+        <MappingFragment StoreEntitySet="TiposVehiculo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Usuario)">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ApellidoPaterno" ColumnName="ApellidoPaterno" />
+          <ScalarProperty Name="ApellidoMaterno" ColumnName="ApellidoMaterno" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="UsuarioBaja" ColumnName="UsuarioBaja" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="FechaUltimoLogin" ColumnName="FechaUltimoLogin" />
+          <ScalarProperty Name="Bloqueado" ColumnName="Bloqueado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zonas">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.Zona)">
+        <MappingFragment StoreEntitySet="Zonas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="EstadoId" ColumnName="EstadoId" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlertasIncidente">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.AlertaIncidente)">
+        <MappingFragment StoreEntitySet="AlertasIncidente">
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="TipoIncidenteId" ColumnName="TipoIncidenteId" />
+          <ScalarProperty Name="Emails" ColumnName="Emails" />
+          <ScalarProperty Name="RecibirOtrasEmpresas" ColumnName="RecibirOtrasEmpresas" />
+          <ScalarProperty Name="RecibirMiEmpresa" ColumnName="RecibirMiEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametrosSistemaEmpresa">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.ParametroSistemaEmpresa)">
+        <MappingFragment StoreEntitySet="ParametrosSistemaEmpresa">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="TipoIncidenteId" ColumnName="TipoIncidenteId" />
+          <ScalarProperty Name="ValorInicial" ColumnName="ValorInicial" />
+          <ScalarProperty Name="Valorfinal" ColumnName="Valorfinal" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="FechaUltimaModificacion" ColumnName="FechaUltimaModificacion" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="ParametrosSistemaId" ColumnName="ParametrosSistemaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfiguracionesDashboard">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.ConfiguracionDashboard)">
+        <MappingFragment StoreEntitySet="ConfiguracionesDashboard">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="ReporteId" ColumnName="ReporteId" />
+          <ScalarProperty Name="MontoAfectadoMinimo" ColumnName="MontoAfectadoMinimo" />
+          <ScalarProperty Name="MontoAfectadoMaximo" ColumnName="MontoAfectadoMaximo" />
+          <ScalarProperty Name="EsConsolidado" ColumnName="EsConsolidado" />
+          <ScalarProperty Name="SeIncluyeTabla" ColumnName="SeIncluyeTabla" />
+          <ScalarProperty Name="EsReporteBase" ColumnName="EsReporteBase" />
+          <ScalarProperty Name="SegmentoReporteId" ColumnName="SegmentoReporteId" />
+          <ScalarProperty Name="TipoUnidadTiempoId" ColumnName="TipoUnidadTiempoId" />
+          <ScalarProperty Name="ValorUnidadTiempo" ColumnName="ValorUnidadTiempo" />
+          <ScalarProperty Name="ConfiguracionDashboardBaseId" ColumnName="ConfiguracionDashboardBaseId" />
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NivelesGeograficos">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.NivelGeografico)">
+        <MappingFragment StoreEntitySet="NivelesGeograficos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposUnidadTiempo">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoUnidadTiempo)">
+        <MappingFragment StoreEntitySet="TiposUnidadTiempo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametrosSistema">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.ParametrosSistema)">
+        <MappingFragment StoreEntitySet="ParametrosSistema">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TipoDeParametro" ColumnName="TipoDeParametro" />
+          <ScalarProperty Name="TipoIncidenteEsRequerido" ColumnName="TipoIncidenteEsRequerido" />
+          <ScalarProperty Name="ValorFinalEsRequerido" ColumnName="ValorFinalEsRequerido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FiltrosDashboard">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.FiltroDashboard)">
+        <MappingFragment StoreEntitySet="FiltrosDashboard">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FiltroDashboardId" ColumnName="FiltroDashboardId" />
+          <ScalarProperty Name="TipoFiltroId" ColumnName="TipoFiltroId" />
+          <ScalarProperty Name="ValorFiltro" ColumnName="ValorFiltro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposFiltroDashboard">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoFiltroDashboard)">
+        <MappingFragment StoreEntitySet="TiposFiltroDashboard">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PoligonosDetalle">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.PoligonoDetalle)">
+        <MappingFragment StoreEntitySet="PoligonosDetalle">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PoligonoId" ColumnName="PoligonoId" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportesDashboard">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.ReporteDashboard)">
+        <MappingFragment StoreEntitySet="ReportesDashboard">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TiposAfectacion">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.TipoAfectacion)">
+        <MappingFragment StoreEntitySet="TiposAfectacion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AfectacionesIncidente">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.AfectacionIncidente)">
+        <MappingFragment StoreEntitySet="AfectacionesIncidente">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IncidenteId" ColumnName="IncidenteId" />
+          <ScalarProperty Name="TipoAfectacionId" ColumnName="TipoAfectacionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relUsuarioEmpresa">
+      <EntityTypeMapping TypeName="IsTypeOf(Conor.UsuarioEmpresa)">
+        <MappingFragment StoreEntitySet="relUsuarioEmpresa">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DatabaseGenerationWorkflow" Value="$(VSEFTools)\DBGen\TablePerTypeStrategy.xaml" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Conor" ZoomLevel="88" ShowGrid="false" DisplayType="true" >
+        <EntityTypeShape EntityType="Conor.CantidadDelincuentes" PointX="6.625" PointY="0.5" Width="2.125" Height="1.787985026041667" />
+        <EntityTypeShape EntityType="Conor.Estado" Width="2.125" PointX="5.5" PointY="8.5" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="Conor.Ciudad" Width="1.5" PointX="8.25" PointY="8.625" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="Conor.Empresa" Width="1.5" PointX="13.875" PointY="11.5" Height="3.1340950520833335" />
+        <EntityTypeShape EntityType="Conor.Incidente" Width="2.5" PointX="11" PointY="0.5" Height="10.441549479166666" />
+        <EntityTypeShape EntityType="Conor.Instalacion" Width="1.5" PointX="11.875" PointY="11.75" Height="3.1340950520833335" />
+        <EntityTypeShape EntityType="Conor.Lesionado" Width="1.5" PointX="8.25" PointY="6.375" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Conor.MedioAmenaza" Width="1.5" PointX="13.875" PointY="0.5" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Conor.Perfil" Width="1.5" PointX="16.125" PointY="8.125" Height="1.9802864583333339" />
+        <EntityTypeShape EntityType="Conor.Poligono" Width="2.25" PointX="5.5" PointY="11.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Conor.UsuarioPerfil" Width="1.5" PointX="16" PointY="5.375" Height="1.7879850260416657" />
+        <EntityTypeShape EntityType="Conor.MotivoAmenaza" Width="1.5" PointX="5.625" PointY="6.25" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Conor.TipoArma" Width="1.5" PointX="9" PointY="0.5" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Conor.TipoExtorsion" Width="1.5" PointX="4.25" PointY="1.25" Height="1.9802864583333339" />
+        <EntityTypeShape EntityType="Conor.TipoIncidente" Width="1.5" PointX="14" PointY="7.375" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="Conor.TipoInstalacion" Width="1.5" PointX="10.125" PointY="15.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Conor.TipoIntrusion" Width="1.5" PointX="13.875" PointY="2.875" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Conor.TipoVehiculo" Width="1.5" PointX="13.875" PointY="5.125" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Conor.Usuario" Width="1.75" PointX="15.75" PointY="0.5" Height="4.2879036458333326" />
+        <EntityTypeShape EntityType="Conor.Zona" Width="1.5" PointX="3.75" PointY="3.5" Height="2.9417936197916656" />
+        <AssociationConnector Association="Conor.PerfilrelPerfilUsuario">
+          <ConnectorPoint PointX="16.8125" PointY="8.125" />
+          <ConnectorPoint PointX="16.8125" PointY="7.1629850260416656" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.EmpresasInstalaciones">
+          <ConnectorPoint PointX="13.875" PointY="13.192047526041666" />
+          <ConnectorPoint PointX="13.375" PointY="13.192047526041666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoInstalacionInstalaciones">
+          <ConnectorPoint PointX="11.46875" PointY="15.625" />
+          <ConnectorPoint PointX="11.46875" PointY="14.463440755208332" />
+          <ConnectorPoint PointX="11.875" PointY="14.463440755208332" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.EstadosCiudades">
+          <ConnectorPoint PointX="7.625" PointY="9.9686775647822543" />
+          <ConnectorPoint PointX="8.25" PointY="9.9686775647822543" />
+        </AssociationConnector>
+        <AssociationConnector ManuallyRouted="false" Association="Conor.EstadosZona">
+          <ConnectorPoint PointX="5.53125" PointY="8.5" />
+          <ConnectorPoint PointX="5.53125" PointY="5.9738044881184811" />
+          <ConnectorPoint PointX="5.25" PointY="5.9738044881184811" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoArmaIncidentes">
+          <ConnectorPoint PointX="10.5" PointY="1.4901432291666672" />
+          <ConnectorPoint PointX="11" PointY="1.4901432291666672" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoExtorcionIncidentes">
+          <ConnectorPoint PointX="5.75" PointY="2.7785260752290455" />
+          <ConnectorPoint PointX="8.0416666666666661" PointY="2.778526075229045" />
+          <ConnectorPoint PointX="8.2083333333333339" PointY="2.7785260752290455" />
+          <ConnectorPoint PointX="11" PointY="2.7785260752290455" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.CantidadDelincuentesIncidentes">
+          <ConnectorPoint PointX="8.125" PointY="2.287985026041667" />
+          <ConnectorPoint PointX="8.125" PointY="3.1392655376145164" />
+          <ConnectorPoint PointX="11" PointY="3.1392655376145164" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.LesionadosIncidentes">
+          <ConnectorPoint PointX="9.75" PointY="7.3651432291666667" />
+          <ConnectorPoint PointX="11" PointY="7.3651432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.MedioAmenazaIncidentes">
+          <ConnectorPoint PointX="13.875" PointY="1.4901432291666668" />
+          <ConnectorPoint PointX="13.5" PointY="1.4901432291666668" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoIntrusionIncidentes">
+          <ConnectorPoint PointX="13.875" PointY="3.8651432291666667" />
+          <ConnectorPoint PointX="13.5" PointY="3.8651432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoVehiculoIncidentes">
+          <ConnectorPoint PointX="13.875" PointY="6.1151432291666667" />
+          <ConnectorPoint PointX="13.5" PointY="6.1151432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoIncidenteIncidentes">
+          <ConnectorPoint PointX="14" PointY="8.74974609375" />
+          <ConnectorPoint PointX="13.5" PointY="8.74974609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.UsuarioIncidentes">
+          <ConnectorPoint PointX="15.75" PointY="2.6776432291666663" />
+          <ConnectorPoint PointX="13.5" PointY="2.6776432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.EmpresasIncidentes" ManuallyRouted="false">
+          <ConnectorPoint PointX="13.875" PointY="11.5" />
+          <ConnectorPoint PointX="13.500000000000002" PointY="10.941549479166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.EstadosIncidentes">
+          <ConnectorPoint PointX="7.625" PointY="8.53125" />
+          <ConnectorPoint PointX="11" PointY="8.53125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.CiudadesIncidentes" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="9.7832747395833319" />
+          <ConnectorPoint PointX="11" PointY="9.7832747395833319" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.ZonaIncidentes">
+          <ConnectorPoint PointX="5.25" PointY="5.6957954732259068" />
+          <ConnectorPoint PointX="11" PointY="5.6957954732259068" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Conor.AlertaIncidente" Width="3" PointX="20.625" PointY="9.5" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Conor.ParametroSistemaEmpresa" Width="3.125" PointX="16.875" PointY="13.125" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="Conor.ConfiguracionDashboard" Width="2.75" PointX="18.125" PointY="0.5" Height="4.0956022135416656" />
+        <EntityTypeShape EntityType="Conor.NivelGeografico" PointX="3.125" PointY="12.625" Width="1.875" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Conor.TipoUnidadTiempo" Width="2.25" PointX="21.25" PointY="0.5" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Conor.ParametrosSistema" Width="3" PointX="20.75" PointY="13" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="Conor.FiltroDashboard" Width="2.25" PointX="21.375" PointY="2.375" Height="2.172587890625" />
+        <AssociationConnector Association="Conor.ConfiguracionDashboardFiltrosDashboard">
+          <ConnectorPoint PointX="20.875" PointY="3.4612939453125" />
+          <ConnectorPoint PointX="21.375" PointY="3.4612939453125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Conor.TipoFiltroDashboard" Width="2" PointX="21.5" PointY="5" Height="1.59568359375" />
+        <AssociationConnector Association="Conor.UsuarioUsuarioPerfil">
+          <ConnectorPoint PointX="16.75" PointY="4.7879036458333326" />
+          <ConnectorPoint PointX="16.75" PointY="5.375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Conor.PoligonoDetalle" Width="3.125" PointX="8.125" PointY="12" Height="1.9802864583333353" />
+        <AssociationConnector Association="Conor.PoligonoPoligonoDetalle">
+          <ConnectorPoint PointX="7.75" PointY="12.990143229166668" />
+          <ConnectorPoint PointX="8.125" PointY="12.990143229166668" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.NivelGeograficoPoligono">
+          <ConnectorPoint PointX="5" PointY="13.422841796875" />
+          <ConnectorPoint PointX="5.5" PointY="13.422841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.InstalacionesIncidentes">
+          <ConnectorPoint PointX="12.625" PointY="11.75" />
+          <ConnectorPoint PointX="12.625" PointY="10.941549479166666" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.ZonaPoligono">
+          <ConnectorPoint PointX="5.15625" PointY="6.4417936197916656" />
+          <ConnectorPoint PointX="5.15625" PointY="12.21875" />
+          <ConnectorPoint PointX="5.5" PointY="12.21875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.EstadosPoligono">
+          <ConnectorPoint PointX="6.5625" PointY="11.2494921875" />
+          <ConnectorPoint PointX="6.5625" PointY="11.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.PoligonoCiudades" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.75" PointY="11.875" />
+          <ConnectorPoint PointX="8.25" PointY="11.3744921875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoUnidadTiempoConfiguracionDashboard">
+          <ConnectorPoint PointX="21.25" PointY="1.2978417968749998" />
+          <ConnectorPoint PointX="20.875" PointY="1.2978417968749998" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoFiltroDashboardFiltrosDashboard">
+          <ConnectorPoint PointX="22.5" PointY="5" />
+          <ConnectorPoint PointX="22.5" PointY="4.547587890625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Conor.ReporteDashboard" Width="2.875" PointX="18.25" PointY="5.125" Height="1.5956835937499996" />
+        <AssociationConnector Association="Conor.ReportesDashboardConfiguracionDashboard">
+          <ConnectorPoint PointX="19.5625" PointY="5.125" />
+          <ConnectorPoint PointX="19.5625" PointY="4.5956022135416656" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoIncidenteAlertaIncidente">
+          <ConnectorPoint PointX="15.48046875" PointY="10.1244921875" />
+          <ConnectorPoint PointX="15.48046875" PointY="10.812248593749994" />
+          <ConnectorPoint PointX="20.229166666666668" PointY="10.812248593749994" />
+          <ConnectorPoint PointX="20.395833333333332" PointY="10.812248593749994" />
+          <ConnectorPoint PointX="20.625" PointY="10.812248593749994" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.EmpresaAlertaIncidente">
+          <ConnectorPoint PointX="15.375" PointY="12.401195161458332" />
+          <ConnectorPoint PointX="15.377604166666666" PointY="12.401195161458332" />
+          <ConnectorPoint PointX="15.544270833333334" PointY="12.401195161458332" />
+          <ConnectorPoint PointX="20.229166666666668" PointY="12.401195161458332" />
+          <ConnectorPoint PointX="20.395833333333332" PointY="12.401195161458332" />
+          <ConnectorPoint PointX="20.65625" PointY="12.401195161458332" />
+          <ConnectorPoint PointX="20.65625" PointY="11.864889322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.ParametrosSistemaParametrosSistemaEmpresa">
+          <ConnectorPoint PointX="20.75" PointY="14.1487939453125" />
+          <ConnectorPoint PointX="20" PointY="14.1487939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.EmpresaParametrosSistemaEmpresa">
+          <ConnectorPoint PointX="15.375" PointY="13.879547526041666" />
+          <ConnectorPoint PointX="15.377604166666666" PointY="13.879547526041666" />
+          <ConnectorPoint PointX="15.544270833333334" PointY="13.879547526041666" />
+          <ConnectorPoint PointX="16.875" PointY="13.879547526041666" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Conor.TipoAfectacion" Width="2.25" PointX="5.75" PointY="3.5" Height="1.9802864583333339" />
+        <EntityTypeShape EntityType="Conor.AfectacionIncidente" Width="2.25" PointX="8.375" PointY="3.5" Height="1.9802864583333326" />
+        <AssociationConnector Association="Conor.TipoAfectacionAfectacionIncidente">
+          <ConnectorPoint PointX="8" PointY="4.4901432291666659" />
+          <ConnectorPoint PointX="8.375" PointY="4.4901432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.IncidenteAfectacionIncidente">
+          <ConnectorPoint PointX="11" PointY="4.4901432291666659" />
+          <ConnectorPoint PointX="10.625" PointY="4.4901432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoIncidenteParametroSistemaEmpresa">
+          <ConnectorPoint PointX="15.4609375" PointY="10.1244921875" />
+          <ConnectorPoint PointX="15.4609375" PointY="15.670146484375" />
+          <ConnectorPoint PointX="16.875" PointY="15.670146484375" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Conor.UsuarioEmpresa" Width="2.5" PointX="18.75" PointY="7.125" Height="1.4033821614583335" />
+        <AssociationConnector Association="Conor.UsuarioEmpresaUsuario">
+          <ConnectorPoint PointX="18.75" PointY="7.6439925130208337" />
+          <ConnectorPoint PointX="16.895833333333332" PointY="7.6439925130208328" />
+          <ConnectorPoint PointX="16.729166666666668" PointY="7.6439925130208337" />
+          <ConnectorPoint PointX="15.84375" PointY="7.6439925130208337" />
+          <ConnectorPoint PointX="15.84375" PointY="4.7879036458333326" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.UsuarioEmpresaEmpresa">
+          <ConnectorPoint PointX="20.3125" PointY="8.9129850260416674" />
+          <ConnectorPoint PointX="20.3125" PointY="12.700600080729167" />
+          <ConnectorPoint PointX="15.544270833333334" PointY="12.700600080729167" />
+          <ConnectorPoint PointX="15.377604166666666" PointY="12.700600080729167" />
+          <ConnectorPoint PointX="15.375" PointY="12.700600080729167" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.MotivoAmenazaIncidente">
+          <ConnectorPoint PointX="7.125" PointY="6.28125" />
+          <ConnectorPoint PointX="11" PointY="6.28125" />
+        </AssociationConnector>
+        <AssociationConnector Association="Conor.TipoInstalacionIncidente">
+          <ConnectorPoint PointX="11.328125" PointY="15.625" />
+          <ConnectorPoint PointX="11.328125" PointY="10.941549479166666" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

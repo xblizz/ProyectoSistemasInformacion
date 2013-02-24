@@ -1,0 +1,118 @@
+﻿@using SistemaSeguridad.Helpers
+@model IEnumerable<SS.Core.Entities.TipoExtorsion>
+
+@{
+    ViewBag.Title = "Tipos de extorsión";
+}
+
+<h2>Tipos de extorsión</h2>
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.FlexGrid,"flexigrid.css")' rel="stylesheet" type="text/css" />
+<script src="@Url.JavaScript(Plugin.FlexGrid, "flexigrid.js")" type="text/javascript"></script>
+
+
+<div id="namegrid"></div>
+
+<div class="Invisible" id="dialog-ConfirmaBorrar" title=@SistemaSeguridad.Resources.GlobalStrings.Informacion>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.DeleteConfirm
+    </p>
+</div>
+
+<div class="Invisible" id="dialog-RN" title=@SistemaSeguridad.Resources.GlobalStrings.Informacion>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        No se puede eliminar este elemento debido a que tiene Incidentes asociados.
+    </p>
+</div>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+
+        var myFlex = {
+            autoload: true,
+            dataType: 'json',
+            url: "@Url.Action("GetTiposExtorciones", "TipoExtorsion")",
+            usepager: true,
+            singleSelect: true,
+            pagestat: 'Mostrando {from} a {to} de {total} registros',
+            procmsg: 'Procesando, por favor espere ...',
+            nomsg: 'No existen registros',
+            pagetext: 'Página',
+            findtext: 'Buscar',
+            outof: 'de',
+            showToggleBtn: false,
+            useRp: true,
+            rp: 15
+        };
+
+        $('#namegrid').flexigrid($.extend({ }, myFlex, {
+            colModel: [
+                { display: 'id', name: 'Id', width: 40, sortable: true, align: 'left', hide: true },
+                { display: 'Descripción', name: 'Descripcion', width: 160, sortable: true, align: 'left' }
+            ],
+            buttons: [
+                { name: 'Nuevo', bclass: 'add', onpress: doCommand },
+                { name: 'Modifiicar', bclass: 'edit', onpress: doCommand },
+                { name: 'Eliminar', bclass: 'delete', onpress: doCommand }
+            ]
+        }));
+        
+
+        function doCommand(com, grid) {
+            if (com == 'Nuevo') {
+                var url = "@Url.Action("Create")";
+                $(location).attr('href', url);
+            }
+            if (com == 'Modifiicar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="Id"]');
+                    var url = "@Url.Action("Edit/")" + id.text();
+                    $(location).attr('href', url);
+                });
+            } else if (com == 'Eliminar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="Id"]');
+                    var usuario = $('.trSelected > td[abbr="user"]');
+                    OpenPopUp({
+                        id: "dialog-confirm",
+                        buttons: 2,
+                        yes: function() {
+                            $.getJSON("@Url.Action("RnEliminar")", { id: id.text() }, function(data) {
+                                if (data == "false") {
+                                    OpenPopUp({
+                                        id: " dialog-RN",
+                                        buttons: 2,
+                                        ok: function() {
+                                            $('#namegrid').flexOptions({ params: parameters }).flexReload();
+                                        }
+                                    });
+                                    } else {
+                                    $.getJSON("@Url.Action("DeleteConfirmed")", { id: id.text() }, function(data) {
+                                        var mensaje;
+                                        if (data == "true") {
+                                            mensaje = "El tipo de extorción " + usuario.text().trim() + " ha sido eliminado.";
+                                        } else {
+                                            mensaje = "No se ha podido eliminar el tipo de extorción seleccionado: " + usuario.text().trim() + ".";
+                                        }
+                                        alert(mensaje);
+                                        $('#namegrid').flexReload();
+                                    });
+                                }
+                            });
+                        },
+                        no:function() {
+                            $('#namegrid').flexOptions({ params: parameters }).flexReload();
+                        }
+                    });
+                    
+            
+                });
+            }
+        }
+    });
+    
+
+</script>

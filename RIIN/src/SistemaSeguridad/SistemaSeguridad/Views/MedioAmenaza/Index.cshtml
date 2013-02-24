@@ -1,0 +1,91 @@
+﻿@using SistemaSeguridad.Helpers
+@model IEnumerable<SS.Core.Entities.MedioAmenaza>
+
+@{
+    ViewBag.Title = "Medios de Amenaza";
+}
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.FlexGrid,"flexigrid.css")' rel="stylesheet" type="text/css" />
+<script src="@Url.JavaScript(Plugin.FlexGrid, "flexigrid.js")" type="text/javascript"></script>
+
+<h2>Medios de amenaza</h2>
+
+<div id="namegrid"></div>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+
+        var myFlex = {
+            autoload: true,
+            dataType: 'json',
+            url: "@Url.Action("GetAmenazas", "MedioAmenaza")",
+            usepager: true,
+            singleSelect: true,
+            pagestat: 'Mostrando {from} a {to} de {total} registros',
+            procmsg: 'Procesando, por favor espere ...',
+            nomsg: 'No existen registros',
+            pagetext: 'Página',
+            findtext: 'Buscar',
+            outof: 'de',
+            showToggleBtn: false,
+            useRp: true,
+            rp: 15
+        };
+
+        $('#namegrid').flexigrid($.extend({ }, myFlex, {
+            colModel: [
+                { display: 'id', name: 'Id', width: 40, sortable: true, align: 'left', hide: true },
+                { display: 'Descripción', name: 'Descripcion', width: 60, sortable: true, align: 'left' }
+            ],
+            buttons: [
+                { name: 'Nuevo', bclass: 'add', onpress: doCommand },
+                { name: 'Modifiicar', bclass: 'edit', onpress: doCommand },
+                { name: 'Eliminar', bclass: 'delete', onpress: doCommand }
+            ]
+        }));
+        
+
+        function doCommand(com, grid) {
+            if (com == 'Nuevo') {
+                var url = "@Url.Action("Create")";
+                $(location).attr('href', url);
+            }
+            if (com == 'Modifiicar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="Id"]');
+                    var url = "@Url.Action("Edit/")" + id.text();
+                    $(location).attr('href', url);
+                });
+            } else if (com == 'Eliminar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="Id"]');
+                    var usuario = $('.trSelected > td[abbr="user"]');
+
+                    $.getJSON("@Url.Action("RnEliminar")", { id: id.text() }, function(data) {
+                        if (data == "false") {
+                            alert("no se borra");
+                        } else {
+                            $.getJSON("@Url.Action("DeleteConfirmed")", { id: id.text() }, function(data) {
+                                var mensaje;
+                                if(data=="true") {
+                                    mensaje = "El medio de amenaza " + usuario.text().trim() + " ha sido eliminado.";
+                                }else {
+                                    mensaje = "No se ha podido eliminar el medio de amenaza seleccionado: " + usuario.text().trim() + ".";
+                                }
+                                alert(mensaje);
+                                $('#namegrid').flexReload();
+                            });
+                        }
+                    });
+                });
+            }
+        }
+
+
+
+
+    });
+    
+
+</script>

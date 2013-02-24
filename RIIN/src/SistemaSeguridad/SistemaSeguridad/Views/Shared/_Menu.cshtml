@@ -1,0 +1,30 @@
+﻿@model List<MenuItem>
+@using SS.Core.Security.Menu
+@using SistemaSeguridad.Helpers
+
+<ul id="nav">
+    @foreach (var item in Model)
+    {
+        <li><a href="#">
+            <img src="@Url.Image(@item.PathImg)" alt="" width="26" height="24" />@item.Title.Trim()</a>
+            <ul>
+                @foreach (var option in item.Chose)
+                {
+                    <li>@Html.ActionLink(@option.Text, @option.Action, @option.Controller)</li>
+                }
+            </ul>
+        </li>
+    }
+</ul>
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        $('#nav li a').click(function (event) {
+            var elem = $(this).next();
+            if (elem.is('ul')) {
+                event.preventDefault();
+                $('#nav ul:visible').not(elem).slideUp();
+                elem.slideToggle();
+            }
+        });
+    });
+</script>

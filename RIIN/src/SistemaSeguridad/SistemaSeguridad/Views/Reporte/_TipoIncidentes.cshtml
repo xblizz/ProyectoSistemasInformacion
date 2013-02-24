@@ -1,0 +1,18 @@
+﻿Tipo de incidente
+<select id="cmbPerfil" name="PerfilId" title="Perfiles" multiple="multiple"></select>  
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#cmbPerfil").Cascade("@Url.Action("GetTiposIncidente", "Helper")", null, multiseleccion, 260);
+
+    function multiseleccion(object, size) {
+        $(object).multiselect({
+            selectedList: 4,
+            header: false,
+                minWidth:size,
+            noneSelectedText: "Seleccione..."
+        });
+        $(object).multiselect('refresh');
+    }
+});
+</script>

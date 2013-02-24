@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "TendenciaDia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>ShowTendenciaHora</h2>
+<input id="btnBuscar" type="button" value="push" />
+<input id="btnBuscar" type="button" value="push" />
+
+<div id="divTendenciaMes" >
+    @Html.Partial("_HeaderLocalizacion");
+    @Html.Partial("_UnidadTiempo");
+    @Html.Partial("_TipoIncidentes");
+</div>
+<div id="reporte"></div>
+<script type="text/javascript">
+    //Search button
+    $(document).ready(function () {
+        $("#btnBuscar").bind("click", function() {
+            loadInfo();
+        });
+    });
+    
+    function loadInfo() {
+         //We build parameter array
+        var stringArray = new Array(10);
+        //stringArray[0] = $("#EmpresaId option:selected").text();       //Devuelve Texto
+        stringArray[0] = $("#EmpresaId option:selected").val();        //Devuelve ID
+        stringArray[1] = $("#EstadoId option:selected").val();
+        stringArray[2] = $("#CiudadId option:selected").val();
+        stringArray[3] = $("#ZonaId option:selected").val();
+        stringArray[4] = $("#chkConor").val();
+
+        getJson("@Url.Action("ShowTendenciaMes")",{values: stringArray},  function (data) {
+            $('#reporte').html(data);
+        });
+    }
+</script>

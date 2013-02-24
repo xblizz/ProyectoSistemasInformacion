@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Reporte de Tendencia";
+}
+
+<!-- Tendencia -->
+<div>@Html.Partial("_FiltrosTendencia")</div>
+
+<input type="button" id="btnConsultar" name="btnConsultar" value="Consultar"/>
+
+<!--span para que dibuje el iframe generado en el ReporteController-->
+<div id="reporte"></div>
+
+<script type="text/javascript">
+    //Search button
+    $(document).ready(function () {
+        $("#btnConsultar").bind("click", function () {
+            loadInfo();
+        });
+    });
+
+    function loadInfo() {
+        //We build parameter array
+        var stringArray = new Array(14);
+
+        stringArray[0] = $("#EmpresaId option:selected").val();
+        stringArray[1] = $("#EstadoId option:selected").val();
+        stringArray[2] = $("#CiudadId option:selected").val();
+        stringArray[3] = $("#ZonaId option:selected").val();
+        stringArray[4] = $('#chkConor').is(':checked');
+        stringArray[5] = $("#cmbTiposIncidente").val();
+        //stringArray[6] = $("#ddMesInicio option:selected").val();
+        stringArray[6] = $("#txtMesInicioMes").val();
+        stringArray[7] = $("#txtMesFinalMes").val();
+        stringArray[8] = $("#txtAnioInicialMes").val();
+        stringArray[9] = $("#txtAnioFinalMes").val();
+        stringArray[10] = $("#txtFechaInicioDia").val();
+        stringArray[11] = $("#txtFechaFinalDia").val();
+        stringArray[12] = $("#txtFechaInicioHora").val();
+        stringArray[13] = $("#txtHoraInicio").val();
+        stringArray[14] = $("#txtHoraFinal").val();
+
+        var mes = document.getElementById("rdMes").checked;
+        var dia = document.getElementById("rdDia").checked;
+        var hora = document.getElementById("rdHora").checked;
+
+        var actionUrl = "";
+
+        if (mes)
+            actionUrl = "@Url.Action("ShowTendenciaMes")"
+        else if (dia)
+            actionUrl = "@Url.Action("ShowTendenciaDia")" //"/Reports/ShowTendenciaDia";
+        else if (hora)
+            actionUrl = "@Url.Action("ShowTendenciaDia")" //"/Reports/ShowTendenciaHora";
+
+        var postData = { values: stringArray };
+
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            data: postData,
+            success: function (data) {
+                $('#reporte').html(data);
+            },
+            dataType: "json",
+            traditional: true
+        });
+    }
+</script>

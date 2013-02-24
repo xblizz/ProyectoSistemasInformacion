@@ -1,0 +1,48 @@
+﻿@using SistemaSeguridad.Helpers
+@model SS.Core.Entities.MotivoAmenaza
+
+@{
+    ViewBag.Title = "Alta de motivo de amenaza";
+}
+
+<h2>Alta de motivo de amenaza</h2>
+
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm("Create", "MotivoAmenaza", FormMethod.Post, new { id = "Crear" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>MotivoAmenaza</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+         <p>
+            <a class="button" id="btnGuardar" ><b class="o"><b class="m"><b>Guardar</b></b></b></a>
+            <a class="button" id="btnCancelar" ><b class="o"><b class="m"><b>Cancelar</b></b></b></a>
+        </p>
+    </fieldset>
+}
+
+<script type="text/javascript">
+
+    $("#btnGuardar").click(function() {
+        $('#Crear').submit();
+    });
+
+    $("#btnCancelar").click(function() {
+        var url = "@Url.Action("Index", "MotivoAmenaza")";
+        $(location).attr('href', url);
+    });
+
+
+
+</script>

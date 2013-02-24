@@ -1,0 +1,82 @@
+﻿@model SS.Core.Entities.TipoInstalacion
+@using SistemaSeguridad.Helpers
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.TipoInstalacionStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.TipoInstalacionStrings.ViewEditName</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<div id="dialog-confirm" class="Invisible" title=@SistemaSeguridad.Resources.GlobalStrings.Cancel>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.ReturnConfirm
+    </p>
+</div>
+@using (Html.BeginForm("Edit", "TipoInstalacion", FormMethod.Post, new { id = "form" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@SistemaSeguridad.Resources.TipoInstalacionStrings.ModuleName</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descripcion)
+            @Html.ValidationMessageFor(model => model.Descripcion)
+        </div>
+
+        @Html.HiddenFor(model => model.UsuarioAlta)
+        @Html.HiddenFor(model => model.FechaAlta)
+
+        @*<p>
+            <input type="submit" value=@SistemaSeguridad.Resources.TipoInstalacionStrings.Save />
+        </p>*@
+        <p>
+            <a class="button" id="btnGuardar" ><b>@SistemaSeguridad.Resources.TipoInstalacionStrings.Save</b></a>
+            <a class="button" id="btnCancelar" ><b>Cancelar</b></a>
+        </p>
+    </fieldset>
+}
+
+@*<div>
+    @Html.ActionLink(@SistemaSeguridad.Resources.TipoInstalacionStrings.BackToIndex, "Index")
+</div>*@
+<script type="text/javascript">
+    
+    $(document).ready(function() { 
+    $("#btnGuardar").click(function (e) {
+            postJson("form", function (data) {
+            });
+        });
+
+        $("#btnCancelar").bind("click", function() {
+            OpenPopUp({
+                id: "dialog-confirm",
+                buttons: 2,
+                yes: function() {
+                    var url = "@Url.Action("Index")";
+                    $(location).attr('href', url);
+                    return;
+                },
+                no: function() {
+                    return;
+                }
+            });
+        });
+    });
+
+</script>

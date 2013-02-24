@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CancelConfirm" xml:space="preserve">
+    <value>¿Desea perder los cambios?</value>
+  </data>
+  <data name="CreatorDate" xml:space="preserve">
+    <value>Fecha de alta</value>
+  </data>
+  <data name="CreatorUser" xml:space="preserve">
+    <value>Usuario de alta</value>
+  </data>
+  <data name="DeleteConfirm" xml:space="preserve">
+    <value>¿Esta seguro que desea borrar este elemento?</value>
+  </data>
+  <data name="InternalError" xml:space="preserve">
+    <value>Ocurrio un error, contacte a su administrador.</value>
+  </data>
+  <data name="selectOne" xml:space="preserve">
+    <value>- Seleccione uno -</value>
+    <comment>Indica que usuario debe seleccionar una opción de un combo</comment>
+  </data>
+  <data name="Usuario_eliminado" xml:space="preserve">
+    <value>El usuario seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="Usuario_RN" xml:space="preserve">
+    <value>No se puede eliminar este usuario, por que tiene Incidentes asociados.</value>
+  </data>
+  <data name="ContraseñaEnviada" xml:space="preserve">
+    <value>Se ha enviado su contraseña al correo electrónico que especifico cuando se dio de alta en el sistema.</value>
+  </data>
+  <data name="ContraseñaErrorAlEnviar" xml:space="preserve">
+    <value>Ocurrio un error al enviar su contraseña. Favor de contactar al administrador.</value>
+  </data>
+  <data name="Informacion" xml:space="preserve">
+    <value>Información</value>
+  </data>
+  <data name="InvalidMail" xml:space="preserve">
+    <value>El correo especificado, no coincide con el correo asiciado a este usuario. Favor de verificar.</value>
+  </data>
+  <data name="UsuarioInactivo" xml:space="preserve">
+    <value>El usuario especificado se encuentra inactivo.</value>
+  </data>
+  <data name="UsuarioInexistente" xml:space="preserve">
+    <value>El usuario especificado no existe.</value>
+  </data>
+  <data name="TipoArmaEliminada" xml:space="preserve">
+    <value>El tipo de arma seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="TipoArmaRN" xml:space="preserve">
+    <value>No se puede eliminar este tipo de arma, por que tiene Incidentes asociados.</value>
+  </data>
+  <data name="CiudadEliminada" xml:space="preserve">
+    <value>La ciudad seleccionada ha sido eliminada del sistema.</value>
+  </data>
+  <data name="CiudadRN" xml:space="preserve">
+    <value>No se puede eliminar esta ciudad, por que tiene Incidentes asociados.</value>
+  </data>
+  <data name="EmpresaEliminada" xml:space="preserve">
+    <value>La empresa seleccionada ha sido eliminada del sistema.</value>
+  </data>
+  <data name="EmpresaRN" xml:space="preserve">
+    <value>No se puede eliminar esta empresa, por que tiene Incidentes, Alertas Incidentes,  Instalaciones, Parametros Sistemas Empresas ó Usuario Empresa , asociados.</value>
+  </data>
+  <data name="EstadoEliminado" xml:space="preserve">
+    <value>El estado seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="EstadoRN" xml:space="preserve">
+    <value>No se puede eliminar este estado, por que tiene Incidentes, Ciudades o Zonas asociadas.</value>
+  </data>
+  <data name="TipoAfectacionEliminada" xml:space="preserve">
+    <value>El tipo de afectacion seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="TipoAfectacionRN" xml:space="preserve">
+    <value>No se puede eliminar este tipo de afectacion, por que tiene Afectacion Incidentes asociados.</value>
+  </data>
+  <data name="TipoIncidenteEliminado" xml:space="preserve">
+    <value>El tipo de incidente seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="TipoIncidenteRN" xml:space="preserve">
+    <value>No se puede eliminar este tipo de incidente, por que tiene Alerta Incidentes, Incidentes o Parametro Sistema Empresa asociados.</value>
+  </data>
+  <data name="TipoInstalacionEliminada" xml:space="preserve">
+    <value>El tipo de instalacion seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="TipoInstalacionRN" xml:space="preserve">
+    <value>No se puede eliminar este tipo de instalacion, por que tiene Incidentes asociados.</value>
+  </data>
+  <data name="TipoLesionadoEliminado" xml:space="preserve">
+    <value>El tipo de lesionado seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="TipoLesionadoRN" xml:space="preserve">
+    <value>No se puede eliminar este tipo de lesión, por que tiene Incidentes asociados.</value>
+  </data>
+  <data name="ZonaEliminada" xml:space="preserve">
+    <value>La zona seleccionada ha sido eliminada del sistema.</value>
+  </data>
+  <data name="ZonaRN" xml:space="preserve">
+    <value>No se puede eliminar esta zona, por que tiene Incidentes asociados.</value>
+  </data>
+  <data name="CantidadDelincuentesEliminado" xml:space="preserve">
+    <value>El elemento de cantidad de delincuentes seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="CantidadDelincuentesRN" xml:space="preserve">
+    <value>No se puede eliminar este tipo de cantidad de delincuentes.</value>
+  </data>
+  <data name="ParametroEliminado" xml:space="preserve">
+    <value>El parametro seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="ParametroRN" xml:space="preserve">
+    <value>No se puede eliminar esta parametro, por que tiene Incidentes asociados.</value>
+  </data>
+  <data name="TipoIntrusionEliminado" xml:space="preserve">
+    <value>El tipo de intrusión seleccionado ha sido eliminado del sistema.</value>
+  </data>
+  <data name="TipoIntrusionRN" xml:space="preserve">
+    <value>No se puede eliminar este tipo de intrusión.</value>
+  </data>
+  <data name="UsuarioCreado" xml:space="preserve">
+    <value>El usuario Usuario se ha dado de alta exitosamente.</value>
+  </data>
+  <data name="ErrorGeneral" xml:space="preserve">
+    <value>Ocurrio un error, favor de verificar.</value>
+  </data>
+  <data name="UsuarioBloqueado" xml:space="preserve">
+    <value>Por su seguridad, esta cuenta a sido bloqueada, favor de consultar con su administrador.</value>
+  </data>
+  <data name="UsuarioPassword" xml:space="preserve">
+    <value>El password que ingreso, es incorrecto, favor de verificar.</value>
+  </data>
+  <data name="UsuarioPasswordIncorrecto" xml:space="preserve">
+    <value>El usuario o password que ingreso, estan incorrectos. Favor de verificar.</value>
+  </data>
+  <data name="ConfirmarGeolocalizacionIncidente" xml:space="preserve">
+    <value>Favor de confirmar el Estado, Ciudad y Zona.</value>
+  </data>
+  <data name="IncidenteSinZona" xml:space="preserve">
+    <value>No se encontro una zona en esta localización, el incidente se marcara como fuera de zona.</value>
+  </data>
+  <data name="ReturnConfirm" xml:space="preserve">
+    <value>¿Desea regresar?</value>
+  </data>
+  <data name="EditarPoligono" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="LimpiarMapa" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+</root>

@@ -1,0 +1,36 @@
+﻿@model SS.Core.Entities.TipoArma
+
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.TipoArmaStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.TipoArmaStrings.ViewDeleteName</h2>
+
+<h3>@SistemaSeguridad.Resources.TipoArmaStrings.DeleteConfirm</h3>
+
+@using (Html.BeginForm()) {
+<fieldset>
+
+    <table class="style1">
+        <tr>
+            <th>
+                @SistemaSeguridad.Resources.TipoArmaStrings.lblName</th>
+            <th>
+               @SistemaSeguridad.Resources.TipoArmaStrings.lblFechaAlta</th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Nombre)</td>
+            <td>
+                @Html.DisplayFor(model => model.FechaAlta)</td>
+        </tr>
+    </table>
+</fieldset>
+
+    <p>
+        <input type="submit" value=@SistemaSeguridad.Resources.TipoArmaStrings.Delete /> |
+        @Html.ActionLink(@SistemaSeguridad.Resources.TipoArmaStrings.BackToIndex, "Index")
+    </p>
+    
+    @Html.HiddenFor(model => model.Id)
+}

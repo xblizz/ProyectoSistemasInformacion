@@ -1,0 +1,218 @@
+﻿@model IEnumerable<SS.Core.Entities.Ciudad>
+@using SistemaSeguridad.Helpers
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.CiudadStrings.ModuleName;
+}
+<h2>@SistemaSeguridad.Resources.CiudadStrings.ViewIndexName</h2>
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.FlexGrid, "flexigrid.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+@Content.Script("jquery-1.5.1.js", Url)
+@Content.Script("jquery-ui-1.8.11.js", Url)
+<link href='@Url.Stylesheet("Incidentes.css")' rel="stylesheet" type="text/css" />
+<script src="@Url.JavaScript(Plugin.FlexGrid, "flexigrid.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript(Plugin.JCombo, "jquery.Cascade.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript(Plugin.Multiselect, "jquery.multiselect.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("Common.function.js")" type="text/javascript"></script>
+<div id="dialog-confirm" class="Invisible" title=@SistemaSeguridad.Resources.GlobalStrings.Cancel>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.DeleteConfirm
+    </p>
+</div>
+<div class="Invisible" id="dialog-RN" title=@SistemaSeguridad.Resources.GlobalStrings.Cancel>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.CiudadRN
+    </p>
+</div>
+<div class="Invisible" id="dialog-Deleted" title=@SistemaSeguridad.Resources.GlobalStrings.Cancel>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.CiudadEliminada
+    </p>
+</div>
+<div class="Invisible" id="dialog-internalerror" title=@SistemaSeguridad.Resources.GlobalStrings.Cancel>
+    <p>
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+        @SistemaSeguridad.Resources.GlobalStrings.InternalError
+    </p>
+</div>
+<div id="Filtros">
+    <div>
+        Estado:<select id="ddEstados" name="ddEstados" title="Estado"></select>&nbsp;<a class="button"
+            id="btnBuscar"><b class="o"><b class="m"><b>Buscar</b></b></b></a>
+    </div>
+</div>
+<br />
+<table id="namegrid" style="display: none">
+</table>
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+
+        $("#ddEstados").Cascade("@Url.Action("GetEstados", "Helper")", { selected_value: '19' }, formato, 160);
+        var parameters = [];//{ name: 'isFiltered', value: false }, { name: 'estado', value: -1 }
+
+        var myFlex = {
+            autoload: true,
+            dataType: 'json',
+            url: "@Url.Action("GetCiudades", "Ciudad")",
+            params: parameters,
+            usepager: true,
+            singleSelect: true,
+            pagestat: 'Mostrando {from} a {to} de {total} registros',
+            procmsg: 'Procesando, por favor espere ...',
+            nomsg: 'No existen registros',
+            pagetext: 'Página',
+            findtext: 'Buscar',
+            outof: 'de',
+            showToggleBtn: false
+        };
+
+        $('#namegrid').flexigrid($.extend({ }, myFlex, {
+            colModel: [
+                { display: 'id', name: 'id', width: 40, sortable: true, align: 'left', hide: true },
+                { display: 'id', name: 'idEstado', width: 40, sortable: true, align: 'left', hide: true },
+                { display: 'Estado', name: 'estado', width: 130, sortable: true, align: 'left' },
+                { display: 'Ciudad', name: 'ciudad', width: 130, sortable: true, align: 'left' },
+                { display: 'Usuario', name: 'user', width: 40, sortable: true, align: 'left' },
+                { display: 'Fecha Alta', name: 'fechaAlta', width: 100, sortable: true, align: 'left' }
+            ],
+            buttons: [
+                { name: 'Nuevo', bclass: 'add', onpress: doCommand },
+                { name: 'Modifiicar', bclass: 'edit', onpress: doCommand },
+                { name: 'Eliminar', bclass: 'delete', onpress: doCommand }
+            ],
+            onSuccess: gridFormat
+        }));
+
+        function doCommand(com, grid) {
+            if (com == 'Nuevo') {
+                var url = "@Url.Action("Create")";
+                $(location).attr('href', url);
+            }
+            if (com == 'Modifiicar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="id"]');
+                    var url = "@Url.Action("Edit/")" + id.text();
+                    $(location).attr('href', url);
+                });
+            } else if (com == 'Eliminar') {
+                $('.trSelected', grid).each(function() {
+                    var id = $('.trSelected > td[abbr="id"]');
+                    var idEstado = $('.trSelected > td[abbr="idEstado"]');
+                    var ciudad = $('.trSelected > td[abbr="ciudad"]');
+                    OpenPopUp({
+                        id: "dialog-confirm",
+                        buttons: 2,
+                        yes: function() {
+                            deleteItem(id, idEstado, ciudad);
+                        },
+                        no:function() {
+                            $('#namegrid').flexOptions().flexReload();
+                        }
+                    });
+                });
+            }
+        }
+
+        function deleteItem(id, idEstado,ciudad) {
+            $.getJSON("@Url.Action("RnEliminaCiudad")", { id: id.text(), idEstado: idEstado.text() }, function(data) {
+                if (data == "false") {
+                    OpenPopUp({
+                        id: "dialog-RN",
+                        buttons: 1,
+                        ok: function() {
+                            return;
+                        }
+                    });
+                } else {
+                    $.getJSON("@Url.Action("DeleteConfirmed")", { id: id.text(), idEstado: idEstado.text() }, function(data) {
+                        var mensaje;
+                        if (data == "true") {
+                            //mensaje = "La ciudad " + ciudad.text().trim() + " ha sido eliminado.";
+                            OpenPopUp({
+                                id: "dialog-Deleted",
+                                buttons: 1,
+                                ok: function() {
+                                    $('#namegrid').flexOptions().flexReload();
+                                    return;
+                                }
+                            });
+                        } else {
+                            //mensaje = "No se ha podido eliminar la ciudad: " + ciudad.text().trim() + ".";
+                            OpenPopUp({
+                                id: "dialog-internalerror",
+                                buttons: 1,
+                                ok: function() {
+                                    return;
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+        }    
+        
+        function gridFormat() {
+            var cell = $('td[abbr*="activo"] > div');
+            var className = "";
+            var currentElement;
+            $.each(cell, function(i, item) {
+                currentElement = $(this);
+                if (currentElement.text() == "true") {
+                    className = "status_ok";
+                } else {
+                    className = "status_bad";
+                }
+                currentElement.text("");
+                currentElement.addClass(className);
+            });
+
+            var cellDataTime = $('td[abbr*="fecha"] > div');
+
+            $.each(cellDataTime, function(i, item) {
+                currentElement = $(this);
+
+                var milli = currentElement.text().replace( /\/Date\((-?\d+)\)\// , '$1');
+                var d = new Date(parseInt(milli));
+                if (d != 'Invalid Date') {
+                    currentElement.text("");
+                    currentElement.text(formatDate(d));
+                }
+            });
+            return true;
+        }
+
+        function formato(object) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth: 150,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+
+        function multiseleccion(object) {
+            $(object).multiselect({
+                selectedList: 4,
+                header: false,
+                minWidth: 150,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+
+       $("#btnBuscar").click(function () {
+            parameters = [{ name: 'estado', value: $("#ddEstados").val() }];
+            $('#namegrid').flexOptions({ params: parameters }).flexReload();
+        });
+
+        function prossesForm(data) {
+            //alert(data);
+        }
+    });
+</script>

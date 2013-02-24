@@ -1,0 +1,50 @@
+﻿@model SS.Core.Entities.Instalacion
+
+@{
+    ViewBag.Title = "Instalaciones";
+}
+
+<h2>Borrar instalación</h2>
+
+<h3>¿Esta seguro que desea borrar este elemento?</h3>
+@using (Html.BeginForm()) {
+<fieldset>
+    <legend></legend>
+
+        <table class="style1">
+        <tr>
+            <th>
+                Empresa</th>
+            <th>
+                Tipo</th>
+            <th>
+                Nombre</th>
+            <th>
+                Fecha</th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Empresa.Nombre)</td>
+            <td>
+                @Html.DisplayFor(model => model.TipoInstalacion.Nombre)</td>
+            <td>
+                @Html.DisplayFor(model => model.Nombre)</td>
+            <td>
+                @Html.DisplayFor(model => model.FechaAlta)</td>
+        </tr>
+    </table>
+
+    @Html.HiddenFor(model => model.Id)
+
+    <p></p>
+
+    <p style="padding-left:10px">
+        <input type="submit" value="Borrar" />
+    </p>
+
+</fieldset>
+
+    <p>
+        @Html.ActionLink("Regresar a la lista", "Index")
+    </p>
+}

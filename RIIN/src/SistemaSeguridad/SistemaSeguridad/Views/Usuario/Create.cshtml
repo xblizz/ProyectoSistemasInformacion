@@ -1,0 +1,190 @@
+﻿@using SistemaSeguridad.Helpers
+@model SS.Core.Entities.Usuario
+
+
+@{
+    ViewBag.Title = "Alta de usuarios";
+}
+<div class="breadcrumb">
+	<h2>Alta de Usuario</h2>
+</div>	
+
+
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+
+
+    @Content.Script("jquery-1.5.1.js", Url)
+    @Content.Script("jquery-ui-1.8.11.js", Url)
+
+    @Content.Script("jquery.validate.min.js", Url)
+    @Content.Script("jquery.validate.unobtrusive.min.js", Url)
+    @Content.Script("Common.function.js", Url)
+    @Content.Script("Plugins/jCombo/jquery.Cascade.js", Url)
+
+<script src="@Url.JavaScript(Plugin.Multiselect, "jquery.multiselect.js")" type="text/javascript"></script>
+
+
+
+@using (Html.BeginForm("Create", "Usuario", FormMethod.Post, new { id = "CrearUsuario" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Usuario</legend>
+
+        <div id="divFiltros">
+            <div class="single-field">
+                Grupos: <select id="ddGrupos" name="ddGrupos" title="Grupos" >
+                        </select>
+                
+                <div class="single-field">
+                    Empresas: <select id="EmpresaId" name="EmpresaId" title="Empresas">
+                              </select>  
+                </div>
+                <div class="single-field">
+                    Perfiles: <select id="cmbPerfil" name="PerfilId" title="Perfiles" multiple="multiple">
+                              </select>
+                </div>
+            </div>
+            <div id="divGrupos"></div>
+            <div class="single-field">
+                <div class="editor-field">
+                    Usuario:
+                    @Html.EditorFor(model => model.UserName)
+                    @Html.ValidationMessageFor(model => model.UserName)
+                </div>
+            </div>
+            <div class="single-field">
+                <div>
+                    Password:
+                    @*  @Html.EditorFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password)*@
+                    <input id="Password" class="text-box single-line valid" type="password" value="" name="Password"/>
+                    <span class="field-validation-valid" data-valmsg-replace="true" data-valmsg-for="Password"></span>
+                </div>
+            </div>
+            <div class="single-field">
+                <div class="editor-field">
+                    Nombre:
+                    @Html.EditorFor(model => model.Nombre)
+                    @Html.ValidationMessageFor(model => model.Nombre)
+                </div>
+            </div>
+            <div class="single-field">
+                <div class="editor-field">
+                    Apellido paterno:
+                    @Html.EditorFor(model => model.ApellidoPaterno)
+                    @Html.ValidationMessageFor(model => model.ApellidoPaterno)
+                </div>
+            </div>
+            <div class="single-field">
+                <div>
+                    Apellido materno:
+                    @Html.EditorFor(model => model.ApellidoMaterno)
+                </div>
+            </div>
+            <div class="single-field">
+                <div class="editor-field">
+                    Email:
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+            <div class="single-field">
+                <div >
+                    Activo:
+                    <input id="Activo"  name="Activo" checked type="checkbox" value="true" onClick="this.checked= !this.checked"/>
+                    <input name="Activo" type="hidden" value="true" />
+                </div>
+            </div>
+            <p>
+                <a class="button" id="btnGuardar" ><b>Guardar</b></a>
+                <a class="button" id="btnCancelar" ><b>Cancelar</b></a>
+            </p>
+        </div>
+    </fieldset>
+    
+     <div id="dialog-correcto" class="Invisible" title=@SistemaSeguridad.Resources.GlobalStrings.Informacion>
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+          @SistemaSeguridad.Resources.GlobalStrings.UsuarioCreado
+        </p>
+    </div>
+    <div id="dialog-error" class="Invisible" title=@SistemaSeguridad.Resources.GlobalStrings.Informacion>
+        <p>
+            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+           @SistemaSeguridad.Resources.GlobalStrings.ErrorGeneral
+        </p>
+    </div>
+    
+}
+
+
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+       
+        $("#ddGrupos").Cascade("@Url.Action("GetGrupos", "Helper")", null, formato, 160);
+        $("#EmpresaId").Cascade("@Url.Action("GetEmpresas", "Helper")", { parent: "#ddGrupos", parent_value: '0', selected_value: '0' }, formato, 160);
+        $("#cmbPerfil").Cascade("@Url.Action("GetPerfiles", "Helper")", null, multiseleccion, 260);
+   
+
+        $('UserName').blur(function() {
+            $(this).valid();
+//            var cadena = "ñÑÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,./{}|\":<>¿?~`" + String.fromCharCode(10, 13, 32, 64);
+//            $("#UserName").text = RemoveInvalidChars($("#UserName").val(), cadena);
+        });
+
+//        $("#btnGuardar").click(function() {
+//            var cadena = "ñÑÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,./{}|\":<>¿?~`" + String.fromCharCode(10, 13, 32, 64);
+//            $("#UserName").text = RemoveInvalidChars($("#UserName").val(), cadena);
+//            $('#CrearUsuario').submit();
+//        });
+
+        $("#btnCancelar").click(function() {
+            var url = "@Url.Action("Index", "Usuario")";
+            $(location).attr('href', url);
+        });
+        
+        $("#btnGuardar").click(function(e) {
+            postJson("CrearUsuario", function(data) {
+                switch (data) {
+                case 1:
+                    OpenPopUp({
+                        id: "dialog-correcto",
+                        buttons: 1,
+                        ok: function() {
+                            var url = "@Url.Action("Index", "Usuario")";
+                            $(location).attr('href', url);
+                        }
+                    });
+                    break;
+                    
+                case 0:
+                    OpenPopUp({
+                        id: "dialog-error",
+                        buttons: 1,
+                        ok: function() {
+                             var url = "@Url.Action("create", "Usuario")";
+                            $(location).attr('href', url);
+                        }
+                    });
+                    break;
+                default:
+                    OpenPopUp({
+                        id: "dialog-error",
+                        buttons: 1,
+                        ok: function() {
+                            return;
+                        }
+                    });
+                    break;
+                }
+            });
+        });
+
+        $('<div class="tl"></div><div class="tr"></div><div class="bl"></div><div class="br"></div>').appendTo("div.single-field");
+    });
+
+</script>

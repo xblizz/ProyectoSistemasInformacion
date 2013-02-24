@@ -1,0 +1,121 @@
+﻿@model SS.Core.Entities.ConfiguracionDashboard
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>ConfiguracionDashboard</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmpresaId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmpresaId)
+            @Html.ValidationMessageFor(model => model.EmpresaId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReporteId, "ReportesDashboard")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ReporteId", String.Empty)
+            @Html.ValidationMessageFor(model => model.ReporteId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MontoAfectadoMinimo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MontoAfectadoMinimo)
+            @Html.ValidationMessageFor(model => model.MontoAfectadoMinimo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MontoAfectadoMaximo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MontoAfectadoMaximo)
+            @Html.ValidationMessageFor(model => model.MontoAfectadoMaximo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EsConsolidado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EsConsolidado)
+            @Html.ValidationMessageFor(model => model.EsConsolidado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SeIncluyeTabla)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SeIncluyeTabla)
+            @Html.ValidationMessageFor(model => model.SeIncluyeTabla)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EsReporteBase)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EsReporteBase)
+            @Html.ValidationMessageFor(model => model.EsReporteBase)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SegmentoReporteId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SegmentoReporteId)
+            @Html.ValidationMessageFor(model => model.SegmentoReporteId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoUnidadTiempoId, "TipoUnidadTiempo")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TipoUnidadTiempoId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TipoUnidadTiempoId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorUnidadTiempo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorUnidadTiempo)
+            @Html.ValidationMessageFor(model => model.ValorUnidadTiempo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfiguracionDashboardBaseId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfiguracionDashboardBaseId)
+            @Html.ValidationMessageFor(model => model.ConfiguracionDashboardBaseId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UsuarioId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UsuarioId)
+            @Html.ValidationMessageFor(model => model.UsuarioId)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

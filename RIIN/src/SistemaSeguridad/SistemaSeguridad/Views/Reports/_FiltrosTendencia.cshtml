@@ -1,0 +1,201 @@
+﻿@using SistemaSeguridad.Helpers
+
+<!-- Tabular -->
+<div>@Html.Partial("_HeaderLocalizacion")
+</div>    
+
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.TimePicker, "timePicker.css")' rel="stylesheet" type="text/css" />
+<script src="@Url.JavaScript("jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("jquery-1.5.1.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("jquery-ui-1.8.11.min.js")" type="text/javascript"></script>
+<script src="@Url.JavaScript("Common.function.js")" type="text/javascript"></script>
+
+@Content.Script("Plugins/DatePicker/jquery.ui.datepicker.min.js", Url)
+@Content.Script("Plugins/DatePicker/Datepicker.es.js", Url)
+@Content.Script("Plugins/jCombo/jquery.Cascade.js", Url)
+@Content.Script("Plugins/Multiselect/jquery.multiselect.min.js", Url)
+@Content.Script("Plugins/TimePicker/jquery.timePicker.js", Url)
+
+<table style="width: 100%;">
+            <tr>
+                <td>
+                    <ul style="list-style-type: none">
+                        <li><input type="radio" id="rdMes" name="rptType" value="1"/>Mes</li>
+                        <li><input type="radio" id="rdDia" name="rptType" value="2"/>Dia</li>
+                        <li><input type="radio" id="rdHora" name="rptType" value="3"/>Hora</li>
+                    </ul></td>
+                <td>
+                    <div id="divMes">
+                                        <table style="width:100%;">
+                        <tr>
+                            <td>
+                                Mes inicial</td>
+                            <td>
+                                <select id="txtMesInicioMes" name="txtMesInicioMes" title="Mes Inicio" style="margin: 10px;"></select>
+                            <td>
+                                Año inicial:</td>
+                            <td>
+                                <select id="txtAnioInicialMes" name="txtAnioInicialMes" title="A Inicial" style="margin: 10px;"></select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Mes Final</td>
+                            <td>
+                                <select id="txtMesFinalMes" name="txtMesFinalMes" title="Mes Final" style="margin: 10px;"></select>
+                                </td>
+                            <td>
+                                Año final:</td>
+                            <td>
+                                <select id="txtAnioFinalMes" name="txtAnioFinalMes" title="A Final" style="margin: 10px;"></select>
+                            </td>
+                        </tr>
+                        </table>
+                    </div>
+                </td>
+                <td>
+                    <div id="divDia">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+                                Fecha de inicio:</td>
+                            <td>
+                                
+                                <input type="text" id="txtFechaInicioDia" />
+                                
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                </td>
+                            <td>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Fecha final:</td>
+                            <td>
+                                <input type="text" id="txtFechaFinalDia" /></td>
+                        </tr>
+                    </table>
+                    </div>
+                </td>
+                <td>
+                <div id="divHora">
+                    <table style="width:100%;">
+                        <tr>
+                            <td>
+                                Fecha de inicio:</td>
+                            <td>
+                                <input type="text" id="txtFechaInicioHora" /></td>
+                            <td>
+                                Hora de inicio:</td>
+                            <td>
+                                <input type="text" id="txtHoraInicio" size="8"/></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                &nbsp;</td>
+                            <td>
+                                Hora final:</td>
+                            <td>
+                                <input type="text" id="txtHoraFinal" size="8"/></td>
+                        </tr>
+                        </table>
+                </div>
+                </td>
+            </tr>
+        </table>
+
+<div style="padding-top:5px; float:left">
+    Tipo de incidente
+    <select id="cmbTiposIncidente" name="PerfilId" title="Tipos de incidente" multiple="multiple"></select>  
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    $("#txtMesInicioMes").Cascade("@Url.Action("GetMonths", "Reports")", { initial_text: 'Seleccione...' }, formato, 160);
+    $("#txtMesFinalMes").Cascade("@Url.Action("GetMonths", "Reports")", { initial_text: 'Seleccione...' }, formato, 160);
+
+    $("#txtAnioInicialMes").Cascade("@Url.Action("GetYears", "Reports")", { initial_text: 'Seleccione...' }, formato, 160);
+    $("#txtAnioFinalMes").Cascade("@Url.Action("GetYears", "Reports")", { initial_text: 'Seleccione...' }, formato, 160);
+
+    $("#cmbTiposIncidente").Cascade("@Url.Action("GetTiposIncidente", "Helper")", null, multiseleccion, 260);
+
+           function formato(object, size) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth:size,
+                noneSelectedText: "Seleccione"
+            });
+            $(object).multiselect('refresh');
+        }
+
+    function multiseleccion(object, size) {
+        $(object).multiselect({
+            selectedList: 4,
+            header: false,
+                minWidth:size,
+            noneSelectedText: "Seleccione..."
+        });
+        $(object).multiselect('refresh');
+    }
+});
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#rdMes').click(function () {
+            $('#divMes').show();
+            $("#divDia").hide();
+            $("#divHora").hide();
+        });
+
+        $('#rdDia').click(function () {
+            $('#divMes').hide();
+            $("#divDia").show();
+            $("#divHora").hide();
+        });
+
+        $('#rdHora').click(function () {
+            $('#divMes').hide();
+            $("#divDia").hide();
+            $("#divHora").show();
+        });
+
+        $('input[name=rptType]:eq(0)').click();
+
+        var dt = new Date();
+
+        $("#txtFechaInicioDia").val(formatDate(dt, 1));
+        $("#txtFechaInicioDia").datepicker({ dateFormat: 'yy/mm/dd' });
+
+        $("#txtFechaFinalDia").val(formatDate(dt, 1));
+        $("#txtFechaFinalDia").datepicker({ dateFormat: 'yy/mm/dd' });
+
+        $("#txtFechaInicioHora").val(formatDate(dt, 1));
+        $("#txtFechaInicioHora").datepicker({ dateFormat: 'yy/mm/dd' });
+
+        $("#txtHoraInicio").timePicker({
+            show24Hours: true,
+            separator: ':',
+            step: 15
+        });
+
+        $("#txtHoraFinal").timePicker({
+            show24Hours: true,
+            separator: ':',
+            step: 15
+        });
+
+        //$("#txtHoraInicio").val(hour + ":" + min);
+        //$("#txtHoraFinal").val(hour + ":" + min);
+    });
+</script>

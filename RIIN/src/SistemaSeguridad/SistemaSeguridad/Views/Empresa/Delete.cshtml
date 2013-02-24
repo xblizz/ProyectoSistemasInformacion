@@ -1,0 +1,38 @@
+﻿@model SS.Core.Entities.Empresa
+
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.EmpresaStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.EmpresaStrings.ViewDeleteName</h2>
+
+<h3>@SistemaSeguridad.Resources.GlobalStrings.DeleteConfirm</h3>
+
+@using (Html.BeginForm()) {
+<fieldset>
+
+    <div class="display-label">@SistemaSeguridad.Resources.EmpresaStrings.Name</div>
+    <div style="font-weight: bold; float:left">
+        @Html.DisplayFor(model => model.Nombre)
+    </div>
+
+    @Html.HiddenFor(model => model.Id)
+
+    <p></p>
+
+</fieldset>
+
+     <p>
+        <input type="submit" class="submit" value=@SistemaSeguridad.Resources.EmpresaStrings.Delete />
+        <input type="button" id="btnCancelar" name="btnCancelar" class="submit" value=@SistemaSeguridad.Resources.EmpresaStrings.Cancel />
+    </p>
+}
+
+<script type="text/javascript">
+$(document).ready(function (){
+    $("#btnCancelar").click(function() {
+            var url = "@Url.Action("Index","Empresa")";
+            $(location).attr('href', url);
+    });
+});
+</script>

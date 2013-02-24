@@ -1,0 +1,57 @@
+﻿@using SistemaSeguridad.Helpers
+
+<div id="divEmpresa" style="display:inline-block; padding: 5px">
+    <ul style="display: inline; list-style-type: none;">
+        <li style="float: left; padding-right: 5px">Grupo <select id="ddGrupos" name="ddGrupos" title="Grupos"></select></li>
+        <li style="float: left; padding-right: 5px">Empresa <select id="EmpresaId" name="ddEmpresa" title="Empresa" style="margin: 10px;"></select></li>
+    </ul>
+</div>
+
+<div id="divEstado" style="padding:5px">
+    <ul style="display: inline; list-style-type: none;">        
+        <li style="float: left; padding-right: 5px;">Estado <select id="EstadoId" name="ddEstado" title="Estado" style="margin: 10px;"></select></li>
+        <li style="float: left; padding-right: 5px;">Ciudad <select id="CiudadId" name="ddCiudad" title="Ciudad" style="margin: 10px;"></select></li>
+        <li style="float: left; padding-right: 5px;">Zona <select id="ZonaId" name="ddZona" title="Zona" style="margin: 10px;"></select></li>
+        <li style="float: left; padding-right: 5px;"><input type="checkbox" id="chkConor" name="chkConor" />¿Incluir empresa en Conor?</li>
+    </ul>
+</div>
+
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+
+@Content.Script("Plugins/jCombo/jquery.Cascade.js", Url)
+@Content.Script("Plugins/Multiselect/jquery.multiselect.min.js", Url)
+@Content.Script("Plugins/DatePicker/jquery.ui.datepicker.min.js", Url)
+@Content.Script("Plugins/DatePicker/Datepicker.es.js", Url)
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#ddGrupos").Cascade("@Url.Action("GetGruposByUser", "Helper")", null, formato, 160);
+        $("#EmpresaId").Cascade("@Url.Action("GetEmpresas", "Helper")", { parent: "#ddGrupos", parent_value: '0', selected_value: '0' }, formato, 160);
+        $("#EstadoId").Cascade("@Url.Action("GetEstados", "Helper")", {selected_value: '19'}, formatoTodos, 160);
+        $("#CiudadId").Cascade("@Url.Action("GetCiudades", "Helper")", { parent: "#EstadoId", parent_value: '0', selected_value: '0' }, formatoTodos,150);
+        $("#ZonaId").Cascade("@Url.Action("GetZonasReports", "Helper")", { parent: "#EstadoId", parent_value: '0', selected_value: '0' }, formatoTodos, 160);
+
+       function formato(object, size) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth:size,
+                noneSelectedText: "Seleccione"
+            });
+            $(object).multiselect('refresh');
+        }
+
+        function formatoTodos(object, size) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth:size,
+                noneSelectedText: "Todos"
+            });
+            $(object).multiselect('refresh');
+        }
+    });
+</script>

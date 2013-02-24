@@ -1,0 +1,153 @@
+﻿@model SS.Core.Entities.Incidente
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Incidente</legend>
+
+    <div class="display-label">FechaIncidente</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaIncidente)
+    </div>
+
+    <div class="display-label">Empresa</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Empresa.Nombre)
+    </div>
+
+    <div class="display-label">TipoIncidente</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoIncidente.Nombre)
+    </div>
+
+    <div class="display-label">Lesionado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Lesionado.Nombre)
+    </div>
+
+    <div class="display-label">TipoInstalacionId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoInstalacionId)
+    </div>
+
+    <div class="display-label">Instalaciones</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Instalaciones.Nombre)
+    </div>
+
+    <div class="display-label">MontoAfectacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MontoAfectacion)
+    </div>
+
+    <div class="display-label">Comentarios</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Comentarios)
+    </div>
+
+    <div class="display-label">Latitud</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Latitud)
+    </div>
+
+    <div class="display-label">Longitud</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Longitud)
+    </div>
+
+    <div class="display-label">Estado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estado.Nombre)
+    </div>
+
+    <div class="display-label">Ciudad</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Ciudad.Nombre)
+    </div>
+
+    <div class="display-label">Zona</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Zona.Nombre)
+    </div>
+
+    <div class="display-label">TipoArma</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoArma.Nombre)
+    </div>
+
+    <div class="display-label">Detenidos</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Detenidos)
+    </div>
+
+    <div class="display-label">CantidadDelincuente</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CantidadDelincuente.NombreDeCantidad)
+    </div>
+
+    <div class="display-label">TipoVehiculo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoVehiculo.Nombre)
+    </div>
+
+    <div class="display-label">TipoExtorcion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoExtorcion.Nombre)
+    </div>
+
+    <div class="display-label">Usuario</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.UserName)
+    </div>
+
+    <div class="display-label">FechaAlta</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaAlta)
+    </div>
+
+    <div class="display-label">UsuarioCancelacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UsuarioCancelacion)
+    </div>
+
+    <div class="display-label">FechaCancelacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaCancelacion)
+    </div>
+
+    <div class="display-label">UsuarioUltimaModificacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UsuarioUltimaModificacion)
+    </div>
+
+    <div class="display-label">FechaUltimaMoldificacion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FechaUltimaMoldificacion)
+    </div>
+
+    <div class="display-label">TipoAmenaza</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoAmenaza.Nombre)
+    </div>
+
+    <div class="display-label">MedioAmenaza</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MedioAmenaza.Nombre)
+    </div>
+
+    <div class="display-label">TipoIntrusion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoIntrusion.Nombre)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

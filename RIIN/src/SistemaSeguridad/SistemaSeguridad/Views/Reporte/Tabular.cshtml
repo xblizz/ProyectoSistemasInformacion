@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Reporte Tabular";
+}
+
+<!-- Tabular -->
+<div>@Html.Partial("_FiltrosTabular")</div>
+
+<input type="button" id="btnConsultar" name="btnConsultar" value="Consultar"/>
+
+<!--span para que dibuje el iframe generado en el ReporteController-->
+<div id="reporte"></div>
+
+<script type="text/javascript">
+    //Search button
+    $(document).ready(function () {
+        $("#btnConsultar").bind("click", function() {
+            loadInfo();
+        });
+    });
+    
+    function loadInfo() {
+         //We build parameter array
+        var stringArray = new Array();
+
+        //We initialize array to avoid empty positions
+        for (i = 0; i < 10; i++) {
+            stringArray[i] = 0;
+        }
+
+        //stringArray[0] = $("#EmpresaId option:selected").text();       //Devuelve Texto
+        stringArray[0] = $("#EmpresaId option:selected").val();          //Devuelve ID
+        stringArray[1] = $("#EstadoId option:selected").val();
+        stringArray[2] = $("#CiudadId option:selected").val();
+        stringArray[3] = $("#ZonaId option:selected").val();
+        stringArray[4] = $('#chkConor').is(':checked'); 
+        stringArray[5] = $("#txtFechaInicio").val();
+        stringArray[6] = $("#txtFechaFinal").val();
+        stringArray[7] = $("#txtMontoInicial").val();
+        stringArray[8] = $("#txtMontoFinal").val();
+        stringArray[9] = $("#cmbTiposIncidente").val();
+
+        var actionUrl = "/Reports/ShowTabular";
+        var postData = { values: stringArray };
+
+        $.ajax({
+            type: "POST",
+            url: actionUrl,
+            data: postData,
+            success: function (data) {
+                $('#reporte').html(data);
+            },
+            dataType: "json",
+            traditional: true
+        });
+
+//        getJson("@Url.Action("ShowTabular")", postData,  function (data) {
+//            $('#reporte').html(data);
+//        });
+    }
+</script>

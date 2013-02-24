@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65b9c21c30614b6fba38930cfc10683f" Name="Diagram1">
+        <EntityTypeShape EntityType="RIINModel.AfectacionesIncidente" Width="1.5" PointX="10.5" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.AlertasIncidente" Width="1.5" PointX="3" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.CantidadDelincuentes" Width="1.5" PointX="6" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Ciudades" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.ConfiguracionesDashboard" Width="1.5" PointX="5" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Empresas" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Estados" Width="1.5" PointX="3.75" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.FiltrosDashboard" Width="1.5" PointX="7.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Incidentes" Width="1.5" PointX="8.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Instalaciones" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Lesionados" Width="1.5" PointX="6" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.MediosAmenaza" Width="1.5" PointX="6" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.MotivosAmenaza" Width="1.5" PointX="6" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.NivelesGeograficos" Width="1.5" PointX="1.5" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.ParametrosSistema" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.ParametrosSistemaEmpresa" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Perfiles" Width="1.5" PointX="0.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Poligonos" Width="1.5" PointX="1.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.PoligonosDetalle" Width="1.5" PointX="3.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.ReportesDashboard" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposAfectacion" Width="1.5" PointX="8.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposArma" Width="1.5" PointX="6" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposExtorsion" Width="1.5" PointX="6" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposFiltroDashboard" Width="1.5" PointX="5" PointY="51.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposIncidente" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposInstalacion" Width="1.5" PointX="3.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposIntrusion" Width="1.5" PointX="6" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposUnidadTiempo" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.TiposVehiculo" Width="1.5" PointX="6" PointY="45" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Usuarios" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.Zonas" Width="1.5" PointX="6" PointY="47.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.InformacionEmpresas" Width="1.5" PointX="10.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.InformacionEstados" Width="1.5" PointX="12.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RIINModel.InformacionPerfiles" Width="1.5" PointX="12.75" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="RIINModel.FK_IncidenteAfectacionIncidente" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoAfectacionAfectacionIncidente" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EmpresaAlertaIncidente" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoIncidenteAlertaIncidente" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_CantidadDelincuentesIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_CiudadesIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EstadosCiudades" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_PoligonoCiudades" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_ConfiguracionDashboardFiltrosDashboard" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_ReportesDashboardConfiguracionDashboard" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoUnidadTiempoConfiguracionDashboard" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EmpresaParametrosSistemaEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EmpresasIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EmpresasInstalaciones" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EstadosIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EstadosPoligono" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_EstadosZona" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoFiltroDashboardFiltrosDashboard" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_InstalacionesIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_LesionadosIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_MedioAmenazaIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_MotivoAmenazaIncidente" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoArmaIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoExtorcionIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoIncidenteIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoInstalacionIncidente" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoIntrusionIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoVehiculoIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_UsuarioIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_ZonaIncidentes" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoInstalacionInstalaciones" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_NivelGeograficoPoligono" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_ParametrosSistemaParametrosSistemaEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_TipoIncidenteParametroSistemaEmpresa" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_PoligonoPoligonoDetalle" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.FK_ZonaPoligono" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.relPerfilesUsuarios" ManuallyRouted="false" />
+        <AssociationConnector Association="RIINModel.relUsuarioEmpresa" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

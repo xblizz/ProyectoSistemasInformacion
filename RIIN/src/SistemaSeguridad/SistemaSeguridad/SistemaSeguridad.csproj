@@ -1,0 +1,882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D85C9C61-F241-4CE2-A044-F02B21C17861}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaSeguridad</RootNamespace>
+    <AssemblyName>SistemaSeguridad</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\GlobalValidations.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalValidations.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\GridHelper.cs" />
+    <Compile Include="Controllers\AlertaIncidenteController.cs" />
+    <Compile Include="Controllers\CantidadDelincuentesController.cs" />
+    <Compile Include="Controllers\CiudadController.cs" />
+    <Compile Include="Controllers\ConfiguracionDashboardController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
+    <Compile Include="Controllers\EstadoController.cs" />
+    <Compile Include="Controllers\HelperController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IncidenteController.cs" />
+    <Compile Include="Controllers\InstalacionController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\MedioAmenazaController.cs" />
+    <Compile Include="Controllers\MotivoAmenazaController.cs" />
+    <Compile Include="Controllers\ParametrosController.cs" />
+    <Compile Include="Controllers\ReporteController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\TipoAfectacionController.cs" />
+    <Compile Include="Controllers\TipoArmaController.cs" />
+    <Compile Include="Controllers\TipoExtorsionController.cs" />
+    <Compile Include="Controllers\TipoIncidenteController.cs" />
+    <Compile Include="Controllers\TipoInstalacionController.cs" />
+    <Compile Include="Controllers\TipoIntrusionController.cs" />
+    <Compile Include="Controllers\TipoLesionadoController.cs" />
+    <Compile Include="Controllers\TipoVehiculoController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\ZonaController.cs" />
+    <Compile Include="Enums\NivelesGeograficosEnum.cs" />
+    <Compile Include="Enums\ParametrosSistemaEnums.cs" />
+    <Compile Include="Enums\PerfilesUsuarioEnum.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Flexgrid.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Models\CiudadEntity.cs" />
+    <Compile Include="Models\FiltroReporteModel.cs" />
+    <Compile Include="Models\GroupIncidentModel.cs" />
+    <Compile Include="Models\EmpresaEntity.cs" />
+    <Compile Include="Models\EstadoEntity.cs" />
+    <Compile Include="Models\FiltrosUsuarioModel.cs" />
+    <Compile Include="Models\HelperContainer.cs" />
+    <Compile Include="Models\ICoordList.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\UsuarioModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\General.aspx.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\General.aspx.designer.cs">
+      <DependentUpon>General.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GeneralChart.aspx.cs">
+      <DependentUpon>GeneralChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\GeneralChart.aspx.designer.cs">
+      <DependentUpon>GeneralChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\GeneralTable.aspx.cs">
+      <DependentUpon>GeneralTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\GeneralTable.aspx.designer.cs">
+      <DependentUpon>GeneralTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaDia.aspx.cs">
+      <DependentUpon>TendenciaDia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaDia.aspx.designer.cs">
+      <DependentUpon>TendenciaDia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaDiaChart.aspx.cs">
+      <DependentUpon>TendenciaDiaChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaDiaChart.aspx.designer.cs">
+      <DependentUpon>TendenciaDiaChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaDiaTable.aspx.cs">
+      <DependentUpon>TendenciaDiaTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaDiaTable.aspx.designer.cs">
+      <DependentUpon>TendenciaDiaTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaHora.aspx.cs">
+      <DependentUpon>TendenciaHora.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaHora.aspx.designer.cs">
+      <DependentUpon>TendenciaHora.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaHoraChart.aspx.cs">
+      <DependentUpon>TendenciaHoraChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaHoraChart.aspx.designer.cs">
+      <DependentUpon>TendenciaHoraChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaHoraTable.aspx.cs">
+      <DependentUpon>TendenciaHoraTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaHoraTable.aspx.designer.cs">
+      <DependentUpon>TendenciaHoraTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaMes.aspx.cs">
+      <DependentUpon>TendenciaMes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaMes.aspx.designer.cs">
+      <DependentUpon>TendenciaMes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaMesChart.aspx.cs">
+      <DependentUpon>TendenciaMesChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaMesChart.aspx.designer.cs">
+      <DependentUpon>TendenciaMesChart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TendenciaMesTable.aspx.cs">
+      <DependentUpon>TendenciaMesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\TendenciaMesTable.aspx.designer.cs">
+      <DependentUpon>TendenciaMesTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AlertasIncidenteStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlertasIncidenteStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CantidadDelincuentesStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CantidadDelincuentesStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\CiudadStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CiudadStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\EmpresaStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmpresaStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\EstadoStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstadoStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\InstalacionStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InstalacionStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ParametrosStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ParametrosStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TipoAfectacionStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoAfectacionStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TipoArmaStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoArmaStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TipoIncidenteStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoIncidenteStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TipoInstalacionStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoInstalacionStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TipoIntrusionStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoIntrusionStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\TipoLesionadoStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TipoLesionadoStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ZonaStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ZonaStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Tabular.aspx.cs">
+      <DependentUpon>Tabular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Tabular.aspx.designer.cs">
+      <DependentUpon>Tabular.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\Common.css" />
+    <Content Include="Content\css\date_input.css" />
+    <Content Include="Content\css\images\apply2.png" />
+    <Content Include="Content\css\images\button.png" />
+    <Content Include="Content\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\css\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\css\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\css\Incidentes.css" />
+    <Content Include="Content\css\jquery-ui-1.8.17.custom.css" />
+    <Content Include="Content\css\jquery.fancybox.css" />
+    <Content Include="Content\css\jquery.ui.all.css" />
+    <Content Include="Content\css\jquery.ui.base.css" />
+    <Content Include="Content\css\jquery.ui.core.css" />
+    <Content Include="Content\css\jquery.ui.datepicker.css" />
+    <Content Include="Content\css\jquery.ui.theme.css" />
+    <Content Include="Content\css\jquery.wysiwyg.css" />
+    <Content Include="Content\css\Login.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\visualize.css" />
+    <Content Include="Content\images\avatar.gif" />
+    <Content Include="Content\images\avatar_f.gif" />
+    <Content Include="Content\images\avatar_m.gif" />
+    <Content Include="Content\images\blank.gif" />
+    <Content Include="Content\images\cal.jpg" />
+    <Content Include="Content\images\catalogos.png" />
+    <Content Include="Content\images\circle.gif" />
+    <Content Include="Content\images\close.png" />
+    <Content Include="Content\images\dashboard.png" />
+    <Content Include="Content\images\error.gif" />
+    <Content Include="Content\images\fancybox-x.png" />
+    <Content Include="Content\images\fancybox-y.png" />
+    <Content Include="Content\images\fancybox.png" />
+    <Content Include="Content\images\fancy_close.png" />
+    <Content Include="Content\images\fancy_loading.png" />
+    <Content Include="Content\images\fancy_nav_left.png" />
+    <Content Include="Content\images\fancy_nav_right.png" />
+    <Content Include="Content\images\fancy_shadow_e.png" />
+    <Content Include="Content\images\fancy_shadow_n.png" />
+    <Content Include="Content\images\fancy_shadow_ne.png" />
+    <Content Include="Content\images\fancy_shadow_nw.png" />
+    <Content Include="Content\images\fancy_shadow_s.png" />
+    <Content Include="Content\images\fancy_shadow_se.png" />
+    <Content Include="Content\images\fancy_shadow_sw.png" />
+    <Content Include="Content\images\fancy_shadow_w.png" />
+    <Content Include="Content\images\fancy_title_left.png" />
+    <Content Include="Content\images\fancy_title_main.png" />
+    <Content Include="Content\images\fancy_title_over.png" />
+    <Content Include="Content\images\fancy_title_right.png" />
+    <Content Include="Content\images\gradient.png" />
+    <Content Include="Content\images\home.png" />
+    <Content Include="Content\images\hsep.gif" />
+    <Content Include="Content\images\info.gif" />
+    <Content Include="Content\images\jquery.wysiwyg.gif" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\mac.png" />
+    <Content Include="Content\images\mbg.jpg" />
+    <Content Include="Content\images\msg_beer.png" />
+    <Content Include="Content\images\msg_error.png" />
+    <Content Include="Content\images\msg_info.png" />
+    <Content Include="Content\images\msg_success.png" />
+    <Content Include="Content\images\nav\calendar.png" />
+    <Content Include="Content\images\nav\catalogos.png" />
+    <Content Include="Content\images\nav\dashboard.png" />
+    <Content Include="Content\images\nav\incidentes.png" />
+    <Content Include="Content\images\nav\media.png" />
+    <Content Include="Content\images\nav\pages.png" />
+    <Content Include="Content\images\nav\reportes.png" />
+    <Content Include="Content\images\nav\settings.png" />
+    <Content Include="Content\images\nav\support.png" />
+    <Content Include="Content\images\nav\users.png" />
+    <Content Include="Content\images\nav\usuarios.png" />
+    <Content Include="Content\images\onoff.gif" />
+    <Content Include="Content\images\prsep.gif" />
+    <Content Include="Content\images\prstr.png" />
+    <Content Include="Content\images\sb.gif" />
+    <Content Include="Content\images\sorta.gif" />
+    <Content Include="Content\images\sortd.gif" />
+    <Content Include="Content\images\srch.gif" />
+    <Content Include="Content\images\srch_loader.gif" />
+    <Content Include="Content\images\st_offline.png" />
+    <Content Include="Content\images\st_online.png" />
+    <Content Include="Content\images\st_warning.png" />
+    <Content Include="Content\images\success.gif" />
+    <Content Include="Content\images\tt.png" />
+    <Content Include="Content\images\warning.gif" />
+    <Content Include="Content\js\jquery.visualize.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Content\themes\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\ui-lightness\jquery-ui-1.7.1.custom.css" />
+    <Content Include="Content\themes\ui-lightness\ui.accordion.css" />
+    <Content Include="Content\themes\ui-lightness\ui.all.css" />
+    <Content Include="Content\themes\ui-lightness\ui.base.css" />
+    <Content Include="Content\themes\ui-lightness\ui.core.css" />
+    <Content Include="Content\themes\ui-lightness\ui.datepicker.css" />
+    <Content Include="Content\themes\ui-lightness\ui.dialog.css" />
+    <Content Include="Content\themes\ui-lightness\ui.progressbar.css" />
+    <Content Include="Content\themes\ui-lightness\ui.resizable.css" />
+    <Content Include="Content\themes\ui-lightness\ui.slider.css" />
+    <Content Include="Content\themes\ui-lightness\ui.tabs.css" />
+    <Content Include="Content\themes\ui-lightness\ui.theme.css" />
+    <Content Include="Global.asax" />
+    <Content Include="MenuActionSecurity.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\General.aspx" />
+    <Content Include="Reports\GeneralChart.aspx" />
+    <Content Include="Reports\GeneralTable.aspx" />
+    <Content Include="Reports\TendenciaDia.aspx" />
+    <Content Include="Reports\TendenciaDiaChart.aspx" />
+    <Content Include="Reports\TendenciaDiaTable.aspx" />
+    <Content Include="Reports\TendenciaHora.aspx" />
+    <Content Include="Reports\TendenciaHoraChart.aspx" />
+    <Content Include="Reports\TendenciaHoraTable.aspx" />
+    <Content Include="Reports\TendenciaMes.aspx" />
+    <Content Include="Reports\TendenciaMesChart.aspx" />
+    <Content Include="Reports\TendenciaMesTable.aspx" />
+    <Content Include="Scripts\Common.function.js" />
+    <Content Include="Scripts\gmaps\GoogleMaps.js" />
+    <Content Include="Scripts\gmaps\markerclusterer_packed.js" />
+    <Content Include="Scripts\gmaps\PolygonCreator.js" />
+    <Content Include="Scripts\Incidentes.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.17.custom.js" />
+    <Content Include="Scripts\jquery.bgiframe-2.1.2.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.dialog.js" />
+    <Content Include="Scripts\jquery.ui.position.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="Scripts\Plugins\DatePicker\Datepicker.es.js" />
+    <Content Include="Scripts\Plugins\DatePicker\jquery.ui.datepicker.min.js" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\flexigrid.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\Plugins\Flexigrid\css\flexigrid.pack.css" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\add.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\bg.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\btn-sprite.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\close.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\ddn.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\dn.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\edit.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\fhbg.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\first.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\hl.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\last.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\line.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\load.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\load.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\magnifier.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\next.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\prev.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\up.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\uup.png" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\images\wbg.gif" />
+    <Content Include="Scripts\Plugins\Flexigrid\css\Style.css" />
+    <Content Include="Scripts\Plugins\Flexigrid\js\flexigrid.js" />
+    <Content Include="Scripts\Plugins\Flexigrid\js\flexigrid.pack.js" />
+    <Content Include="Scripts\Plugins\jCombo\jquery.Cascade.js" />
+    <Content Include="Scripts\Plugins\Multiselect\css\jquery.multiselect.css" />
+    <Content Include="Scripts\Plugins\Multiselect\css\jquery.multiselect.filter.css" />
+    <Content Include="Scripts\Plugins\Multiselect\css\style.css" />
+    <Content Include="Scripts\Plugins\Multiselect\jquery.multiselect.filter.js" />
+    <Content Include="Scripts\Plugins\Multiselect\jquery.multiselect.filter.min.js" />
+    <Content Include="Scripts\Plugins\Multiselect\jquery.multiselect.js" />
+    <Content Include="Scripts\Plugins\Multiselect\jquery.multiselect.min.js" />
+    <Content Include="Scripts\Plugins\TimePicker\jquery.timePicker.js" />
+    <Content Include="Scripts\Plugins\TimePicker\timePicker.css" />
+    <Content Include="Scripts\ui.core.js" />
+    <Content Include="Scripts\ui.dialog.js" />
+    <Content Include="Scripts\ui.draggable.js" />
+    <Content Include="Scripts\ui.resizable.js" />
+    <Content Include="Views\Account\RecuperaContraseña.cshtml" />
+    <Content Include="Reports\Tabular.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AlertasIncidente\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\images\iconos\" />
+    <Folder Include="Scripts\jQueryUI\" />
+    <Folder Include="Uploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app_code\Content.cshtml" />
+    <Content Include="Views\Incidente\Index.cshtml" />
+    <Content Include="Views\Incidente\Details.cshtml" />
+    <Content Include="Views\Incidente\Create.cshtml" />
+    <Content Include="Views\Incidente\Edit.cshtml" />
+    <Content Include="Views\Empresa\Index.cshtml" />
+    <Content Include="Views\Empresa\Create.cshtml" />
+    <Content Include="Views\Empresa\Edit.cshtml" />
+    <Content Include="Views\Empresa\Delete.cshtml" />
+    <Content Include="Views\Usuario\Create.cshtml" />
+    <Content Include="Views\Usuario\Edit.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\TipoIncidente\Index.cshtml" />
+    <Content Include="Views\TipoIncidente\Create.cshtml" />
+    <Content Include="Views\TipoIncidente\Edit.cshtml" />
+    <Content Include="Views\TipoIncidente\Delete.cshtml" />
+    <Content Include="Views\TipoAfectacion\Index.cshtml" />
+    <Content Include="Views\TipoAfectacion\Create.cshtml" />
+    <Content Include="Views\TipoAfectacion\Edit.cshtml" />
+    <Content Include="Views\TipoAfectacion\Delete.cshtml" />
+    <Content Include="Views\TipoInstalacion\Index.cshtml" />
+    <Content Include="Views\TipoInstalacion\Create.cshtml" />
+    <Content Include="Views\TipoInstalacion\Edit.cshtml" />
+    <Content Include="Views\TipoInstalacion\Delete.cshtml" />
+    <Content Include="Views\AlertaIncidente\Index.cshtml" />
+    <Content Include="Views\AlertaIncidente\Create.cshtml" />
+    <Content Include="Views\Parametros\Index.cshtml" />
+    <Content Include="Views\Parametros\Create.cshtml" />
+    <Content Include="Views\Parametros\Edit.cshtml" />
+    <Content Include="Views\Parametros\Delete.cshtml" />
+    <Content Include="Views\Shared\_ToolPolygonUC.cshtml" />
+    <Content Include="Views\TipoVehiculo\Index.cshtml" />
+    <Content Include="Views\TipoVehiculo\Create.cshtml" />
+    <Content Include="Views\TipoVehiculo\Edit.cshtml" />
+    <Content Include="Views\MedioAmenaza\Index.cshtml" />
+    <Content Include="Views\MedioAmenaza\Create.cshtml" />
+    <Content Include="Views\MedioAmenaza\Edit.cshtml" />
+    <Content Include="Views\AlertaIncidente\Delete.cshtml" />
+    <Content Include="Views\AlertaIncidente\Edit.cshtml" />
+    <Content Include="Views\Instalacion\Index.cshtml" />
+    <Content Include="Views\Instalacion\Create.cshtml" />
+    <Content Include="Views\Instalacion\Edit.cshtml" />
+    <Content Include="Views\Instalacion\Delete.cshtml" />
+    <Content Include="Views\Estado\Index.cshtml" />
+    <Content Include="Views\Estado\Create.cshtml" />
+    <Content Include="Views\Estado\Edit.cshtml" />
+    <Content Include="Views\Estado\Delete.cshtml" />
+    <Content Include="Views\Ciudad\Index.cshtml" />
+    <Content Include="Views\Ciudad\Create.cshtml" />
+    <Content Include="Views\Ciudad\Edit.cshtml" />
+    <Content Include="Views\Ciudad\Delete.cshtml" />
+    <Content Include="Views\Zona\Index.cshtml" />
+    <Content Include="Views\Zona\Create.cshtml" />
+    <Content Include="Views\Zona\Edit.cshtml" />
+    <Content Include="Views\Shared\_LocalizationControl.cshtml" />
+    <Content Include="Views\Incidente\GetRoboConViolencia.cshtml" />
+    <Content Include="Views\Incidente\GetRoboSinViolencia.cshtml" />
+    <Content Include="Views\Incidente\GetSecuestroEnRuta.cshtml" />
+    <Content Include="Views\Incidente\GetExtorcion.cshtml" />
+    <Content Include="Views\Incidente\GetAmenaza.cshtml" />
+    <Content Include="Views\Incidente\GetIntrusion.cshtml" />
+    <Content Include="Views\TipoArma\Index.cshtml" />
+    <Content Include="Views\TipoArma\Create.cshtml" />
+    <Content Include="Views\TipoArma\Edit.cshtml" />
+    <Content Include="Views\TipoArma\Delete.cshtml" />
+    <Content Include="Views\TipoLesionado\Index.cshtml" />
+    <Content Include="Views\TipoLesionado\Create.cshtml" />
+    <Content Include="Views\TipoLesionado\Edit.cshtml" />
+    <Content Include="Views\TipoLesionado\Delete.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\GlobalValidations.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>GlobalValidations.Designer.cs</LastGenOutput>
+    </Content>
+    <EmbeddedResource Include="Resources\AlertasIncidenteStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AlertasIncidenteStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CantidadDelincuentesStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CantidadDelincuentesStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CiudadStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>CiudadStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\EmpresaStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EmpresaStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\EstadoStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EstadoStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GlobalStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\InstalacionStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>InstalacionStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ParametrosStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ParametrosStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TipoAfectacionStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoAfectacionStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TipoArmaStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoArmaStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TipoIncidenteStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoIncidenteStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TipoInstalacionStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoInstalacionStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TipoIntrusionStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoIntrusionStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\TipoLesionadoStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoLesionadoStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ZonaStrings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ZonaStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SS.Core.DataAnnotations\SS.Core.DataAnnotations.csproj">
+      <Project>{B456F534-FAE2-45CD-B835-23E13A4ACD61}</Project>
+      <Name>SS.Core.DataAnnotations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Core.Entities\SS.Core.Entities.csproj">
+      <Project>{97037710-EFB1-40CA-9DF0-C994943F6858}</Project>
+      <Name>SS.Core.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Core.Mailer\SS.Core.Mailer.csproj">
+      <Project>{57DF5B08-2BB8-48BF-875A-CF0026B824BF}</Project>
+      <Name>SS.Core.Mailer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SS.Core.Security\SS.Core.Security.csproj">
+      <Project>{4E7153D5-BBD8-4763-AC89-2F8D34835E2B}</Project>
+      <Name>SS.Core.Security</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporte\General.cshtml" />
+    <Content Include="Reports.config" />
+    <None Include="Views\Reporte\Mapa.cshtml" />
+    <Content Include="Views\Reporte\Tabular.cshtml" />
+    <Content Include="Views\Reports\Tendencia2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\CambioContraseña.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoExtorsion\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoExtorsion\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoExtorsion\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MotivoAmenaza\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MotivoAmenaza\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MotivoAmenaza\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\FiltrosReporteMapa.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\FiltrosReportesComunes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ConfiguracionDashboard\FiltrosReporteTabular.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Incidente\EmptyView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporte\Dashboard.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoIntrusion\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoIntrusion\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\TipoIntrusion\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CantidadDelincuentes\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CantidadDelincuentes\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\CantidadDelincuentes\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\Tabular.cshtml" />
+    <Content Include="Views\Reports\_FechasInicialFinal.cshtml" />
+    <Content Include="Views\Reports\_HeaderLocalizacion.cshtml" />
+    <Content Include="Views\Reports\_Montos.cshtml" />
+    <Content Include="Views\Reports\_TipoIncidentes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\General.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_FiltrosTabular.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_FiltrosGeneral.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reports\_FiltrosTendencia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\URNoAuthorized.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporte\AllReports.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporte\TendenciaHora.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporte\TendenciaMes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Reporte\_TipoIncidentes.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Reports.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51241</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

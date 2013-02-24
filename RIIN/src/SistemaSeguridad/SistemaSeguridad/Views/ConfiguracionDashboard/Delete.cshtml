@@ -1,0 +1,78 @@
+﻿@model SS.Core.Entities.ConfiguracionDashboard
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ConfiguracionDashboard</legend>
+
+    <div class="display-label">EmpresaId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmpresaId)
+    </div>
+
+    <div class="display-label">ReportesDashboard</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReportesDashboard.Nombre)
+    </div>
+
+    <div class="display-label">MontoAfectadoMinimo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MontoAfectadoMinimo)
+    </div>
+
+    <div class="display-label">MontoAfectadoMaximo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MontoAfectadoMaximo)
+    </div>
+
+    <div class="display-label">EsConsolidado</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EsConsolidado)
+    </div>
+
+    <div class="display-label">SeIncluyeTabla</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SeIncluyeTabla)
+    </div>
+
+    <div class="display-label">EsReporteBase</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EsReporteBase)
+    </div>
+
+    <div class="display-label">SegmentoReporteId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SegmentoReporteId)
+    </div>
+
+    <div class="display-label">TipoUnidadTiempo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoUnidadTiempo.Nombre)
+    </div>
+
+    <div class="display-label">ValorUnidadTiempo</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorUnidadTiempo)
+    </div>
+
+    <div class="display-label">ConfiguracionDashboardBaseId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ConfiguracionDashboardBaseId)
+    </div>
+
+    <div class="display-label">UsuarioId</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UsuarioId)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

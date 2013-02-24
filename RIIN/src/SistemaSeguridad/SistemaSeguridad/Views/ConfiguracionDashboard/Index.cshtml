@@ -1,0 +1,99 @@
+﻿@model IEnumerable<SS.Core.Entities.ConfiguracionDashboard>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            EmpresaId
+        </th>
+        <th>
+            ReportesDashboard
+        </th>
+        <th>
+            MontoAfectadoMinimo
+        </th>
+        <th>
+            MontoAfectadoMaximo
+        </th>
+        <th>
+            EsConsolidado
+        </th>
+        <th>
+            SeIncluyeTabla
+        </th>
+        <th>
+            EsReporteBase
+        </th>
+        <th>
+            SegmentoReporteId
+        </th>
+        <th>
+            TipoUnidadTiempo
+        </th>
+        <th>
+            ValorUnidadTiempo
+        </th>
+        <th>
+            ConfiguracionDashboardBaseId
+        </th>
+        <th>
+            UsuarioId
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpresaId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReportesDashboard.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MontoAfectadoMinimo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MontoAfectadoMaximo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EsConsolidado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeIncluyeTabla)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EsReporteBase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SegmentoReporteId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoUnidadTiempo.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorUnidadTiempo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfiguracionDashboardBaseId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UsuarioId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MenuActionSecurity>
+  <!--No dejar espacios en los tipos de perfiles-->
+  <menuitem perfiles="AdministradorGeneral,AdministradorEmpresa" pathImg="nav/catalogos.png" title="Catálogos">
+    <!--Grupo Nombre="Configuración Empresa"-->
+    <value controller="" action="" perfiles="AdministradorEmpresa">Configuración de Alertas por Tipo de Incidente</value>
+    <value controller="" action="" perfiles="AdministradorEmpresa">Configuración de Semaforización</value>
+    <value controller="" action="" perfiles="AdministradorEmpresa">Catálogo de Instalaciones</value>
+    <value controller="" action="" perfiles="AdministradorGeneral">Catalogo de Grupo y Empresas</value>
+    
+    <!--Grupo Nombre="Geográficos"-->
+    <value controller="Estado" action="Index,Create,Update,Delete" perfiles="AdministradorEmpresa">Estados</value>
+    <value controller="Ciudad" action="Index,Create,Update,Delete" perfiles="AdministradorEmpresa">Ciudades</value>
+    <value controller="Zona" action="Index,Create,Update,Delete" perfiles="AdministradorEmpresa">Zonas</value>
+    
+    <!--<Grupo Nombre="Incidentes"-->
+    <value controller="TipoIncidente" action="Index,Create,Update,Delete" perfiles="AdministradorGeneral">Tipo de Incidentes</value>
+    <value controller="TipoAfectacion" action="" perfiles="AdministradorGeneral">Tipo de Afectación</value>
+    <value controller="TipoArma" action="" perfiles="AdministradorGeneral">Tipo de Arma</value>
+    <value controller="TipoExtorsion" action="" perfiles="AdministradorGeneral">Tipo de Extorsión</value>
+    <value controller="TipoAmenaza" action="" perfiles="AdministradorGeneral">Tipo de Amenaza</value>
+    <value controller="TipoIntrusion" action="" perfiles="AdministradorGeneral">Tipo de Intrusión</value>
+    <value controller="TipoLesionado" action="" perfiles="AdministradorGeneral">Lesionados</value>
+    <value controller="MedioAmenaza" action="" perfiles="AdministradorGeneral">Medio de Amenaza</value>
+    
+    <!--<Grupo Nombre="Configuración de Sistema"-->
+    <value controller="" action="" perfiles="AdministradorGeneral">Configuración de Parámetros Conor</value>
+  </menuitem>
+  <menuitem perfiles="AdministradorGeneral" pathImg="nav/incidentes.png" title="Incidentes">
+    <value controller="Incidente" action="Create, Edit">Alta de Incidentes</value>
+    <value controller="Incidente" action="Index">Consulta de Incidentes</value>
+    <value controller="Incidente" action="Index" menu="off" perfiles="Consultor"></value>
+    <value controller="Incidente" action="Index, Delete, Create, Edit" menu="off" perfiles="AdministradorGeneral"></value>
+  </menuitem>
+  <menuitem perfiles="Consultor" pathImg="nav/reportes.png" title="Reportes">
+    <value controller="" action="">Reporte de Tendencia</value>
+    <value controller="" action="">Reporte General</value>
+    <value controller="" action="">Mapa de Incidentes</value>
+    <value controller="" action="">Reporte Tabular</value>
+  </menuitem>
+  <menuitem perfiles="AdministradorGeneral" pathImg="nav/usuarios.png" title="Usuarios">
+    <value controller="Usuario" action="Index,Create,Delete,Edit">Index</value>
+  </menuitem>
+
+  <menuitem perfiles="AdministradorGeneral,AdministradorEmpresa,Consultor,Capturista" pathImg="" title="">
+    <value controller="Home" action="Index" menu="off"></value>
+    <value controller="Account" action="Login,Index,CambioContraseña,RecuperaContraseña" menu="off"></value>
+  </menuitem>
+</MenuActionSecurity>

@@ -1,0 +1,147 @@
+﻿@model SS.Core.Entities.ParametroSistemaEmpresa
+@using SistemaSeguridad.Helpers
+@{
+    ViewBag.Title = "Agregar Parámetro";
+}
+<h2>
+    Agregar Parámetro</h2>
+<link href='@Url.Stylesheet("Common.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet(Plugin.Multiselect, "jquery.multiselect.css")' rel="stylesheet" type="text/css" />
+<link href='@Url.Stylesheet("Incidentes.css")' rel="stylesheet" type="text/css" />
+@Content.Script("jquery-1.5.1.js", Url)
+@Content.Script("jquery-ui-1.8.11.js", Url)
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@Content.Script("Common.function.js", Url)
+@Content.Script("Plugins/jCombo/jquery.Cascade.js", Url)
+<script src="@Url.JavaScript(Plugin.Multiselect, "jquery.multiselect.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>ParametroSistemaEmpresa</legend>
+        <div id="divEmpresas">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpresaId, "Empresa")
+            </div>
+            <select id="EmpresaId" name="EmpresaId" title="Empresas">
+            </select>
+            <span id="idEmpresa" class="Invisible">@(Model != null ? @Model.EmpresaId : 0)</span>
+        </div>
+        <p />
+        <div id="divParametrosSistema">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ParametrosSistemaId, "ParametrosSistema")
+            </div>
+            <select id="ParametrosSistemaId" name="ParametrosSistemaId" title="Parametros de Sistema">
+            </select>
+            <span id="idParametrosSistema" class="Invisible">@(Model != null ? @Model.ParametrosSistemaId : 0)</span>
+        </div>
+        <p />      
+        <div id="divTipoIncidente">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TipoIncidenteId, "TipoIncidente")
+            </div>
+            <select id="TipoIncidenteId" name="TipoIncidenteId" title="Tipo de Incidente" multiple="multiple">
+            </select>
+            @Html.ValidationMessageFor(model => model.TipoIncidente.Id)
+            <span id="idTipoIncidente" class="Invisible">@(Model != null ? @Model.TipoIncidenteId : 0)</span>
+            <p />
+        </div>      
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorInicial)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorInicial)
+            @Html.ValidationMessageFor(model => model.ValorInicial)
+        </div>
+        <p />
+        <div id="divValorFinal" class="editor-label">
+            @Html.LabelFor(model => model.Valorfinal)
+            <p />
+            @Html.EditorFor(model => model.Valorfinal)
+            @Html.ValidationMessageFor(model => model.Valorfinal)
+        </div>       
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+       
+        $("#EmpresaId").Cascade("@Url.Action("ObtenerEmpresas", "Helper")", { selected_value: $("#idEmpresa").text() }, formato, 160);
+        $("#ParametrosSistemaId").Cascade("@Url.Action("GetParametrosSistema", "Helper")", { parent: "#EmpresaId", parent_value: '0', selected_value: $("#idParametrosSistema").text() }, formato, 160);
+        $("#TipoIncidenteId").Cascade("@Url.Action("GetTiposIncidente", "Helper")", { parent: "#ParametrosSistemaId", parent_value: '0', selected_value: $("#idTipoIncidente").text() }, formato, 260);
+   
+
+        function formato(object, size) {
+            $(object).multiselect({
+                multiple: false,
+                selectedList: 4,
+                header: false,
+                minWidth:size,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+
+        function multiseleccion(object, size) {
+            $(object).multiselect({
+                selectedList: 4,
+                header: false,
+                 minWidth:size,
+                noneSelectedText: "Seleccione..."
+            });
+            $(object).multiselect('refresh');
+        }
+
+        $('UserName').blur(function() {
+            $(this).valid();
+            var cadena = "ñÑÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,./{}|\":<>¿?~`" + String.fromCharCode(10, 13, 32, 64);
+            $("#UserName").text = RemoveInvalidChars($("#UserName").val(), cadena);
+        });
+
+        $("#btnGuardar").click(function() {
+            var cadena = "ñÑÁÉÍÓÚÜáéíóúü¡!#$%^&*()+=-_[]\\\';,./{}|\":<>¿?~`" + String.fromCharCode(10, 13, 32, 64);
+            $("#UserName").text = RemoveInvalidChars($("#UserName").val(), cadena);
+            $('#CrearUsuario').submit();
+        });
+
+        $("#btnCancelar").click(function() {
+            var url = "@Url.Action("Index", "Parametros")";
+            $(location).attr('href', url);
+        });
+       
+        $("#ParametrosSistemaId").change(function()
+            {
+                //$('#DropDowlList1').val(1);
+                var index = $(this).val();
+                $.getJSON("@Url.Action("ObtenerEsRequerido")", { id: index }, function(data) 
+                {
+                    if (data == "true") 
+                    {
+                        $("#divValorFinal").show("fast");
+                    }
+                    else{
+                          $("#divValorFinal").hide("fast");
+                    }
+                });
+                $.getJSON("@Url.Action("ObtenerIncidenteEsRequerido")", { id: index }, function(data) 
+                {
+                    if (data == "true") 
+                    {
+                          $("#divTipoIncidente").show("fast");
+                    }
+                    else{
+                        $("#divTipoIncidente").hide("fast");
+                    }
+                });
+        });
+    });
+
+</script>

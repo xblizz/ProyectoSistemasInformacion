@@ -1,0 +1,34 @@
+﻿@model SS.Core.Entities.AlertaIncidente
+
+@{
+    ViewBag.Title = @SistemaSeguridad.Resources.AlertasIncidenteStrings.ModuleName;
+}
+
+<h2>@SistemaSeguridad.Resources.AlertasIncidenteStrings.ViewDeleteName</h2>
+
+<h3>@SistemaSeguridad.Resources.AlertasIncidenteStrings.DeleteConfirm</h3>
+
+@using (Html.BeginForm()) {
+<fieldset>
+
+    <div class="display-label">@SistemaSeguridad.Resources.AlertasIncidenteStrings.Name:</div>
+    <div style="font-weight: bold;">
+        @Html.DisplayFor(model => model.Empresa)
+    </div>
+        <div style="font-weight: bold;">
+        @Html.DisplayFor(model => model.TipoIncidente)
+    </div>
+
+    @Html.HiddenFor(model => model.EmpresaId)
+    @Html.HiddenFor(model => model.TipoIncidenteId)
+
+    <p></p>
+
+</fieldset>
+
+    <p>
+        <input type="submit" value=@SistemaSeguridad.Resources.AlertasIncidenteStrings.Delete /> |
+        @Html.ActionLink(@SistemaSeguridad.Resources.AlertasIncidenteStrings.BackToIndex, "Index")    
+    </p>
+
+}

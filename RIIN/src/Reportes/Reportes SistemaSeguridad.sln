@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Reportes SistemaSeguridad", "Reportes SistemaSeguridad\SistemaSeguridad.rptproj", "{0B675FB6-DC84-4B4F-A616-C26168F54ADC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.Debug|Default.ActiveCfg = Debug
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.Debug|Default.Build.0 = DebugLocal
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.Debug|Default.Deploy.0 = DebugLocal
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.DebugLocal|Default.Build.0 = DebugLocal
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.Release|Default.ActiveCfg = Release
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.Release|Default.Build.0 = Release
+		{0B675FB6-DC84-4B4F-A616-C26168F54ADC}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
